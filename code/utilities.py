@@ -1,5 +1,6 @@
 import pandas
 from collections import Counter
+import re
 
 def get_most_common_tokens_from_column(df, column_name):
     column_values = get_single_column(df, column_name)
@@ -25,7 +26,8 @@ def get_df_lines_by_condition(df, column_name, value):
     return df.loc[df[column_name] == value]
 
 def get_all_tokens_from_array(array):
-    return [item for sublist in map(lambda settlement_name: settlement_name.split(), array) for item in sublist]
+    # return [item for sublist in map(lambda settlement_name: settlement_name.split(), array) for item in sublist]
+    return [item for sublist in map(lambda settlement_name: re.split(',| |\.|\?|\n', settlement_name), array) for item in sublist]
 
 # def get_df_from_result(question_number, results):
 #     return pandas.DataFrame([[question_number, res[1], res[0]] for res in results], columns=COLUMNS)
