@@ -7,9 +7,15 @@ path_2020 = r'/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project
 path_2019 = r'/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/twitter_data_2019'
 path_2018 = r'/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/twitter_data_2018'
 
+frame_2021 = r'/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/frame_2021.csv'
+frame_2020 = r'/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/frame_2020.csv'
+frame_2019 = r'/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/frame_2019.csv'
+frame_2018 = r'/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/frame_2018.csv'
+
 months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 
 paths = [path_2021, path_2020, path_2019, path_2018]
+frames = [frame_2021, frame_2020, frame_2019, frame_2018]
 
 
 def create_dataframe_from_path(path):
@@ -46,8 +52,19 @@ def print_boomer_by_month():
             print(str(year) + "-" + month + ": " + str(list(filter(lambda element: element[0] == 'בומר', all_elements_by_count))))
         year -= 1
 
-print_boomer_by_month()
+# print_boomer_by_month()
 
+def print_word_by_month(word):
+    year = 2021
+    for frame in frames:
+        frame_df = pd.read_csv(frame)
+        for month in months:
+            filtered_df = frame_df[frame_df["created_at"].str.split('-').str[1] == month]
+            all_elements_by_count = get_most_common_tokens_from_column(filtered_df, "text")
+            print(str(year) + "-" + month + ": " + str(list(filter(lambda element: element[0] == word, all_elements_by_count))))
+        year -= 1
+
+print_word_by_month("להשים")
 # fram = pd.DataFrame(li, columns=['text', 'tweet_id', 'created_at', 'user_name', 'user_screen_name', 'used_id'])
 
 # print(list(filter(lambda element: 100 < element[1] < 500, all_elements_by_count)))
