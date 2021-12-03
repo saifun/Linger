@@ -23,7 +23,7 @@ def count_words_by_month(words):
 def write_data_to_csv(word_count):
     for word in word_count:
         word_df = pd.DataFrame(list(word_count[word].items()), columns=['month', 'count'])
-        word_df.to_csv(f'results/{word}_count.csv', index=False, header=True)
+        word_df.to_csv(f'results/word_count/{word}_count.csv', index=False, header=True)
 
 
 count_words_by_month(INTERESTING_WORDS)

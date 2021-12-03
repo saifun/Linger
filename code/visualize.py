@@ -31,6 +31,6 @@ def format_month_values(month_tag):
     return ''
 
 
-data_dir = 'results'
+data_dir = 'results/word_count'
 for filename in os.listdir(data_dir):
     create_single_file_chart(f'{data_dir}/{filename}')
