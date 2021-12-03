@@ -1,18 +1,10 @@
-import glob
 import pandas as pd
+from utilities import get_df_from_path
 from consts import FRAMES, PATHS, YEARS
 
 
 def create_dataframe_from_path(path):
-    all_files = glob.glob(path + "/*.csv")
-    li = []
-    for filename in all_files:
-        try:
-            df = pd.read_csv(filename, encoding='utf-8')
-            li.append(df)
-        except:
-            print(filename)
-    final_dataframe = pd.concat(li, axis=0, ignore_index=True)
+    final_dataframe = pd.concat(get_df_from_path(path), axis=0, ignore_index=True)
     return final_dataframe
 
 

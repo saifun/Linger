@@ -1,5 +1,23 @@
 import re
+import glob
+import pandas as pd
 from collections import Counter
+
+
+def open_csv_files_from_path(path):
+    all_files = glob.glob(path + "/*.csv")
+    for filename in all_files:
+        try:
+            df = pd.read_csv(filename, encoding='utf-8')
+            print('yielding! - ' + filename)
+            yield df, filename
+        except:
+            print(filename)
+
+
+def get_df_from_path(path):
+    for df, filename in open_csv_files_from_path(path):
+        yield df
 
 
 def get_most_common_tokens_from_column(df, column_name):
@@ -15,7 +33,7 @@ def get_most_common_values_from_column(df, column_name):
 
 def get_most_common_values_from_array(array):
     array = filter(lambda value: value is not None, array)
-    return Counter(array).most_common()
+    return dict(Counter(array).most_common())
 
 
 def get_single_column(df, column_name):
@@ -28,7 +46,7 @@ def get_df_lines_by_condition(df, column_name, value):
 
 def get_all_tokens_from_array(array):
     # return [item for sublist in map(lambda settlement_name: settlement_name.split(), array) for item in sublist]
-    return [item for sublist in map(lambda settlement_name: re.split(',| |\.|\?|\n', settlement_name), array) for item
+    return [item for sublist in map(lambda word: re.split(',| |\.|\?|\n', word), array) for item
             in sublist]
 
 
