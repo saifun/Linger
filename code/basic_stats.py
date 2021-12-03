@@ -16,6 +16,8 @@ def count_words_by_month(words):
             month = filename.split('-')[1]
             for word in word_count_per_month:
                 word_count_per_month[word][f'{year}-{month}'] += all_elements_by_count.get(word, 0)
+    print(word_count_per_month)
+    write_data_to_csv(word_count_per_month)
 
 
 def write_data_to_csv(word_count):
