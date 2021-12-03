@@ -15,11 +15,6 @@ def open_csv_files_from_path(path):
             print(filename)
 
 
-def get_df_from_path(path):
-    for df, filename in open_csv_files_from_path(path):
-        yield df
-
-
 def get_most_common_tokens_from_column(df, column_name):
     column_values = get_single_column(df, column_name)
     all_tokens = get_all_tokens_from_array(column_values)
