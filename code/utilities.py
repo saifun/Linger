@@ -41,7 +41,7 @@ def get_df_lines_by_condition(df, column_name, value):
 
 def get_all_tokens_from_array(array):
     # return [item for sublist in map(lambda settlement_name: settlement_name.split(), array) for item in sublist]
-    return [item for sublist in map(lambda word: re.split(',| |\.|\?|\n', word), array) for item
+    return [item for sublist in map(lambda word: re.split(',| |\.|\?|\n', str(word)), array) for item
             in sublist]
 
 
