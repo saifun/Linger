@@ -21,7 +21,10 @@ def create_single_file_chart(filename):
 
 def get_word_from_path(path):
     filename = os.path.basename(path)
-    return ''.join(list(reversed(filename.split('_')[0])))
+    if  any("\u0590" <= c <= "\u05EA" for c in filename.split('_')[0]):
+        return ''.join(list(reversed(filename.split('_')[0])))
+    else:
+        return ''.join(list(filename.split('_')[0]))
 
 
 def format_month_values(month_tag):
@@ -31,6 +34,14 @@ def format_month_values(month_tag):
     return ''
 
 
-data_dir = 'results/word_count'
-for filename in os.listdir(data_dir):
-    create_single_file_chart(f'{data_dir}/{filename}')
+def main():
+    # visualize_basic_files('results/word_count')
+    visualize_basic_files('results/meta_data_count')
+
+
+def visualize_basic_files(data_dir):
+    for filename in os.listdir(data_dir):
+        create_single_file_chart(f'{data_dir}/{filename}')
+
+
+main()

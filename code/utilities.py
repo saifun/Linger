@@ -4,15 +4,17 @@ import pandas as pd
 from collections import Counter
 
 
-def open_csv_files_from_path(path):
+def open_csv_files_from_path(path,verbose = False):
     all_files = glob.glob(path + "/*.csv")
     for filename in all_files:
         try:
             df = pd.read_csv(filename, encoding='utf-8')
-            print('yielding! - ' + filename)
+            if verbose:
+                print('yielding! - ' + filename)
             yield df, filename
         except:
-            print(filename)
+            if verbose:
+                print(filename)
 
 
 def get_most_common_tokens_from_column(df, column_name):
