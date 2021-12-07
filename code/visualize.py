@@ -1,7 +1,9 @@
 import os
 import seaborn
+import json
 import matplotlib.pyplot as plt
 import pandas as pd
+from wordcloud import WordCloud
 
 
 def create_single_file_chart(filename):
@@ -19,9 +21,28 @@ def create_single_file_chart(filename):
     plt.show()
 
 
+def visualize_word_cloud(filename):
+    with open(filename, 'r') as file:
+        word_count = json.loads(file.read())
+    hebrew_word_data = {
+        _reverse_hebrew_word(word): count
+        for word, count in word_count.items()
+    }
+    word_cloud = WordCloud(font_path='/Users/saifun/Library/Fonts/trashimclm-bold-webfont.ttf')
+    word_cloud.generate_from_frequencies(frequencies=hebrew_word_data)
+    plt.figure()
+    plt.imshow(word_cloud, interpolation="bilinear")
+    plt.axis("off")
+    plt.show()
+
+
 def get_word_from_path(path):
     filename = os.path.basename(path)
-    return ''.join(list(reversed(filename.split('_')[0])))
+    return _reverse_hebrew_word(filename.split('_')[0])
+
+
+def _reverse_hebrew_word(word):
+    return ''.join(list(reversed(word)))
 
 
 def format_month_values(month_tag):
@@ -31,6 +52,7 @@ def format_month_values(month_tag):
     return ''
 
 
-data_dir = 'results/word_count'
-for filename in os.listdir(data_dir):
-    create_single_file_chart(f'{data_dir}/{filename}')
+def generate_word_count_graphs():
+    data_dir = 'results/word_count'
+    for filename in os.listdir(data_dir):
+        create_single_file_chart(f'{data_dir}/{filename}')
