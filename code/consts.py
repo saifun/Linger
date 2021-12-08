@@ -4,8 +4,8 @@ DATA_PATH = '/Users/saifun/Documents/HUJI/3 semester/67978_Needle_in_a_Data_Hays
 YEARS = list(range(2018, 2022))
 
 PATHS = {
-    # year: DATA_PATH.format('twitter_data_' + str(year))
-    year: DATA_PATH.format('twitter_data_' + str(year) + '/data_' + str(year))
+    year: DATA_PATH.format('twitter_data_' + str(year))
+    # year: DATA_PATH.format('twitter_data_' + str(year) + '/data_' + str(year))
     for year in YEARS
 }
 
