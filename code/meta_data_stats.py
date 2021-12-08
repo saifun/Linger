@@ -12,11 +12,10 @@ def count_tweets_by_month():
             month_key = get_month_key(filepath, year)
             if month_key not in words_count:
                 words_count[month_key] = 0
-            words_count[month_key]+=len(list(single_day_posts["used_id"]))
+            words_count[month_key] += len(list(single_day_posts["used_id"]))
     values = []
     for month_key in words_count.keys():
         values.append((month_key, words_count[month_key]))
-    print(values)
     write_output(f'results/meta_data_count/tweets_count.csv', values)
 
 
@@ -30,11 +29,12 @@ def count_unique_users_by_month():
             for id in list(single_day_posts["used_id"]):
                 if id not in users_count[month_key]:
                     users_count[month_key][id] = 0
-                users_count[month_key][id]+=1
+                users_count[month_key][id] += 1
     values = []
     for month_key in users_count.keys():
         values.append((month_key, len(users_count[month_key])))
     write_output(f'results/meta_data_count/users_count.csv', values)
+
 
 def count_words_by_month():
     words_count = {}
@@ -44,7 +44,7 @@ def count_words_by_month():
             if month_key not in words_count:
                 words_count[month_key] = 0
             for text in list(single_day_posts["text"]):
-                words_count[month_key]+=(len(text.split(" ")))
+                words_count[month_key] += (len(text.split(" ")))
     values = []
     for month_key in words_count.keys():
         values.append((month_key, words_count[month_key]))
@@ -63,8 +63,4 @@ def get_month_key(filepath, year):
     return month_key
 
 
-# count_unique_users_by_month()
 count_words_by_month()
-# for year in YEARS:
-#     for single_day_posts, filepath in open_csv_files_from_path(PATHS[year]):
-#         pass
