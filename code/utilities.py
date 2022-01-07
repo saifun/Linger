@@ -1,8 +1,11 @@
 import re
 import glob
-import stanza
 import pandas as pd
 from collections import Counter
+
+from stanza_processor import Processor
+
+processor = Processor()
 
 
 def open_csv_files_from_path(path):
@@ -20,7 +23,11 @@ def generate_sentences(path):
     for single_day_posts, filename in open_csv_files_from_path(path):
         posts = get_single_column(single_day_posts, 'text')
         for post in posts:
-            print(type(post), post)
+            sentences = re.split('\.|\?|\n', post)
+            for sentence in sentences:
+                if sentence == '':
+                    continue
+                yield sentence, processor.get_stanza_analysis(sentence)
 
 
 def get_most_common_tokens_from_column(df, column_name):
