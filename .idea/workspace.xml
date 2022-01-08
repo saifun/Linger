@@ -19,11 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="536503f9-9a1e-4841-97df-b0dc99c9f937" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/code/gender_numbers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/test_files/twitter_sample.csv" afterDir="false" />
+    <list default="true" id="536503f9-9a1e-4841-97df-b0dc99c9f937" name="Default Changelist" comment="finding gender mismatch for noun-num and noun-adj">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/gender_numbers.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/gender_numbers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/stanza_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/stanza_processor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +109,14 @@
       <option name="presentableId" value="Default" />
       <updated>1638005876526</updated>
     </task>
+    <task id="LOCAL-00001" summary="finding gender mismatch for noun-num and noun-adj">
+      <created>1641653318611</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641653318611</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,75 +131,79 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finding gender mismatch for noun-num and noun-adj" />
+    <option name="LAST_COMMIT_MESSAGE" value="finding gender mismatch for noun-num and noun-adj" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="465" y="187" key="#xdebugger.XInspectDialog" timestamp="1638293426556">
       <screen x="0" y="23" width="1440" height="816" />
     </state>
     <state x="465" y="187" key="#xdebugger.XInspectDialog/0.23.1440.816@0.23.1440.816" timestamp="1638293426556" />
-    <state width="1419" height="263" key="GridCell.Tab.0.bottom" timestamp="1641653219208">
+    <state width="1419" height="471" key="GridCell.Tab.0.bottom" timestamp="1641672499912">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="210" key="GridCell.Tab.0.bottom/0.23.1440.816@0.23.1440.816" timestamp="1638377815259" />
     <state width="1419" height="163" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1638028600265" />
     <state width="1419" height="293" key="GridCell.Tab.0.bottom/0.23.1440.825/-1920.-191.1920.1057@0.23.1440.825" timestamp="1638007137932" />
-    <state width="1419" height="263" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1641653219208" />
-    <state width="1419" height="263" key="GridCell.Tab.0.center" timestamp="1641653219207">
+    <state width="1419" height="471" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1641672499912" />
+    <state width="1419" height="471" key="GridCell.Tab.0.center" timestamp="1641672499911">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="210" key="GridCell.Tab.0.center/0.23.1440.816@0.23.1440.816" timestamp="1638377815258" />
     <state width="1419" height="163" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1638028600264" />
     <state width="1419" height="293" key="GridCell.Tab.0.center/0.23.1440.825/-1920.-191.1920.1057@0.23.1440.825" timestamp="1638007137931" />
-    <state width="1419" height="263" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1641653219207" />
-    <state width="1419" height="263" key="GridCell.Tab.0.left" timestamp="1641653219206">
+    <state width="1419" height="471" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1641672499911" />
+    <state width="1419" height="471" key="GridCell.Tab.0.left" timestamp="1641672499910">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="210" key="GridCell.Tab.0.left/0.23.1440.816@0.23.1440.816" timestamp="1638377815257" />
     <state width="1419" height="163" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1638028600263" />
     <state width="1419" height="293" key="GridCell.Tab.0.left/0.23.1440.825/-1920.-191.1920.1057@0.23.1440.825" timestamp="1638007137930" />
-    <state width="1419" height="263" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1641653219206" />
-    <state width="1419" height="263" key="GridCell.Tab.0.right" timestamp="1641653219207">
+    <state width="1419" height="471" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1641672499910" />
+    <state width="1419" height="471" key="GridCell.Tab.0.right" timestamp="1641672499912">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="210" key="GridCell.Tab.0.right/0.23.1440.816@0.23.1440.816" timestamp="1638377815258" />
     <state width="1419" height="163" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1638028600264" />
     <state width="1419" height="293" key="GridCell.Tab.0.right/0.23.1440.825/-1920.-191.1920.1057@0.23.1440.825" timestamp="1638007137931" />
-    <state width="1419" height="263" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1641653219207" />
-    <state width="1419" height="263" key="GridCell.Tab.1.bottom" timestamp="1641653219209">
+    <state width="1419" height="471" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1641672499912" />
+    <state width="1419" height="267" key="GridCell.Tab.1.bottom" timestamp="1641672301207">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="258" key="GridCell.Tab.1.bottom/0.23.1440.816@0.23.1440.816" timestamp="1638293832389" />
-    <state width="1419" height="263" key="GridCell.Tab.1.bottom/0.23.1440.827@0.23.1440.827" timestamp="1641653219209" />
-    <state width="1419" height="263" key="GridCell.Tab.1.center" timestamp="1641653219209">
+    <state width="1419" height="267" key="GridCell.Tab.1.bottom/0.23.1440.827@0.23.1440.827" timestamp="1641672301207" />
+    <state width="1419" height="267" key="GridCell.Tab.1.center" timestamp="1641672301207">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="258" key="GridCell.Tab.1.center/0.23.1440.816@0.23.1440.816" timestamp="1638293832389" />
-    <state width="1419" height="263" key="GridCell.Tab.1.center/0.23.1440.827@0.23.1440.827" timestamp="1641653219209" />
-    <state width="1419" height="263" key="GridCell.Tab.1.left" timestamp="1641653219208">
+    <state width="1419" height="267" key="GridCell.Tab.1.center/0.23.1440.827@0.23.1440.827" timestamp="1641672301207" />
+    <state width="1419" height="267" key="GridCell.Tab.1.left" timestamp="1641672301207">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="258" key="GridCell.Tab.1.left/0.23.1440.816@0.23.1440.816" timestamp="1638293832388" />
-    <state width="1419" height="263" key="GridCell.Tab.1.left/0.23.1440.827@0.23.1440.827" timestamp="1641653219208" />
-    <state width="1419" height="263" key="GridCell.Tab.1.right" timestamp="1641653219209">
+    <state width="1419" height="267" key="GridCell.Tab.1.left/0.23.1440.827@0.23.1440.827" timestamp="1641672301207" />
+    <state width="1419" height="267" key="GridCell.Tab.1.right" timestamp="1641672301207">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="258" key="GridCell.Tab.1.right/0.23.1440.816@0.23.1440.816" timestamp="1638293832389" />
-    <state width="1419" height="263" key="GridCell.Tab.1.right/0.23.1440.827@0.23.1440.827" timestamp="1641653219209" />
-    <state x="319" y="176" key="Vcs.Push.Dialog.v2" timestamp="1641589371002">
+    <state width="1419" height="267" key="GridCell.Tab.1.right/0.23.1440.827@0.23.1440.827" timestamp="1641672301207" />
+    <state x="319" y="176" key="Vcs.Push.Dialog.v2" timestamp="1641653331032">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
-    <state x="319" y="176" key="Vcs.Push.Dialog.v2/0.23.1440.827@0.23.1440.827" timestamp="1641589371002" />
-    <state width="720" height="413" key="XDebugger.FullValuePopup" timestamp="1641653022579">
+    <state x="319" y="176" key="Vcs.Push.Dialog.v2/0.23.1440.827@0.23.1440.827" timestamp="1641653331032" />
+    <state width="720" height="413" key="XDebugger.FullValuePopup" timestamp="1641671606488">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
-    <state width="720" height="413" key="XDebugger.FullValuePopup/0.23.1440.827@0.23.1440.827" timestamp="1641653022579" />
+    <state width="720" height="413" key="XDebugger.FullValuePopup/0.23.1440.827@0.23.1440.827" timestamp="1641671606488" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/code/gender_numbers.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="15" />
+          <line>58</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -200,6 +211,7 @@
       <configuration name="PythonConfigurationType">
         <watch expression="sent_parse_tree[index].pos" language="Python" />
         <watch expression="sent_parse_tree[index].head" language="Python" />
+        <watch expression="tot_df[&quot;head&quot;]" language="Python" />
       </configuration>
     </watches-manager>
   </component>
