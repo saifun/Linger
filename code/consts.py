@@ -1,3 +1,5 @@
+from collections import namedtuple
+
 DATA_PATH = '/Users/saifun/Documents/HUJI/3 semester/67978_Needle_in_a_Data_Haystack/final_project/twitter/hebrew_twitter/{}'
 
 YEARS = list(range(2018, 2022))
@@ -13,3 +15,15 @@ FRAMES = {
 }
 
 MONTHS = ['{:02d}'.format(month) for month in range(1, 13)]
+
+HEAD = 'head'
+POS = 'pos'
+WORD = 'word'
+GENDER = 'gender'
+Info = namedtuple('Info', [WORD, HEAD, POS, GENDER])
+FEMININE = 'Fem'
+MASCULINE = 'Masc'
+GENDERS = (MASCULINE, FEMININE)
+NOUN_POS = 'NOUN'
+NUM_POS = 'NUM'
+ADJ_POS = 'ADJ'

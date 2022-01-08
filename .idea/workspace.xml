@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="536503f9-9a1e-4841-97df-b0dc99c9f937" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/code/gender_numbers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/test_files/twitter_sample.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/read_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/read_files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/stanza_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/stanza_processor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +51,28 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.gender_numbers">
+    <configuration name="gender_numbers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Linger" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/gender_numbers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="read_files" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -72,6 +96,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gender_numbers" />
         <item itemvalue="Python.read_files" />
       </list>
     </recent_temporary>
@@ -104,56 +129,77 @@
       <screen x="0" y="23" width="1440" height="816" />
     </state>
     <state x="465" y="187" key="#xdebugger.XInspectDialog/0.23.1440.816@0.23.1440.816" timestamp="1638293426556" />
-    <state width="1419" height="210" key="GridCell.Tab.0.bottom" timestamp="1638377815259">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state width="1419" height="263" key="GridCell.Tab.0.bottom" timestamp="1641653219208">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="210" key="GridCell.Tab.0.bottom/0.23.1440.816@0.23.1440.816" timestamp="1638377815259" />
     <state width="1419" height="163" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1638028600265" />
     <state width="1419" height="293" key="GridCell.Tab.0.bottom/0.23.1440.825/-1920.-191.1920.1057@0.23.1440.825" timestamp="1638007137932" />
-    <state width="1419" height="210" key="GridCell.Tab.0.center" timestamp="1638377815258">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state width="1419" height="263" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1641653219208" />
+    <state width="1419" height="263" key="GridCell.Tab.0.center" timestamp="1641653219207">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="210" key="GridCell.Tab.0.center/0.23.1440.816@0.23.1440.816" timestamp="1638377815258" />
     <state width="1419" height="163" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1638028600264" />
     <state width="1419" height="293" key="GridCell.Tab.0.center/0.23.1440.825/-1920.-191.1920.1057@0.23.1440.825" timestamp="1638007137931" />
-    <state width="1419" height="210" key="GridCell.Tab.0.left" timestamp="1638377815257">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state width="1419" height="263" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1641653219207" />
+    <state width="1419" height="263" key="GridCell.Tab.0.left" timestamp="1641653219206">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="210" key="GridCell.Tab.0.left/0.23.1440.816@0.23.1440.816" timestamp="1638377815257" />
     <state width="1419" height="163" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1638028600263" />
     <state width="1419" height="293" key="GridCell.Tab.0.left/0.23.1440.825/-1920.-191.1920.1057@0.23.1440.825" timestamp="1638007137930" />
-    <state width="1419" height="210" key="GridCell.Tab.0.right" timestamp="1638377815258">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state width="1419" height="263" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1641653219206" />
+    <state width="1419" height="263" key="GridCell.Tab.0.right" timestamp="1641653219207">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="210" key="GridCell.Tab.0.right/0.23.1440.816@0.23.1440.816" timestamp="1638377815258" />
     <state width="1419" height="163" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1638028600264" />
     <state width="1419" height="293" key="GridCell.Tab.0.right/0.23.1440.825/-1920.-191.1920.1057@0.23.1440.825" timestamp="1638007137931" />
-    <state width="1419" height="258" key="GridCell.Tab.1.bottom" timestamp="1638293832389">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state width="1419" height="263" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1641653219207" />
+    <state width="1419" height="263" key="GridCell.Tab.1.bottom" timestamp="1641653219209">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="258" key="GridCell.Tab.1.bottom/0.23.1440.816@0.23.1440.816" timestamp="1638293832389" />
-    <state width="1419" height="258" key="GridCell.Tab.1.center" timestamp="1638293832389">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state width="1419" height="263" key="GridCell.Tab.1.bottom/0.23.1440.827@0.23.1440.827" timestamp="1641653219209" />
+    <state width="1419" height="263" key="GridCell.Tab.1.center" timestamp="1641653219209">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="258" key="GridCell.Tab.1.center/0.23.1440.816@0.23.1440.816" timestamp="1638293832389" />
-    <state width="1419" height="258" key="GridCell.Tab.1.left" timestamp="1638293832388">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state width="1419" height="263" key="GridCell.Tab.1.center/0.23.1440.827@0.23.1440.827" timestamp="1641653219209" />
+    <state width="1419" height="263" key="GridCell.Tab.1.left" timestamp="1641653219208">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="258" key="GridCell.Tab.1.left/0.23.1440.816@0.23.1440.816" timestamp="1638293832388" />
-    <state width="1419" height="258" key="GridCell.Tab.1.right" timestamp="1638293832389">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state width="1419" height="263" key="GridCell.Tab.1.left/0.23.1440.827@0.23.1440.827" timestamp="1641653219208" />
+    <state width="1419" height="263" key="GridCell.Tab.1.right" timestamp="1641653219209">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state width="1419" height="258" key="GridCell.Tab.1.right/0.23.1440.816@0.23.1440.816" timestamp="1638293832389" />
+    <state width="1419" height="263" key="GridCell.Tab.1.right/0.23.1440.827@0.23.1440.827" timestamp="1641653219209" />
+    <state x="319" y="176" key="Vcs.Push.Dialog.v2" timestamp="1641589371002">
+      <screen x="0" y="23" width="1440" height="827" />
+    </state>
+    <state x="319" y="176" key="Vcs.Push.Dialog.v2/0.23.1440.827@0.23.1440.827" timestamp="1641589371002" />
+    <state width="720" height="413" key="XDebugger.FullValuePopup" timestamp="1641653022579">
+      <screen x="0" y="23" width="1440" height="827" />
+    </state>
+    <state width="720" height="413" key="XDebugger.FullValuePopup/0.23.1440.827@0.23.1440.827" timestamp="1641653022579" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/code/gender_numbers.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="frame[frame[&quot;created_at&quot;].split('-')[1] == month]" language="Python" />
-        <watch expression="frame[&quot;created_at&quot;].str.split('-')[1]" language="Python" />
-        <watch expression="frame[frame[&quot;created_at&quot;].str.split('-').str[1] == month]" language="Python" />
-        <watch expression="frame[&quot;created_at&quot;].str.split('-')" language="Python" />
-        <watch expression="frame[frame[&quot;created_at&quot;].str.split('-').str == month]" language="Python" />
-        <watch expression="frame[&quot;created_at&quot;].str.split('-').str[1]" language="Python" />
+        <watch expression="sent_parse_tree[index].pos" language="Python" />
+        <watch expression="sent_parse_tree[index].head" language="Python" />
       </configuration>
     </watches-manager>
   </component>
