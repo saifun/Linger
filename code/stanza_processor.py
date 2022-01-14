@@ -26,4 +26,4 @@ class Processor:
         tot_df = pd.concat(lst, ignore_index=True)
         tot_df = tot_df.shift(1).iloc[1:]
         tot_df["head"] = tot_df["head"].astype(int)
-        return tot_df['text'], tot_df['head'], tot_df['upos']
+        return tot_df['text'], tot_df['head'], tot_df['upos'], tot_df['feats'], tot_df['deprel']
