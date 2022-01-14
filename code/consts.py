@@ -15,3 +15,6 @@ FRAMES = {
 }
 
 MONTHS = ['{:02d}'.format(month) for month in range(1, 13)]
+
+HEB_CAHRS_START = "\u0590"
+HEB_CAHRS_END = "\u05EA"

@@ -4,7 +4,7 @@ import pandas as pd
 from collections import Counter
 
 
-def open_csv_files_from_path(path,verbose = False):
+def open_csv_files_from_path(path, verbose=False):
     all_files = glob.glob(path + "/*.csv")
     for filename in all_files:
         try:
@@ -42,7 +42,6 @@ def get_df_lines_by_condition(df, column_name, value):
 
 
 def get_all_tokens_from_array(array):
-    # return [item for sublist in map(lambda settlement_name: settlement_name.split(), array) for item in sublist]
     return [item for sublist in map(lambda word: re.split(',| |\.|\?|\n', str(word)), array) for item
             in sublist]
 

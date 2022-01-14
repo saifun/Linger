@@ -2,6 +2,7 @@ import os
 import seaborn
 import matplotlib.pyplot as plt
 import pandas as pd
+from consts import HEB_CAHRS_START, HEB_CAHRS_END
 
 
 def create_single_file_chart(filename, use_word_from_file=False):
@@ -24,7 +25,7 @@ def create_single_file_chart(filename, use_word_from_file=False):
 
 def get_word_from_path(path):
     filename = os.path.basename(path)
-    if any("\u0590" <= c <= "\u05EA" for c in filename.split('_')[0]):
+    if any(HEB_CAHRS_START <= c <= HEB_CAHRS_END for c in filename.split('_')[0]):
         return ''.join(list(reversed(filename.split('_')[0])))
     else:
         return ''.join(list(filename.split('_')[0]))
@@ -47,4 +48,5 @@ def visualize_basic_files(data_dir, use_word_from_file=False):
         create_single_file_chart(f'{data_dir}/{filename}', use_word_from_file)
 
 
-main()
+if __name__ == '__main__':
+    main()
