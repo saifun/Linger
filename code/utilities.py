@@ -2,10 +2,7 @@ import re
 import glob
 import pandas as pd
 from collections import Counter
-
-from stanza_processor import Processor
-
-processor = Processor()
+from semantic_tree import SemanticTree
 
 
 def open_csv_files_from_path(path):
@@ -27,7 +24,7 @@ def generate_sentences(path):
             for sentence in sentences:
                 if sentence == '':
                     continue
-                yield sentence, processor.get_stanza_analysis(sentence)
+                yield sentence, SemanticTree(sentence)
 
 
 def get_most_common_tokens_from_column(df, column_name):
@@ -60,26 +57,5 @@ def get_all_tokens_from_array(array):
             in sublist]
 
 
-# def get_df_from_result(question_number, results):
-#     return pandas.DataFrame([[question_number, res[1], res[0]] for res in results], columns=COLUMNS)
-
 def create_all_words_histogram(all_text_df):
     all_text_df.str.split().map(lambda x: len(x)).hist()
-
-# def plot_top_words_barchart(all_text_df):
-#     corpus = get_corpus(all_text_df)
-#     counter = Counter(corpus)
-#     most = counter.most_common()
-#     word_list, count_list = [], []
-#     for word, count in most[:20]:
-#         word_list.append(word)
-#         count_list.append(count)
-#
-#     seaborn.barplot(x=count_list, y=invert_words(word_list))
-#
-#
-# def plot_top_ngrams_barchart(all_text_df, n=2):
-#     corpus = get_corpus(all_text_df)
-#     top_n_bigrams = get_top_ngrams_from_corpus(all_text_df, n)[:20]
-#     word_list, count_list = map(list, zip(*top_n_bigrams))
-#     seaborn.barplot(x=count_list, y=invert_words(word_list))

@@ -16,6 +16,9 @@ FRAMES = {
 
 MONTHS = ['{:02d}'.format(month) for month in range(1, 13)]
 
+"""
+Semantic representation related consts
+"""
 HEAD = 'head'
 POS = 'pos'
 WORD = 'word'
@@ -29,3 +32,4 @@ NOUN_POS = 'NOUN'
 NUM_POS = 'NUM'
 ADJ_POS = 'ADJ'
 VERB_POS = 'VERB'
+ROOT = -1
