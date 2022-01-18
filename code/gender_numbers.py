@@ -54,9 +54,9 @@ def print_gender_mismatches_per_sentence(sentence, gender_mismatch_dict):
 
 
 def find_gender_mismatch_sentences(path):
-    for sentence, stanza_analysis in generate_sentences(path):
-        text, tree, pos, features, deprel = stanza_analysis
-        parse_tree = get_parse_tree(text, tree, pos, features, deprel)
+    for sentence, semantic_tree in generate_sentences(path):
+        semantic_tree.parse_text()
+        parse_tree = semantic_tree.tree
         gender_mismatch_dict_noun_num = find_gender_mismatches_for_sentence(parse_tree, NOUN_POS, NUM_POS)
         gender_mismatch_dict_noun_adj = find_gender_mismatches_for_sentence(parse_tree, NOUN_POS, ADJ_POS)
         gender_mismatch_dict_verb_noun = find_gender_mismatches_for_sentence(parse_tree, VERB_POS, NOUN_POS)

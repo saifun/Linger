@@ -7,11 +7,20 @@ class SemanticTree:
         self.text = text
         self.processor = Processor()
 
+    def get_gender(self, feature):
+        if feature:
+            all_features = feature.split('|')
+            for f in all_features:
+                split_f = f.split('=')
+                if split_f[0] == 'Gender':
+                    return split_f[1]
+        return None
+
     def parse_text(self):
-        parsed_text, tree, pos, features, dependency_relationship = self.processor.get_stanza_analysis(self.text)
-        word_list = list(zip(list(parsed_text), map(lambda head: head - 1, list(tree)), list(pos), list(features),
-                             list(dependency_relationship)))
-        self.tree = {index: Info(word, head, pos, feats, deps) for index, (word, head, pos, feats, deps) in
+        parsed_text, tree, pos, features, deprel = self.processor.get_stanza_analysis(self.text)
+        word_list = list(zip(list(parsed_text), map(lambda head: head - 1, list(tree)), list(pos),
+                             map(lambda feature: self.get_gender(feature), list(features)), list(deprel)))
+        self.tree = {index: Info(word, head, pos, gender, deprel) for index, (word, head, pos, gender, deprel) in
                      enumerate(word_list)}
         self.parsed_text = parsed_text
 
