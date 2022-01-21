@@ -4,6 +4,7 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
+import seaborn
 
 
 # def get_parse_tree(text, tree, pos, features, deprel):
@@ -100,6 +101,39 @@ def plot_results(Ys, x):
         plt.plot(x, y, label="line1")
     plt.show()
 
+def format_month_values(month_tag):
+    year, month = month_tag.split('-')
+    if month == '01':
+        return year
+    return ''
+
+def get_word_from_path(path):
+    filename = os.path.basename(path)
+    return ' '.join(filename.split('_')[:2])
+
+def create_single_file_chart(data_dir):
+    seaborn.set_theme(style="ticks")
+    dfs = []
+    for filename in os.listdir(data_dir):
+        df = pd.read_csv(f'{data_dir}/{filename}', encoding='utf-8')
+        df = df.sort_values(by='month')
+        df['name'] = get_word_from_path(filename)
+        dfs.append(df)
+        x_values = [format_month_values(month_tag) for month_tag in df['month']]
+    final_df = pd.concat(dfs, ignore_index=True)
+    plot = seaborn.barplot(x='month', y='count', hue='name', data=final_df, palette="pastel")
+    plot.set_xticklabels(x_values)
+    # plt.xticks(ticks=list(range(len(x_values))), labels=x_values)
+    plt.title("Gender Mismatch Count per Month")
+    plt.xlabel('Months')
+    plt.ylabel('Gender Mismatch Count')
+
+    plt.show()
+
+def generate_gender_mismatch_graph():
+    data_dir = 'results/gender_mismatch'
+    create_single_file_chart(data_dir)
+
 def plot_num_gender_mismatch_per_year_test():
     mismatches_noun_num_per_year = []
     mismatches_noun_adj_per_year = []
@@ -132,6 +166,7 @@ def find_gender_mismatch_sentences(path):
 
 
 # find_gender_mismatch_sentences("./test_files")
-plot_num_gender_mismatch_per_year()
+# plot_num_gender_mismatch_per_year()
 # print(PATHS)
 # print({f'{year}-{month}': 0 for year in YEARS for month in MONTHS})
+generate_gender_mismatch_graph()
