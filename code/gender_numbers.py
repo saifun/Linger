@@ -80,7 +80,7 @@ def write_data_to_csv(mismatch_name, mismatch_dict):
     mismatch_df.to_csv(f'results/gender_mismatch/{mismatch_name}_count.csv', index=False, header=True)
 
 
-def plot_num_gender_mismatch_per_year():
+def create_df_num_gender_mismatch_per_year():
     mismatches_noun_num_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
     mismatches_noun_adj_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
     mismatches_verb_noun_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
@@ -95,63 +95,6 @@ def plot_num_gender_mismatch_per_year():
     write_data_to_csv("noun_adj", mismatches_noun_adj_per_month)
     write_data_to_csv("verb_noun", mismatches_verb_noun_per_month)
 
-
-def plot_results(Ys, x):
-    for y in Ys:
-        plt.plot(x, y, label="line1")
-    plt.show()
-
-def format_month_values(month_tag):
-    year, month = month_tag.split('-')
-    if month == '01':
-        return year
-    return ''
-
-def get_word_from_path(path):
-    filename = os.path.basename(path)
-    return ' '.join(filename.split('_')[:2])
-
-def create_single_file_chart(data_dir):
-    seaborn.set_theme(style="ticks")
-    dfs = []
-    for filename in os.listdir(data_dir):
-        df = pd.read_csv(f'{data_dir}/{filename}', encoding='utf-8')
-        df = df.sort_values(by='month')
-        df['name'] = get_word_from_path(filename)
-        dfs.append(df)
-        x_values = [format_month_values(month_tag) for month_tag in df['month']]
-    final_df = pd.concat(dfs, ignore_index=True)
-    plot = seaborn.barplot(x='month', y='count', hue='name', data=final_df, palette="pastel")
-    plot.set_xticklabels(x_values)
-    # plt.xticks(ticks=list(range(len(x_values))), labels=x_values)
-    plt.title("Gender Mismatch Count per Month")
-    plt.xlabel('Months')
-    plt.ylabel('Gender Mismatch Count')
-
-    plt.show()
-
-def generate_gender_mismatch_graph():
-    data_dir = 'results/gender_mismatch'
-    create_single_file_chart(data_dir)
-
-def plot_num_gender_mismatch_per_year_test():
-    mismatches_noun_num_per_year = []
-    mismatches_noun_adj_per_year = []
-    mismatches_verb_noun_per_year = []
-    for year in YEARS:
-        mismatches_curr_year_noun_num = 0
-        mismatches_curr_year_noun_adj = 0
-        mismatches_curr_year_verb_noun = 0
-        for sentence, semantic_tree in generate_sentences("./test_files"):
-            semantic_tree.parse_text()
-            parse_tree = semantic_tree.tree
-            mismatches_curr_year_noun_num += find_num_gender_mismatch_for_sentence_noun_num(parse_tree)
-            mismatches_curr_year_noun_adj += find_num_gender_mismatch_for_sentence_noun_adj(parse_tree)
-            mismatches_curr_year_verb_noun += find_num_gender_mismatch_for_sentence_verb_noun(parse_tree)
-        mismatches_noun_num_per_year.append(mismatches_curr_year_noun_num)
-        mismatches_noun_adj_per_year.append(mismatches_curr_year_noun_adj)
-        mismatches_verb_noun_per_year.append(mismatches_curr_year_verb_noun)
-    plot_results([mismatches_noun_num_per_year, mismatches_noun_adj_per_year, mismatches_verb_noun_per_year], YEARS)
 
 def find_gender_mismatch_sentences(path):
     for sentence, semantic_tree in generate_sentences(path):
@@ -169,4 +112,3 @@ def find_gender_mismatch_sentences(path):
 # plot_num_gender_mismatch_per_year()
 # print(PATHS)
 # print({f'{year}-{month}': 0 for year in YEARS for month in MONTHS})
-generate_gender_mismatch_graph()
