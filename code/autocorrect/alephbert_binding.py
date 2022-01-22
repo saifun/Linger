@@ -17,7 +17,9 @@ class SuggestedToken:
 
     def get_suggested_token_score(self, text):
         fuzziness_score = self.calculate_fuzziness_for_token(text)
-        return fuzziness_score * self.probability
+        if fuzziness_score == 100:
+            return 100
+        return 0.7 * (fuzziness_score / 100) + (0.3 * self.probability)
 
 
 class AlephBertPredictor:
@@ -29,7 +31,7 @@ class AlephBertPredictor:
         masked_text = self._mask_text_at_index(text, token_index_to_mask)
         tokenized_text = self.alephbert_tokenizer.encode(masked_text)
         model_output_tensors = self.alephbert(torch.tensor([tokenized_text]))[0]
-        return self._get_masked_token_suggestions(model_output_tensors, token_index_to_mask, 10)
+        return self._get_masked_token_suggestions(model_output_tensors, token_index_to_mask, 100)
 
     def get_autocorrect_suggestions(self, text, token_index_to_correct):
         masked_token = text.split()[token_index_to_correct]
@@ -61,6 +63,6 @@ class AlephBertPredictor:
 
 if __name__ == '__main__':
     alephbert = AlephBertPredictor()
-    text = "אני רוצה לאכול מרק"
-    autocorrect_suggestions = alephbert.get_autocorrect_suggestions(text, 2)
+    text = "אני רוצה לאכול חרק"
+    autocorrect_suggestions = alephbert.get_autocorrect_suggestions(text, 3)
     print(autocorrect_suggestions)
