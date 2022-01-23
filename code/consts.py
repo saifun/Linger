@@ -11,6 +11,11 @@ PATHS = {
     for year in YEARS
 }
 
+SUBFILES_PATH = {
+    year: DATA_PATH.format('twitter_data_' + str(year) + '/subfiles_twitter_data_' + str(year))
+    for year in YEARS
+}
+
 FRAMES = {
     year: DATA_PATH.format('frame_' + str(year) + '.csv')
     for year in YEARS

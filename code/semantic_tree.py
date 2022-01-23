@@ -24,6 +24,15 @@ class SemanticTree:
                      enumerate(word_list)}
         self.parsed_text = parsed_text
 
+
+
+    def parse_text_without_processing(self, parsed_text, tree, pos, features, deprel):
+        word_list = list(zip(list(parsed_text), map(lambda head: head - 1, list(tree)), list(pos),
+                             map(lambda feature: self.get_gender(feature), list(features)), list(deprel)))
+        self.tree = {index: Info(word, head, pos, gender, deprel) for index, (word, head, pos, gender, deprel) in
+                     enumerate(word_list)}
+        self.parsed_text = parsed_text
+
     def __str__(self):
         tree_rep = '{\n'
         for index, info in self.tree.items():
