@@ -38,7 +38,7 @@ def generate_sentences_for_single_day(path):
         month = filename.split('-')[1]
         sentences_for_single_day = posts.str.split(r'\.|\?|\n').explode('sentences')
         sentences_for_single_day = sentences_for_single_day.replace('', float('NaN')).dropna().to_numpy()
-        yield processor.get_stanza_analysis_multiple_sentences(sentences_for_single_day), month
+        yield processor.get_stanza_analysis_multiple_sentences(sentences_for_single_day), month, filename
 
 
 def separate_all_files_to_sub_files():
@@ -64,9 +64,6 @@ def separate_file_to_sub_files(filepath, filename, year):
         df3.to_csv(final_filename + "_part3.csv")
     except:
         print(filename)
-
-# def get_stanza_analysis_for_single_day(path):
-
 
 def get_most_common_tokens_from_column(df, column_name):
     column_values = get_single_column(df, column_name)

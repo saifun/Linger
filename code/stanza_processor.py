@@ -37,7 +37,8 @@ class Processor:
                 lst = []
                 for token in sen.tokens:
                     for word in token.words:
-                        features = [(word.text,
+                        features = [(doc.text,
+                                    word.text,
                                      word.lemma,
                                      word.upos,
                                      word.xpos,
@@ -45,7 +46,7 @@ class Processor:
                                      word.deprel,
                                      word.feats)]
 
-                        df = pd.DataFrame(features, columns=["text", "lemma", "upos", "xpos", "head", "deprel", "feats"])
+                        df = pd.DataFrame(features, columns=["sentence", "text", "lemma", "upos", "xpos", "head", "deprel", "feats"])
                         lst.append(df)
                 tot_df = pd.concat(lst, ignore_index=True)
                 tot_df = tot_df.shift(1).iloc[1:]
