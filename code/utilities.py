@@ -34,11 +34,15 @@ def generate_sentences(path):
 
 def generate_sentences_for_single_day(path):
     for single_day_posts, filename in open_csv_files_from_path(path):
-        posts = single_day_posts["text"].dropna()
+        dump_track_df = pd.read_csv('temp/dump_track.csv')
         month = filename.split('-')[1]
-        sentences_for_single_day = posts.str.split(r'\.|\?|\n').explode('sentences')
-        sentences_for_single_day = sentences_for_single_day.replace('', float('NaN')).dropna().to_numpy()
-        yield processor.get_stanza_analysis_multiple_sentences(sentences_for_single_day), month, filename
+        if filename not in set(dump_track_df['visited']):
+            posts = single_day_posts["text"].dropna()
+            sentences_for_single_day = posts.str.split(r'\.|\?|\n').explode('sentences')
+            sentences_for_single_day = sentences_for_single_day.replace('', float('NaN')).dropna().to_numpy()
+            yield processor.get_stanza_analysis_multiple_sentences(sentences_for_single_day), month, filename
+        else:
+            yield None, month, filename
 
 
 def separate_all_files_to_sub_files():
@@ -97,3 +101,8 @@ def get_all_tokens_from_array(array):
 
 def create_all_words_histogram(all_text_df):
     all_text_df.str.split().map(lambda x: len(x)).hist()
+
+
+def create_dump_track_file():
+    df = pd.DataFrame([], columns=['visited'])
+    df.to_csv('temp/dump_track.csv', index=False)
