@@ -4,7 +4,7 @@ import pandas as pd
 from collections import Counter
 from semantic_tree import SemanticTree
 from stanza_processor import Processor
-from consts import PATHS, YEARS
+from consts import PATHS, YEARS, TEMP_PATH
 
 processor = Processor()
 
@@ -34,7 +34,7 @@ def generate_sentences(path):
 
 def generate_sentences_for_single_day(path):
     for single_day_posts, filename in open_csv_files_from_path(path):
-        dump_track_df = pd.read_csv('temp/dump_track.csv')
+        dump_track_df = pd.read_csv(TEMP_PATH)
         month = filename.split('-')[1]
         if filename not in set(dump_track_df['visited']):
             posts = single_day_posts["text"].dropna()
@@ -54,20 +54,44 @@ def separate_all_files_to_sub_files():
             separate_file_to_sub_files(filepath, filename, year)
 
 
+# def separate_file_to_sub_files(filepath, filename, year):
+#     try:
+#         df = pd.read_csv(filepath)
+#         third = len(df) // 3
+#         df1 = df[:third + 1]
+#         df2 = df[third + 1: 2 * third + 1]
+#         df3 = df[2 * third + 1:]
+#         dir = '/'.join(filepath.split('/')[:-1])
+#         final_filename = dir + '/subfiles_twitter_data_' + str(year) + '/' + filename
+#         df1.to_csv(final_filename + "_part1.csv")
+#         df2.to_csv(final_filename + "_part2.csv")
+#         df3.to_csv(final_filename + "_part3.csv")
+#     except:
+#         print(filename)
+
+
 def separate_file_to_sub_files(filepath, filename, year):
     try:
         df = pd.read_csv(filepath)
-        third = len(df) // 3
-        df1 = df[:third + 1]
-        df2 = df[third + 1: 2 * third + 1]
-        df3 = df[2 * third + 1:]
+        tenth = len(df) // 10
+        df1 = df[:tenth + 1]
+        df2 = df[tenth + 1: 2 * tenth + 1]
+        df3 = df[2 * tenth + 1: 3 * tenth + 1]
+        df4 = df[3 * tenth + 1: 4 * tenth + 1]
+        df5 = df[4 * tenth + 1: 5 * tenth + 1]
+        df6 = df[5 * tenth + 1: 6 * tenth + 1]
+        df7 = df[6 * tenth + 1: 7 * tenth + 1]
+        df8 = df[7 * tenth + 1: 8 * tenth + 1]
+        df9 = df[8 * tenth + 1: 9 * tenth + 1]
+        df10 = df[9 * tenth + 1:]
         dir = '/'.join(filepath.split('/')[:-1])
         final_filename = dir + '/subfiles_twitter_data_' + str(year) + '/' + filename
-        df1.to_csv(final_filename + "_part1.csv")
-        df2.to_csv(final_filename + "_part2.csv")
-        df3.to_csv(final_filename + "_part3.csv")
+        df_list = [df1, df2, df3, df4, df5, df6, df7, df8, df9, df10]
+        for i in range(len(df_list)):
+            df_list[i].to_csv(final_filename + "_part" + str(i+1) + ".csv")
     except:
         print(filename)
+
 
 def get_most_common_tokens_from_column(df, column_name):
     column_values = get_single_column(df, column_name)
@@ -106,3 +130,5 @@ def create_all_words_histogram(all_text_df):
 def create_dump_track_file():
     df = pd.DataFrame([], columns=['visited'])
     df.to_csv('temp/dump_track.csv', index=False)
+
+# create_dump_track_file()

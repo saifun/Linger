@@ -1,5 +1,5 @@
 from utilities import generate_sentences, open_csv_files_from_path, generate_sentences_for_single_day
-from consts import Info, NUM_POS, NOUN_POS, ADJ_POS, VERB_POS, GENDERS, SUBJECT_DEPREL, YEARS, PATHS, MONTHS, SUBFILES_PATH
+from consts import Info, NUM_POS, NOUN_POS, ADJ_POS, VERB_POS, GENDERS, SUBJECT_DEPREL, YEARS, PATHS, MONTHS, SUBFILES_PATH, TEMP_PATH
 from semantic_tree import SemanticTree
 from collections import defaultdict
 import pandas as pd
@@ -152,7 +152,7 @@ def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
     for year in YEARS:
         for stanza_analysis_list, month, filename in generate_sentences_for_single_day(SUBFILES_PATH[year]):
             if stanza_analysis_list:
-                dump_track_df = pd.read_csv('temp/dump_track.csv')
+                dump_track_df = pd.read_csv(TEMP_PATH)
                 for sent_df in stanza_analysis_list:
                     semantic_tree = SemanticTree(sent_df['text'])
                     semantic_tree.parse_text_without_processing(sent_df['text'], sent_df['head'], sent_df['upos'], sent_df['feats'], sent_df['deprel'])
@@ -169,7 +169,7 @@ def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
                         if isinstance(verb_noun_df, pd.DataFrame):
                             verb_noun_df.to_csv(get_gender_mismatch_dump_path(filename, 'verb_noun'))
                 dump_track_df = dump_track_df.append({'visited': filename}, ignore_index=True)
-                dump_track_df['visited'].to_csv('temp/dump_track.csv')
+                dump_track_df['visited'].to_csv(TEMP_PATH)
 
 
 create_csv_dumps_gender_mismatch_per_year_multiple_sentences()
