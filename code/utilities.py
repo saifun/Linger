@@ -13,9 +13,12 @@ def open_csv_files_from_path(path):
     all_files = glob.glob(path + "/*.csv")
     for filename in all_files:
         try:
-            df = pd.read_csv(filename, encoding='utf-8')
+            # df = pd.read_csv(filename, encoding='utf-8')
+            # print('yielding! - ' + filename)
+            # yield df, filename
+            df_iter = pd.read_csv(filename, chunksize=200, iterator=True, encoding='utf-8')
             print('yielding! - ' + filename)
-            yield df, filename
+            yield df_iter, filename
         except:
             print(filename)
 
@@ -32,17 +35,26 @@ def generate_sentences(path):
                 yield sentence, month, SemanticTree(sentence)
 
 
+def is_chunk_visited(dump_track_df, filename, chunk_num):
+    return filename in set(dump_track_df['visited']) and \
+           chunk_num in set(dump_track_df[dump_track_df["visited"] == filename]['chunk_num'])
+
+
 def generate_sentences_for_single_day(path):
-    for single_day_posts, filename in open_csv_files_from_path(path):
+    for posts_iterator, filename in open_csv_files_from_path(path):
         dump_track_df = pd.read_csv(TEMP_PATH)
         month = filename.split('-')[1]
-        if filename not in set(dump_track_df['visited']):
-            posts = single_day_posts["text"].dropna()
-            sentences_for_single_day = posts.str.split(r'\.|\?|\n').explode('sentences')
-            sentences_for_single_day = sentences_for_single_day.replace('', float('NaN')).dropna().to_numpy()
-            yield processor.get_stanza_analysis_multiple_sentences(sentences_for_single_day), month, filename
-        else:
-            yield None, month, filename
+        chunk_num = 0
+        for partial_posts in posts_iterator:
+            chunk_num +=1
+            if not is_chunk_visited(dump_track_df, filename, chunk_num):
+                print("yield chunk " + str(chunk_num))
+                posts = partial_posts["text"].dropna()
+                sentences_for_partial_posts = posts.str.split(r'\.|\?|\n').explode('sentences')
+                sentences_for_partial_posts = sentences_for_partial_posts.replace('', float('NaN')).dropna().to_numpy()
+                yield processor.get_stanza_analysis_multiple_sentences(sentences_for_partial_posts), month, filename, chunk_num
+            else:
+                yield None, month, filename, chunk_num
 
 
 def separate_all_files_to_sub_files():
@@ -128,7 +140,7 @@ def create_all_words_histogram(all_text_df):
 
 
 def create_dump_track_file():
-    df = pd.DataFrame([], columns=['visited'])
-    df.to_csv('temp/dump_track.csv', index=False)
+    df = pd.DataFrame([], columns=['visited', 'chunk_num'])
+    df.to_csv(TEMP_PATH, index=False)
 
 # create_dump_track_file()

@@ -78,6 +78,11 @@ def create_df_gender_mismatch_for_sentence(sent, parse_tree, head_pos, target_po
     return None
 
 
+def create_new_gender_mismatch_df():
+    new_df = pd.DataFrame([], columns=['sentence', 'month', 'year', 'head', 'head_gender', 'mismatch'])
+    return new_df
+
+
 def create_df_gender_mismatch_for_sentence_noun_num(sent, parse_tree, month, year):
     return create_df_gender_mismatch_for_sentence(sent, parse_tree, NOUN_POS, NUM_POS, month, year)
 
@@ -141,18 +146,27 @@ def create_df_num_gender_mismatch_per_year_multiple_sentences():
     write_data_to_csv("verb_noun", mismatches_verb_noun_per_month)
 
 
-def get_gender_mismatch_dump_path(filename, mismatch_name):
+# def get_gender_mismatch_dump_path(filename, mismatch_name):
+#     split_filename = filename.split('/')
+#     dir_path = '/'.join(split_filename[:-1]).replace('subfiles_twitter_data', 'gender_mismatch') + '/'
+#     end_filename = '_'.join(split_filename[-1].split('_')[2:])
+#     return dir_path + 'gender_mismatch_dump_' + mismatch_name + '_' + end_filename
+
+def get_gender_mismatch_dump_path(filename, mismatch_name, year, number):
     split_filename = filename.split('/')
-    dir_path = '/'.join(split_filename[:-1]).replace('subfiles_twitter_data', 'gender_mismatch') + '/'
+    dir_path = '/'.join(split_filename[:-1]) + '/gender_mismatch_' + str(year) + '/'
     end_filename = '_'.join(split_filename[-1].split('_')[2:])
-    return dir_path + 'gender_mismatch_dump_' + mismatch_name + '_' + end_filename
+    return dir_path + 'gender_mismatch_dump_' + mismatch_name + '_chunk' + str(number) + '_' + end_filename
 
 
 def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
     for year in YEARS:
-        for stanza_analysis_list, month, filename in generate_sentences_for_single_day(SUBFILES_PATH[year]):
+        for stanza_analysis_list, month, filename, chunk_num in generate_sentences_for_single_day(PATHS[year]):
             if stanza_analysis_list:
                 dump_track_df = pd.read_csv(TEMP_PATH)
+                new_df_noun_num = create_new_gender_mismatch_df()
+                new_df_noun_adj = create_new_gender_mismatch_df()
+                new_df_verb_noun = create_new_gender_mismatch_df()
                 for sent_df in stanza_analysis_list:
                     semantic_tree = SemanticTree(sent_df['text'])
                     semantic_tree.parse_text_without_processing(sent_df['text'], sent_df['head'], sent_df['upos'], sent_df['feats'], sent_df['deprel'])
@@ -163,13 +177,19 @@ def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
                         noun_adj_df = create_df_gender_mismatch_for_sentence_noun_adj(sentence_text, parse_tree, month, year)
                         verb_noun_df = create_df_gender_mismatch_for_sentence_verb_noun(sentence_text, parse_tree, month, year)
                         if isinstance(noun_num_df, pd.DataFrame):
-                            noun_num_df.to_csv(get_gender_mismatch_dump_path(filename, 'noun_num'))
+                            # noun_num_df.to_csv(get_gender_mismatch_dump_path(filename, 'noun_num'))
+                            new_df_noun_num = new_df_noun_num.append(noun_num_df)
                         if isinstance(noun_adj_df, pd.DataFrame):
-                            noun_adj_df.to_csv(get_gender_mismatch_dump_path(filename, 'noun_adj'))
+                            # noun_adj_df.to_csv(get_gender_mismatch_dump_path(filename, 'noun_adj'))
+                            new_df_noun_adj = new_df_noun_adj.append(noun_num_df)
                         if isinstance(verb_noun_df, pd.DataFrame):
-                            verb_noun_df.to_csv(get_gender_mismatch_dump_path(filename, 'verb_noun'))
-                dump_track_df = dump_track_df.append({'visited': filename}, ignore_index=True)
-                dump_track_df['visited'].to_csv(TEMP_PATH)
+                            # verb_noun_df.to_csv(get_gender_mismatch_dump_path(filename, 'verb_noun'))
+                            new_df_verb_noun = new_df_verb_noun.append(verb_noun_df)
+                new_df_noun_num.to_csv(get_gender_mismatch_dump_path(filename, 'noun_num', year, chunk_num))
+                new_df_noun_adj.to_csv(get_gender_mismatch_dump_path(filename, 'noun_adj', year, chunk_num))
+                new_df_verb_noun.to_csv(get_gender_mismatch_dump_path(filename, 'verb_noun', year, chunk_num))
+                dump_track_df = dump_track_df.append({'visited': filename, 'chunk_num': chunk_num}, ignore_index=True)
+                dump_track_df.to_csv(TEMP_PATH, columns=['visited', 'chunk_num'])
 
 
 create_csv_dumps_gender_mismatch_per_year_multiple_sentences()

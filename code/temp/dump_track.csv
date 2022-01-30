@@ -1,3 +1,2 @@
-,visited
-0,/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/test_data/twitter_data_2018/subfiles_twitter_data_2018/twitter_dump_2018-03-23_part1.csv
-1,/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/test_data/twitter_data_2018/subfiles_twitter_data_2018/twitter_dump_2018-03-23_part3.csv
+,visited,chunk_num
+0,/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/test_data/twitter_data_2018/twitter_dump_2018-03-24.csv,1
