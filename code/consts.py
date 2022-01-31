@@ -5,7 +5,7 @@ from collections import namedtuple
 DATA_PATH = '/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/test_data/{}'
 TEMP_PATH = 'temp/dump_track.csv'
 
-YEARS = list(range(2018, 2022))
+YEARS = list(range(2019, 2022))
 
 PATHS = {
     year: DATA_PATH.format('twitter_data_' + str(year))
@@ -31,8 +31,11 @@ HEAD = 'head'
 POS = 'pos'
 WORD = 'word'
 GENDER = 'gender'
+TENSE = 'tense'
+NUMBER = 'number'
+PERSON = 'person'
 DEPREL = 'deprel'
-Info = namedtuple('Info', [WORD, HEAD, POS, GENDER, DEPREL])
+Info = namedtuple('Info', [WORD, HEAD, POS, GENDER, TENSE, NUMBER, PERSON, DEPREL])
 Mismatch = namedtuple('Mismatch', [WORD, GENDER])
 FEMININE = 'Fem'
 MASCULINE = 'Masc'
@@ -41,5 +44,10 @@ NOUN_POS = 'NOUN'
 NUM_POS = 'NUM'
 ADJ_POS = 'ADJ'
 VERB_POS = 'VERB'
+PRONOUN_POS = 'PRON'
+FUTURE_TENSE = 'Fut'
+SINGULAR_NUMBER = 'Sing'
+THIRD_PERSON = '3'
+FIRST_PERSON = '1'
 SUBJECT_DEPREL = 'nsubj'
 ROOT = -1

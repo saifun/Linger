@@ -1,5 +1,6 @@
 from utilities import generate_sentences, open_csv_files_from_path, generate_sentences_for_single_day
-from consts import Info, NUM_POS, NOUN_POS, ADJ_POS, VERB_POS, GENDERS, SUBJECT_DEPREL, YEARS, PATHS, MONTHS, SUBFILES_PATH, TEMP_PATH
+from consts import Info, NUM_POS, NOUN_POS, ADJ_POS, VERB_POS, GENDERS, SUBJECT_DEPREL, YEARS,\
+    PATHS, MONTHS, SUBFILES_PATH, TEMP_PATH, PRONOUN_POS, FUTURE_TENSE, SINGULAR_NUMBER, THIRD_PERSON, FIRST_PERSON
 from semantic_tree import SemanticTree
 from collections import defaultdict
 import pandas as pd
@@ -39,6 +40,39 @@ def find_mismatch_for_head(target_pos, head_idx, sent_parse_tree):
     return target_pos_mismatches
 
 
+def find_wrong_future_verb_for_head(head_idx, sent_parse_tree):
+    for index in sent_parse_tree:
+        if sent_parse_tree[index].pos == PRONOUN_POS and sent_parse_tree[index].head == head_idx\
+                    and sent_parse_tree[index].deprel == SUBJECT_DEPREL:
+            if is_pronoun_first_singular(sent_parse_tree[index]):
+                return sent_parse_tree[index]
+    return None
+
+
+def is_pronoun_first_singular(pronoun_info):
+    return pronoun_info.number == SINGULAR_NUMBER and pronoun_info.person == FIRST_PERSON
+
+
+def is_verb_future_third_singular(verb_info):
+    return verb_info.tense == FUTURE_TENSE and verb_info.number == SINGULAR_NUMBER and verb_info.person == THIRD_PERSON
+
+
+def find_wrong_future_verb_for_sentence(sent_parse_tree):
+    # example: {0: Info(word='אני', head=1, pos='PRON', gender='Fem,Masc', tense=None, number='Sing', person='1', deprel='nsubj'),
+    #   1: Info(word='יתן', head=-1, pos='VERB', gender='Masc', tense='Fut', number='Sing', person='3', deprel='root'),
+    #   2: Info(word='ל_', head=3, pos='ADP', gender=None, tense=None, number=None, person=None, deprel='case'),
+    #   3: Info(word='_הוא', head=1, pos='PRON', gender='Masc', tense=None, number='Sing', person='3', deprel='obl'),
+    #   4: Info(word='את', head=5, pos='ADP', gender=None, tense=None, number=None, person=None, deprel='case:acc')}
+    verb_indices = [index for index in sent_parse_tree if sent_parse_tree[index].pos == VERB_POS]
+    future_verb_mistakes = dict()
+    for verb_idx in verb_indices:
+        if is_verb_future_third_singular(sent_parse_tree[verb_idx]):
+            wrong_pronoun = find_wrong_future_verb_for_head(verb_idx, sent_parse_tree)
+            if wrong_pronoun:
+                future_verb_mistakes[sent_parse_tree[verb_idx]] = wrong_pronoun
+    return future_verb_mistakes
+
+
 def find_gender_mismatches_for_sentence(sent_parse_tree, head_pos, target_pos):
     head_indices = [index for index in sent_parse_tree if sent_parse_tree[index].pos == head_pos\
                     and sent_parse_tree[index].gender in GENDERS]
@@ -50,23 +84,36 @@ def find_gender_mismatches_for_sentence(sent_parse_tree, head_pos, target_pos):
     return gender_mismatches
 
 
-def print_gender_mismatches_per_sentence(sentence, gender_mismatch_dict):
-    for head_word in gender_mismatch_dict:
-        if gender_mismatch_dict[head_word]:
-            print(sentence)
-            print(f'{head_word.word} ({head_word.gender}): {[(word.word, word.gender) for word in gender_mismatch_dict[head_word]]}\n')
+# def print_gender_mismatches_per_sentence(sentence, gender_mismatch_dict):
+#     for head_word in gender_mismatch_dict:
+#         if gender_mismatch_dict[head_word]:
+#             print(sentence)
+#             print(f'{head_word.word} ({head_word.gender}): {[(word.word, word.gender) for word in gender_mismatch_dict[head_word]]}\n')
 
+#
+# def find_num_gender_mismatch_for_sentence(parse_tree, head_pos, target_pos):
+#     gender_mismatch_dict_noun_num = find_gender_mismatches_for_sentence(parse_tree, head_pos, target_pos)
+#     num_mismatches = sum([len(gender_mismatch_dict_noun_num[head_word]) for head_word in gender_mismatch_dict_noun_num])
+#     return num_mismatches
 
-def find_num_gender_mismatch_for_sentence(parse_tree, head_pos, target_pos):
-    gender_mismatch_dict_noun_num = find_gender_mismatches_for_sentence(parse_tree, head_pos, target_pos)
-    num_mismatches = sum([len(gender_mismatch_dict_noun_num[head_word]) for head_word in gender_mismatch_dict_noun_num])
-    return num_mismatches
+def create_df_future_verb_for_sentence(sent, parse_tree, month, year):
+    future_verb_mistakes_dict = find_wrong_future_verb_for_sentence(parse_tree)
+    if future_verb_mistakes_dict:
+        new_df = create_new_wrong_future_verb_df()
+        for verb in future_verb_mistakes_dict:
+            new_df['verb'] = [verb.word]
+            new_df['pronoun'] = [future_verb_mistakes_dict[verb].word]
+        new_df['year'] = year
+        new_df['month'] = month
+        new_df['sentence'] = sent
+        return new_df
+    return None
 
 
 def create_df_gender_mismatch_for_sentence(sent, parse_tree, head_pos, target_pos, month, year):
     gender_mismatch_dict_noun_num = find_gender_mismatches_for_sentence(parse_tree, head_pos, target_pos)
     if gender_mismatch_dict_noun_num:
-        new_df = pd.DataFrame([], columns=['sentence', 'month', 'year', 'head', 'head_gender', 'mismatch'])
+        new_df = create_new_gender_mismatch_df()
         for head_word in gender_mismatch_dict_noun_num:
             new_df['mismatch'] = [word.word for word in gender_mismatch_dict_noun_num[head_word]]
             new_df['head'] = len(gender_mismatch_dict_noun_num[head_word]) * [head_word.word]
@@ -76,6 +123,11 @@ def create_df_gender_mismatch_for_sentence(sent, parse_tree, head_pos, target_po
         new_df['sentence'] = sent
         return new_df
     return None
+
+
+def create_new_wrong_future_verb_df():
+    new_df = pd.DataFrame([], columns=['sentence', 'month', 'year', 'verb', 'pronoun'])
+    return new_df
 
 
 def create_new_gender_mismatch_df():
@@ -95,16 +147,16 @@ def create_df_gender_mismatch_for_sentence_verb_noun(sent, parse_tree, month, ye
     return create_df_gender_mismatch_for_sentence(sent, parse_tree, VERB_POS, NOUN_POS, month, year)
 
 
-def find_num_gender_mismatch_for_sentence_noun_num(parse_tree):
-    return find_num_gender_mismatch_for_sentence(parse_tree, NOUN_POS, NUM_POS)
+# def find_num_gender_mismatch_for_sentence_noun_num(parse_tree):
+#     return find_num_gender_mismatch_for_sentence(parse_tree, NOUN_POS, NUM_POS)
 
 
-def find_num_gender_mismatch_for_sentence_noun_adj(parse_tree):
-    return find_num_gender_mismatch_for_sentence(parse_tree, NOUN_POS, ADJ_POS)
+# def find_num_gender_mismatch_for_sentence_noun_adj(parse_tree):
+#     return find_num_gender_mismatch_for_sentence(parse_tree, NOUN_POS, ADJ_POS)
 
 
-def find_num_gender_mismatch_for_sentence_verb_noun(parse_tree):
-    return find_num_gender_mismatch_for_sentence(parse_tree, VERB_POS, NOUN_POS)
+# def find_num_gender_mismatch_for_sentence_verb_noun(parse_tree):
+#     return find_num_gender_mismatch_for_sentence(parse_tree, VERB_POS, NOUN_POS)
 
 
 def write_data_to_csv(mismatch_name, mismatch_dict):
@@ -112,38 +164,38 @@ def write_data_to_csv(mismatch_name, mismatch_dict):
     mismatch_df.to_csv(f'results/gender_mismatch/{mismatch_name}_count.csv', index=False, header=True)
 
 
-def create_df_num_gender_mismatch_per_year():
-    mismatches_noun_num_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
-    mismatches_noun_adj_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
-    mismatches_verb_noun_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
-    for year in YEARS:
-        for sentence, month, semantic_tree in generate_sentences(PATHS[year]):
-            semantic_tree.parse_text()
-            parse_tree = semantic_tree.tree
-            mismatches_noun_num_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_noun_num(parse_tree)
-            mismatches_noun_adj_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_noun_adj(parse_tree)
-            mismatches_verb_noun_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_verb_noun(parse_tree)
-    write_data_to_csv("noun_num", mismatches_noun_num_per_month)
-    write_data_to_csv("noun_adj", mismatches_noun_adj_per_month)
-    write_data_to_csv("verb_noun", mismatches_verb_noun_per_month)
+# def create_df_num_gender_mismatch_per_year():
+#     mismatches_noun_num_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
+#     mismatches_noun_adj_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
+#     mismatches_verb_noun_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
+#     for year in YEARS:
+#         for sentence, month, semantic_tree in generate_sentences(PATHS[year]):
+#             semantic_tree.parse_text()
+#             parse_tree = semantic_tree.tree
+#             mismatches_noun_num_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_noun_num(parse_tree)
+#             mismatches_noun_adj_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_noun_adj(parse_tree)
+#             mismatches_verb_noun_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_verb_noun(parse_tree)
+#     write_data_to_csv("noun_num", mismatches_noun_num_per_month)
+#     write_data_to_csv("noun_adj", mismatches_noun_adj_per_month)
+#     write_data_to_csv("verb_noun", mismatches_verb_noun_per_month)
 
 
-def create_df_num_gender_mismatch_per_year_multiple_sentences():
-    mismatches_noun_num_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
-    mismatches_noun_adj_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
-    mismatches_verb_noun_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
-    for year in YEARS:
-        for stanza_analysis_list, month, in generate_sentences_for_single_day(PATHS[year]):
-            for sent_df in stanza_analysis_list:
-                semantic_tree = SemanticTree(sent_df['text'])
-                semantic_tree.parse_text_without_processing(sent_df['text'], sent_df['head'], sent_df['upos'], sent_df['feats'], sent_df['deprel'])
-                parse_tree = semantic_tree.tree
-                mismatches_noun_num_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_noun_num(parse_tree)
-                mismatches_noun_adj_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_noun_adj(parse_tree)
-                mismatches_verb_noun_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_verb_noun(parse_tree)
-    write_data_to_csv("noun_num", mismatches_noun_num_per_month)
-    write_data_to_csv("noun_adj", mismatches_noun_adj_per_month)
-    write_data_to_csv("verb_noun", mismatches_verb_noun_per_month)
+# def create_df_num_gender_mismatch_per_year_multiple_sentences():
+#     mismatches_noun_num_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
+#     mismatches_noun_adj_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
+#     mismatches_verb_noun_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
+#     for year in YEARS:
+#         for stanza_analysis_list, month, in generate_sentences_for_single_day(PATHS[year]):
+#             for sent_df in stanza_analysis_list:
+#                 semantic_tree = SemanticTree(sent_df['text'])
+#                 semantic_tree.parse_text_without_processing(sent_df['text'], sent_df['head'], sent_df['upos'], sent_df['feats'], sent_df['deprel'])
+#                 parse_tree = semantic_tree.tree
+#                 mismatches_noun_num_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_noun_num(parse_tree)
+#                 mismatches_noun_adj_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_noun_adj(parse_tree)
+#                 mismatches_verb_noun_per_month[f'{year}-{month}'] += find_num_gender_mismatch_for_sentence_verb_noun(parse_tree)
+#     write_data_to_csv("noun_num", mismatches_noun_num_per_month)
+#     write_data_to_csv("noun_adj", mismatches_noun_adj_per_month)
+#     write_data_to_csv("verb_noun", mismatches_verb_noun_per_month)
 
 
 # def get_gender_mismatch_dump_path(filename, mismatch_name):
@@ -159,6 +211,13 @@ def get_gender_mismatch_dump_path(filename, mismatch_name, year, number):
     return dir_path + 'gender_mismatch_dump_' + mismatch_name + '_chunk' + str(number) + '_' + end_filename
 
 
+def get_future_verb_dump_path(filename, year, number):
+    split_filename = filename.split('/')
+    dir_path = '/'.join(split_filename[:-1]) + '/future_verb_' + str(year) + '/'
+    end_filename = '_'.join(split_filename[-1].split('_')[2:])
+    return dir_path + 'future_verb_dump_chunk' + str(number) + '_' + end_filename
+
+
 def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
     for year in YEARS:
         for stanza_analysis_list, month, filename, chunk_num in generate_sentences_for_single_day(PATHS[year]):
@@ -167,6 +226,7 @@ def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
                 new_df_noun_num = create_new_gender_mismatch_df()
                 new_df_noun_adj = create_new_gender_mismatch_df()
                 new_df_verb_noun = create_new_gender_mismatch_df()
+                new_df_future_verb = create_new_wrong_future_verb_df()
                 for sent_df in stanza_analysis_list:
                     semantic_tree = SemanticTree(sent_df['text'])
                     semantic_tree.parse_text_without_processing(sent_df['text'], sent_df['head'], sent_df['upos'], sent_df['feats'], sent_df['deprel'])
@@ -176,6 +236,7 @@ def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
                         noun_num_df = create_df_gender_mismatch_for_sentence_noun_num(sentence_text, parse_tree, month, year)
                         noun_adj_df = create_df_gender_mismatch_for_sentence_noun_adj(sentence_text, parse_tree, month, year)
                         verb_noun_df = create_df_gender_mismatch_for_sentence_verb_noun(sentence_text, parse_tree, month, year)
+                        future_verb_df = create_df_future_verb_for_sentence(sentence_text, parse_tree, month, year)
                         if isinstance(noun_num_df, pd.DataFrame):
                             # noun_num_df.to_csv(get_gender_mismatch_dump_path(filename, 'noun_num'))
                             new_df_noun_num = new_df_noun_num.append(noun_num_df)
@@ -185,9 +246,12 @@ def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
                         if isinstance(verb_noun_df, pd.DataFrame):
                             # verb_noun_df.to_csv(get_gender_mismatch_dump_path(filename, 'verb_noun'))
                             new_df_verb_noun = new_df_verb_noun.append(verb_noun_df)
+                        if isinstance(future_verb_df, pd.DataFrame):
+                            new_df_future_verb = new_df_future_verb.append(future_verb_df)
                 new_df_noun_num.to_csv(get_gender_mismatch_dump_path(filename, 'noun_num', year, chunk_num))
                 new_df_noun_adj.to_csv(get_gender_mismatch_dump_path(filename, 'noun_adj', year, chunk_num))
                 new_df_verb_noun.to_csv(get_gender_mismatch_dump_path(filename, 'verb_noun', year, chunk_num))
+                new_df_future_verb.to_csv(get_future_verb_dump_path(filename, year, chunk_num))
                 dump_track_df = dump_track_df.append({'visited': filename, 'chunk_num': chunk_num}, ignore_index=True)
                 dump_track_df.to_csv(TEMP_PATH, columns=['visited', 'chunk_num'])
 
@@ -200,13 +264,13 @@ create_csv_dumps_gender_mismatch_per_year_multiple_sentences()
 #     for stanza_analysis_list, month, in generate_sentences_for_single_day(path):
 
 
-def find_gender_mismatch_sentences(path):
-    for sentence, semantic_tree in generate_sentences(path):
-        semantic_tree.parse_text()
-        parse_tree = semantic_tree.tree
-        gender_mismatch_dict_noun_num = find_gender_mismatches_for_sentence(parse_tree, NOUN_POS, NUM_POS)
-        gender_mismatch_dict_noun_adj = find_gender_mismatches_for_sentence(parse_tree, NOUN_POS, ADJ_POS)
-        gender_mismatch_dict_verb_noun = find_gender_mismatches_for_sentence(parse_tree, VERB_POS, NOUN_POS)
-        print_gender_mismatches_per_sentence(sentence, gender_mismatch_dict_noun_num)
-        print_gender_mismatches_per_sentence(sentence, gender_mismatch_dict_noun_adj)
-        print_gender_mismatches_per_sentence(sentence, gender_mismatch_dict_verb_noun)
+# def find_gender_mismatch_sentences(path):
+#     for sentence, semantic_tree in generate_sentences(path):
+#         semantic_tree.parse_text()
+#         parse_tree = semantic_tree.tree
+#         gender_mismatch_dict_noun_num = find_gender_mismatches_for_sentence(parse_tree, NOUN_POS, NUM_POS)
+#         gender_mismatch_dict_noun_adj = find_gender_mismatches_for_sentence(parse_tree, NOUN_POS, ADJ_POS)
+#         gender_mismatch_dict_verb_noun = find_gender_mismatches_for_sentence(parse_tree, VERB_POS, NOUN_POS)
+#         print_gender_mismatches_per_sentence(sentence, gender_mismatch_dict_noun_num)
+#         print_gender_mismatches_per_sentence(sentence, gender_mismatch_dict_noun_adj)
+#         print_gender_mismatches_per_sentence(sentence, gender_mismatch_dict_verb_noun)
