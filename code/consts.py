@@ -22,6 +22,11 @@ GENDER_MISMATCH_PATHS = {
     for year in YEARS
 }
 
+FUTURE_VERB_PATHS = {
+    year: DATA_PATH.format('twitter_data_' + str(year) + '/future_verb_' + str(year))
+    for year in YEARS
+}
+
 FRAMES = {
     year: DATA_PATH.format('frame_' + str(year) + '.csv')
     for year in YEARS
