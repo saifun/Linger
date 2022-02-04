@@ -54,7 +54,8 @@ def is_pronoun_first_singular(pronoun_info):
 
 
 def is_verb_future_third_singular(verb_info):
-    return verb_info.tense == FUTURE_TENSE and verb_info.number == SINGULAR_NUMBER and verb_info.person == THIRD_PERSON
+    return verb_info.tense == FUTURE_TENSE and verb_info.number == SINGULAR_NUMBER\
+           and verb_info.person == THIRD_PERSON and verb_info.word[0] == 'י'
 
 
 def find_wrong_future_verb_for_sentence(sent_parse_tree):
@@ -115,12 +116,10 @@ def create_df_gender_mismatch_for_sentence(sent, parse_tree, head_pos, target_po
     if gender_mismatch_dict_noun_num:
         new_df = create_new_gender_mismatch_df()
         for head_word in gender_mismatch_dict_noun_num:
-            new_df['mismatch'] = [word.word for word in gender_mismatch_dict_noun_num[head_word]]
-            new_df['head'] = len(gender_mismatch_dict_noun_num[head_word]) * [head_word.word]
-            new_df['head_gender'] = len(gender_mismatch_dict_noun_num[head_word]) * [head_word.gender]
-        new_df['year'] = year
-        new_df['month'] = month
-        new_df['sentence'] = sent
+            for word in gender_mismatch_dict_noun_num[head_word]:
+                added_df = pd.DataFrame([[sent, month, year, head_word.word, head_word.gender, word.word]],
+                                        columns=['sentence', 'month', 'year', 'head', 'head_gender', 'mismatch'])
+                new_df = new_df.append(added_df, ignore_index=True)
         return new_df
     return None
 
@@ -242,12 +241,16 @@ def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
                             new_df_noun_num = new_df_noun_num.append(noun_num_df)
                         if isinstance(noun_adj_df, pd.DataFrame):
                             # noun_adj_df.to_csv(get_gender_mismatch_dump_path(filename, 'noun_adj'))
-                            new_df_noun_adj = new_df_noun_adj.append(noun_num_df)
+                            new_df_noun_adj = new_df_noun_adj.append(noun_adj_df)
                         if isinstance(verb_noun_df, pd.DataFrame):
                             # verb_noun_df.to_csv(get_gender_mismatch_dump_path(filename, 'verb_noun'))
                             new_df_verb_noun = new_df_verb_noun.append(verb_noun_df)
                         if isinstance(future_verb_df, pd.DataFrame):
                             new_df_future_verb = new_df_future_verb.append(future_verb_df)
+                new_df_noun_num = new_df_noun_num.drop_duplicates()
+                new_df_noun_adj = new_df_noun_adj.drop_duplicates()
+                new_df_verb_noun = new_df_verb_noun.drop_duplicates()
+                new_df_future_verb = new_df_future_verb.drop_duplicates()
                 new_df_noun_num.to_csv(get_gender_mismatch_dump_path(filename, 'noun_num', year, chunk_num))
                 new_df_noun_adj.to_csv(get_gender_mismatch_dump_path(filename, 'noun_adj', year, chunk_num))
                 new_df_verb_noun.to_csv(get_gender_mismatch_dump_path(filename, 'verb_noun', year, chunk_num))

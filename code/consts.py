@@ -5,7 +5,7 @@ from collections import namedtuple
 DATA_PATH = '/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/test_data/{}'
 TEMP_PATH = 'temp/dump_track.csv'
 
-YEARS = list(range(2019, 2022))
+YEARS = list(range(2018, 2022))
 
 PATHS = {
     year: DATA_PATH.format('twitter_data_' + str(year))
@@ -14,6 +14,11 @@ PATHS = {
 
 SUBFILES_PATH = {
     year: DATA_PATH.format('twitter_data_' + str(year) + '/subfiles_twitter_data_' + str(year))
+    for year in YEARS
+}
+
+GENDER_MISMATCH_PATHS = {
+    year: DATA_PATH.format('twitter_data_' + str(year) + '/gender_mismatch_' + str(year))
     for year in YEARS
 }
 

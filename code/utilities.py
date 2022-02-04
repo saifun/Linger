@@ -23,6 +23,18 @@ def open_csv_files_from_path(path):
             print(filename)
 
 
+def generate_df_from_csv_path(path):
+    all_files = glob.glob(path + "/*.csv")
+    for filename in all_files:
+        try:
+            df = pd.read_csv(filename, encoding='utf-8')
+            month = filename.split('-')[1]
+            print('yielding! - ' + filename)
+            yield df, month, filename
+        except:
+            print(filename)
+
+
 def generate_sentences(path):
     for single_day_posts, filename in open_csv_files_from_path(path):
         posts = get_single_column(single_day_posts, 'text')
@@ -47,7 +59,9 @@ def generate_sentences_for_single_day(path):
         chunk_num = 0
         for partial_posts in posts_iterator:
             chunk_num +=1
-            if not is_chunk_visited(dump_track_df, filename, chunk_num):
+            # if not is_chunk_visited(dump_track_df, filename, chunk_num):
+            if filename == "/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/test_data/twitter_data_2018/twitter_dump_2018-03-10.csv"\
+                    and chunk_num == 26:
                 print("yield chunk " + str(chunk_num))
                 posts = partial_posts["text"].dropna()
                 sentences_for_partial_posts = posts.str.split(r'\.|\?|\n').explode('sentences')
