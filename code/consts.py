@@ -13,3 +13,10 @@ FRAMES = {
 }
 
 MONTHS = ['{:02d}'.format(month) for month in range(1, 13)]
+
+RECORDS_COUNT_STATS = {
+    2018: 15523736,
+    2019: 23823005,
+    2020: 52823817,
+    2021: 13168095,
+}
