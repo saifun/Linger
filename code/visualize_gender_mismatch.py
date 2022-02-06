@@ -1,10 +1,11 @@
-import seaborn
+import seaborn as sns
 import pandas as pd
 from consts import YEARS, GENDER_MISMATCH_PATHS, MONTHS, FUTURE_VERB_PATHS
 import os
 from visualize import format_month_values
 import matplotlib.pyplot as plt
-from utilities import generate_df_from_csv_path
+from utilities import generate_df_from_csv_path, invert_words
+from collections import  Counter
 
 
 def write_data_to_csv(mismatch_name, mismatch_dict, dir_name):
@@ -28,6 +29,34 @@ def create_df_num_gender_mismatch_per_year():
     write_data_to_csv("verb_noun", gender_mismatch_dict["verb_noun"], "gender_mismatch")
 
 
+def get_corpus_for_gender_mismatch_head_words():
+    counter = Counter([])
+    for year in YEARS:
+        for df, month, filename in generate_df_from_csv_path(GENDER_MISMATCH_PATHS[year]):
+            curr_head_words = list(df['head'])
+            curr_counter = Counter(curr_head_words)
+            counter = sum([counter, curr_counter], Counter())
+    return counter
+
+
+def plot_top_gender_mismatch_words_barchart():
+    # stop=set(get_hebrew_stopwords())
+
+    # new = text.str.split()
+    # new = new.values.tolist()
+    # corpus = [word for i in new for word in i]
+    #
+    counter = get_corpus_for_gender_mismatch_head_words()
+    most = counter.most_common()
+    x, y = [], []
+    for word, count in most[:10]:
+        x.append(word)
+        y.append(count)
+
+    sns.barplot(x=y, y=invert_words(x))
+
+    plt.show()
+
 def create_df_num_wrong_future_verb_per_year():
     wrong_future_verb_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
     for year in YEARS:
@@ -48,7 +77,7 @@ def get_mismatch_name_from_count_file(path):
 
 def create_gender_mismatch_graph():
     data_dir = 'results/gender_mismatch'
-    seaborn.set_theme(style="ticks")
+    sns.set_theme(style="ticks")
     dfs = []
     for filename in os.listdir(data_dir):
         df = pd.read_csv(f'{data_dir}/{filename}', encoding='utf-8')
@@ -57,7 +86,7 @@ def create_gender_mismatch_graph():
         dfs.append(df)
         x_values = [format_month_values(month_tag) for month_tag in df['month']]
     final_df = pd.concat(dfs, ignore_index=True)
-    plot = seaborn.barplot(x='month', y='count', hue='mismatch name', data=final_df, palette="pastel")
+    plot = sns.lineplot(x='month', y='count', hue='mismatch name', data=final_df, palette="pastel")
     plot.set_xticklabels(x_values)
     # plt.xticks(ticks=list(range(len(x_values))), labels=x_values)
     plt.title("Gender Mismatch Count per Month")
@@ -69,7 +98,7 @@ def create_gender_mismatch_graph():
 
 def create_future_verb_graph():
     data_dir = 'results/future_verb'
-    seaborn.set_theme(style="ticks")
+    sns.set_theme(style="ticks")
     dfs = []
     for filename in os.listdir(data_dir):
         df = pd.read_csv(f'{data_dir}/{filename}', encoding='utf-8')
@@ -77,7 +106,8 @@ def create_future_verb_graph():
         dfs.append(df)
         x_values = [format_month_values(month_tag) for month_tag in df['month']]
     final_df = pd.concat(dfs, ignore_index=True)
-    plot = seaborn.barplot(x='month', y='count', data=final_df, palette="pastel")
+    plot = sns.barplot(x='month', y='count', data=final_df, palette="pastel")
+    # plot = sns.lineplot(x='month', y='count', hue='mismatch name', style="mismatch name", markers=True, data=final_df, palette="pastel")
     plot.set_xticklabels(x_values)
     # plt.xticks(ticks=list(range(len(x_values))), labels=x_values)
     plt.title("Wrong Future Verb Count per Month")
@@ -86,5 +116,8 @@ def create_future_verb_graph():
 
     plt.show()
 
-create_gender_mismatch_graph()
-create_future_verb_graph()
+# create_gender_mismatch_graph()
+# create_future_verb_graph()
+# get_corpus_for_gender_mismatch_head_words()
+# plot_top_gender_mismatch_words_barchart()
+# create_gender_mismatch_graph

@@ -35,6 +35,10 @@ def generate_df_from_csv_path(path):
             print(filename)
 
 
+def invert_words(words):
+    return [w[::-1] for w in words]
+
+
 def generate_sentences(path):
     for single_day_posts, filename in open_csv_files_from_path(path):
         posts = get_single_column(single_day_posts, 'text')
