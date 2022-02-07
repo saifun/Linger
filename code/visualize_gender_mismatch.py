@@ -8,6 +8,8 @@ from utilities import generate_df_from_csv_path, invert_words
 from collections import Counter
 import networkx as nx
 import itertools
+from wordcloud import WordCloud
+from visualize import _reverse_hebrew_word
 
 
 def rename_head_mismatch_columns_in_verb_noun():
@@ -67,6 +69,7 @@ def plot_top_gender_mismatch_words_barchart():
     sns.barplot(x=y, y=invert_words(x))
 
     plt.show()
+
 
 def create_df_num_wrong_future_verb_per_year():
     wrong_future_verb_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
@@ -199,10 +202,40 @@ def plot_gender_mismatch_word_graph_example():
 
     plt.show()
 
+def get_common_mistaken_verbs():
+    counter = Counter([])
+    for year in YEARS:
+        for df, month, filename in generate_df_from_csv_path(FUTURE_VERB_PATHS[year]):
+            curr_verbs = list(df['verb'])
+            curr_counter = Counter(curr_verbs)
+            counter = sum([counter, curr_counter], Counter())
+    return counter
+
+
+def plot_word_cloud_for_common_mistaken_verbs():
+    # with open(filename, 'r') as file:
+    #     word_count = json.loads(file.read())
+    # hebrew_word_data = {
+    #     _reverse_hebrew_word(word): count
+    #     for word, count in word_count.items()
+    # }
+    counter = get_common_mistaken_verbs()
+    hebrew_word_data = {
+        _reverse_hebrew_word(word): count
+        for word, count in counter.items()
+    }
+    word_cloud = WordCloud(font_path='./utils/Trashim-CLM-Bold.ttf')
+    word_cloud.generate_from_frequencies(frequencies=hebrew_word_data)
+    plt.figure()
+    plt.imshow(word_cloud, interpolation="bilinear")
+    plt.axis("off")
+    plt.show()
+
 # plot_gender_mismatch_word_graph_example()
 # create_gender_mismatch_graph()
 # create_future_verb_graph()
 # get_corpus_for_gender_mismatch_head_words()
-plot_top_gender_mismatch_words_barchart()
+# plot_top_gender_mismatch_words_barchart()
 # create_gender_mismatch_graph
-create_graph_for_common_gender_mismatches_wordsun()
+# create_graph_for_common_gender_mismatches_wordsun()
+plot_word_cloud_for_common_mistaken_verbs()
