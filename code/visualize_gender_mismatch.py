@@ -5,8 +5,19 @@ import os
 from visualize import format_month_values
 import matplotlib.pyplot as plt
 from utilities import generate_df_from_csv_path, invert_words
-from collections import  Counter
+from collections import Counter
+import networkx as nx
+import itertools
 
+
+def rename_head_mismatch_columns_in_verb_noun():
+    for year in YEARS:
+        for df, month, filename in generate_df_from_csv_path(GENDER_MISMATCH_PATHS[year]):
+            if "verb_noun" in filename:
+                df.rename(columns={'head': 'mismatch', 'mismatch': 'head', 'head_gender': 'verb_gender'}, inplace=True)
+                df.to_csv(filename, columns=['sentence', 'month', 'year', 'mismatch', 'verb_gender', 'head'])
+
+# rename_head_mismatch_columns_in_verb_noun()
 
 def write_data_to_csv(mismatch_name, mismatch_dict, dir_name):
     mismatch_df = pd.DataFrame(list(mismatch_dict.items()), columns=['month', 'count'])
@@ -116,8 +127,82 @@ def create_future_verb_graph():
 
     plt.show()
 
+
+def create_graph_for_common_gender_mismatches_wordsun():
+    counter = get_corpus_for_gender_mismatch_head_words()
+    most = counter.most_common()
+    most_common_heads = [word for word, count in most[:10]]
+    heads_to_mistakes_list = {head: set() for head in most_common_heads}
+    for year in YEARS:
+        for df, month, filename in generate_df_from_csv_path(GENDER_MISMATCH_PATHS[year]):
+            for head_word in heads_to_mistakes_list:
+                mistakes = df[df['head'] == head_word]
+                if not mistakes.empty:
+                    heads_to_mistakes_list[head_word].update(list(mistakes['mismatch']))
+
+    for head_word, mistakes in heads_to_mistakes_list.items():
+        plot_gender_mismatch_word_graph(head_word, list(mistakes))
+
+
+def plot_gender_mismatch_word_graph(head, mistakes):
+    G = nx.Graph()
+    head_list = invert_words([head])
+    mistakes = invert_words(mistakes)
+    G.add_nodes_from(head_list)
+    G.add_nodes_from(mistakes)
+    edges = list(itertools.product(head_list, mistakes))
+    G.add_edges_from(edges)
+
+    pos = nx.spring_layout(G, seed=3113794652)
+    options = {"edgecolors": "tab:gray", "alpha": 1}
+    nx.draw_networkx_nodes(G, pos, nodelist=mistakes, node_color="#539A9F", node_size=3000, **options)
+    nx.draw_networkx_nodes(G, pos, nodelist=head_list, node_color="orange", node_size=8000, **options)
+    nx.draw_networkx_edges(
+        G,
+        pos,
+        edgelist=edges,
+        width=4,
+        alpha=0.4,
+        edge_color="orange",
+    )
+    nx.draw_networkx_labels(G, pos, head_list.extend(mistakes), font_size=14, font_color="whitesmoke")
+
+    # nx.draw_kamada_kawai(G, with_labels=True, font_weight='bold', font_color='w', node_color='lightblue', node_size=2000)
+
+    plt.show()
+
+
+def plot_gender_mismatch_word_graph_example():
+    G = nx.Graph()
+    head_list = invert_words(['בלונים'])
+    mistakes = invert_words(['צהובות', 'יפות', 'עפות', 'שלוש', 'חמש', 'ירוקות'])
+    G.add_nodes_from(head_list)
+    G.add_nodes_from(mistakes)
+    edges = list(itertools.product(head_list, mistakes))
+    G.add_edges_from(edges)
+
+    pos = nx.spring_layout(G, seed=3113794652)
+    options = {"edgecolors": "tab:gray", "alpha": 1}
+    nx.draw_networkx_nodes(G, pos, nodelist=mistakes, node_color="#539A9F", node_size=3000, **options)
+    nx.draw_networkx_nodes(G, pos, nodelist=head_list, node_color="orange", node_size=8000, **options)
+    nx.draw_networkx_edges(
+        G,
+        pos,
+        edgelist=edges,
+        width=4,
+        alpha=0.4,
+        edge_color="orange",
+    )
+    nx.draw_networkx_labels(G, pos, head_list.extend(mistakes), font_size=14, font_color="whitesmoke")
+
+    # nx.draw_kamada_kawai(G, with_labels=True, font_weight='bold', font_color='w', node_color='lightblue', node_size=2000)
+
+    plt.show()
+
+# plot_gender_mismatch_word_graph_example()
 # create_gender_mismatch_graph()
 # create_future_verb_graph()
 # get_corpus_for_gender_mismatch_head_words()
-# plot_top_gender_mismatch_words_barchart()
+plot_top_gender_mismatch_words_barchart()
 # create_gender_mismatch_graph
+create_graph_for_common_gender_mismatches_wordsun()
