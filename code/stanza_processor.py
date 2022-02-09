@@ -1,7 +1,7 @@
 import stanza
 import pandas as pd
 
-
+stanza.download('he')
 class Processor:
     def __init__(self):
         self.heb_nlp = stanza.Pipeline(lang='he', processors='tokenize,mwt,pos,lemma,depparse', verbose=False)
