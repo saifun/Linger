@@ -232,7 +232,7 @@ def open_csv_files_from_path(path):
             # df = pd.read_csv(filename, encoding='utf-8')
             # print('yielding! - ' + filename)
             # yield df, filename
-            df_iter = pd.read_csv(filename, chunksize=200, iterator=True, encoding='utf-8')
+            df_iter = pd.read_csv(filename, chunksize=2000, iterator=True, encoding='utf-8')
             print('yielding! - ' + filename)
             yield df_iter, filename
         except:
