@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+TORCH_CUDA_ARCH_LIST="8.6"
+
 from collections import defaultdict
 from collections import namedtuple
 import stanza
