@@ -55,7 +55,6 @@ def is_chunk_visited(dump_track_df, filename, chunk_num):
     return filename in set(dump_track_df['visited']) and \
            chunk_num in set(dump_track_df[dump_track_df["visited"] == filename]['chunk_num'])
 
-
 def generate_sentences_for_single_day(path):
     for posts_iterator, filename in open_csv_files_from_path(path):
         dump_track_df = pd.read_csv(TEMP_PATH)
@@ -63,9 +62,7 @@ def generate_sentences_for_single_day(path):
         chunk_num = 0
         for partial_posts in posts_iterator:
             chunk_num +=1
-            # if not is_chunk_visited(dump_track_df, filename, chunk_num):
-            if filename == "/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/test_data/twitter_data_2018/twitter_dump_2018-03-10.csv"\
-                    and chunk_num == 26:
+            if not is_chunk_visited(dump_track_df, filename, chunk_num):
                 print("yield chunk " + str(chunk_num))
                 posts = partial_posts["text"].dropna()
                 sentences_for_partial_posts = posts.str.split(r'\.|\?|\n').explode('sentences')
@@ -73,6 +70,24 @@ def generate_sentences_for_single_day(path):
                 yield processor.get_stanza_analysis_multiple_sentences(sentences_for_partial_posts), month, filename, chunk_num
             else:
                 yield None, month, filename, chunk_num
+
+# def generate_sentences_for_single_day(path):
+#     for posts_iterator, filename in open_csv_files_from_path(path):
+#         dump_track_df = pd.read_csv(TEMP_PATH)
+#         month = filename.split('-')[1]
+#         chunk_num = 0
+#         for partial_posts in posts_iterator:
+#             chunk_num +=1
+#             # if not is_chunk_visited(dump_track_df, filename, chunk_num):
+#             if filename == "/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/test_data/twitter_data_2018/twitter_dump_2018-03-10.csv"\
+#                     and chunk_num == 26:
+#                 print("yield chunk " + str(chunk_num))
+#                 posts = partial_posts["text"].dropna()
+#                 sentences_for_partial_posts = posts.str.split(r'\.|\?|\n').explode('sentences')
+#                 sentences_for_partial_posts = sentences_for_partial_posts.replace('', float('NaN')).dropna().to_numpy()
+#                 yield processor.get_stanza_analysis_multiple_sentences(sentences_for_partial_posts), month, filename, chunk_num
+#             else:
+#                 yield None, month, filename, chunk_num
 
 
 def separate_all_files_to_sub_files():
