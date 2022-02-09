@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 from collections import defaultdict
 from collections import namedtuple
 import stanza
