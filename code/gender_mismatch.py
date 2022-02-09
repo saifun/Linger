@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from utilities import generate_sentences, open_csv_files_from_path, generate_sentences_for_single_day, create_dump_track_file
 from consts import Info, NUM_POS, NOUN_POS, ADJ_POS, VERB_POS, GENDERS, SUBJECT_DEPREL, YEARS, PATHS, MONTHS, SUBFILES_PATH, TEMP_PATH, PRONOUN_POS, FUTURE_TENSE, SINGULAR_NUMBER, THIRD_PERSON, FIRST_PERSON
