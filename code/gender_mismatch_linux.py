@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 TORCH_CUDA_ARCH_LIST="8.6"
-
+import os
+os.system('pip3 install torch==1.10.2')
 from collections import defaultdict
 from collections import namedtuple
 import stanza
@@ -10,6 +11,8 @@ import re
 import glob
 import pandas as pd
 from collections import Counter
+
+
 
 
 
