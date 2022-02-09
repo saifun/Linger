@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 from utilities import generate_sentences, open_csv_files_from_path, generate_sentences_for_single_day, create_dump_track_file
