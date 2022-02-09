@@ -1,4 +1,4 @@
-from utilities import generate_sentences, open_csv_files_from_path, generate_sentences_for_single_day
+from utilities import generate_sentences, open_csv_files_from_path, generate_sentences_for_single_day, create_dump_track_file
 from consts import Info, NUM_POS, NOUN_POS, ADJ_POS, VERB_POS, GENDERS, SUBJECT_DEPREL, YEARS,\
     PATHS, MONTHS, SUBFILES_PATH, TEMP_PATH, PRONOUN_POS, FUTURE_TENSE, SINGULAR_NUMBER, THIRD_PERSON, FIRST_PERSON
 from semantic_tree import SemanticTree
@@ -258,7 +258,7 @@ def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
                 dump_track_df = dump_track_df.append({'visited': filename, 'chunk_num': chunk_num}, ignore_index=True)
                 dump_track_df.to_csv(TEMP_PATH, columns=['visited', 'chunk_num'])
 
-
+create_dump_track_file()
 create_csv_dumps_gender_mismatch_per_year_multiple_sentences()
 # def create_csv_gender_mismatch_per_file(filename, path, year):
 #     mismatches_noun_num_df = pd.DataFrame([], columns=['month', 'year', 'head', 'head_gender', 'mismatch'])
