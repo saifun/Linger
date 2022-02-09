@@ -21,8 +21,6 @@ import pandas as pd
 #             if split_f[0] == 'Gender':
 #                 return split_f[1]
 #     return None
-
-
 def is_verb_head_word_and_target_is_not_a_subject(head_pos, target_deprel):
     return head_pos == VERB_POS and target_deprel != SUBJECT_DEPREL
 
