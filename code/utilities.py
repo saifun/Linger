@@ -29,7 +29,7 @@ def generate_df_from_csv_path(path):
         try:
             df = pd.read_csv(filename, encoding='utf-8')
             month = filename.split('-')[1]
-            print('yielding! - ' + filename)
+            # print('yielding! - ' + filename)
             yield df, month, filename
         except:
             print(filename)

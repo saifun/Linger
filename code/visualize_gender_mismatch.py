@@ -134,13 +134,14 @@ def create_future_verb_graph():
 def create_graph_for_common_gender_mismatches_wordsun():
     counter = get_corpus_for_gender_mismatch_head_words()
     most = counter.most_common()
-    most_common_heads = [word for word, count in most[:10]]
+    most_common_heads = [word for word, count in most[23:25]] + ['יומולדת']
     heads_to_mistakes_list = {head: set() for head in most_common_heads}
     for year in YEARS:
         for df, month, filename in generate_df_from_csv_path(GENDER_MISMATCH_PATHS[year]):
             for head_word in heads_to_mistakes_list:
                 mistakes = df[df['head'] == head_word]
                 if not mistakes.empty:
+                    # print(mistakes['sentence'])
                     heads_to_mistakes_list[head_word].update(list(mistakes['mismatch']))
 
     for head_word, mistakes in heads_to_mistakes_list.items():
@@ -207,6 +208,8 @@ def get_common_mistaken_verbs():
     for year in YEARS:
         for df, month, filename in generate_df_from_csv_path(FUTURE_VERB_PATHS[year]):
             curr_verbs = list(df['verb'])
+            if 'יביסט' in curr_verbs:
+                print(df['sentence'])
             curr_counter = Counter(curr_verbs)
             counter = sum([counter, curr_counter], Counter())
     return counter
@@ -233,9 +236,11 @@ def plot_word_cloud_for_common_mistaken_verbs():
 
 # plot_gender_mismatch_word_graph_example()
 # create_gender_mismatch_graph()
+# create_df_num_gender_mismatch_per_year()
 # create_future_verb_graph()
 # get_corpus_for_gender_mismatch_head_words()
 # plot_top_gender_mismatch_words_barchart()
 # create_gender_mismatch_graph
 # create_graph_for_common_gender_mismatches_wordsun()
 plot_word_cloud_for_common_mistaken_verbs()
+# create_df_num_wrong_future_verb_per_year()
