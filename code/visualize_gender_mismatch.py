@@ -35,6 +35,12 @@ def create_df_num_gender_mismatch_per_year():
             del mismatches_noun_num_per_month[f'2021-{month}']
             del mismatches_noun_adj_per_month[f'2021-{month}']
             del mismatches_verb_noun_per_month[f'2021-{month}']
+    del mismatches_noun_num_per_month[f'2018-01']
+    del mismatches_noun_adj_per_month[f'2018-01']
+    del mismatches_verb_noun_per_month[f'2018-01']
+    del mismatches_noun_num_per_month[f'2018-02']
+    del mismatches_noun_adj_per_month[f'2018-02']
+    del mismatches_verb_noun_per_month[f'2018-02']
     gender_mismatch_dict = {"noun_num": mismatches_noun_num_per_month,
                             "noun_adj": mismatches_noun_adj_per_month,
                             "verb_noun": mismatches_verb_noun_per_month}
@@ -247,9 +253,9 @@ def plot_word_cloud_for_common_mistaken_verbs():
     plt.show()
 
 # plot_gender_mismatch_word_graph_example()
-# create_gender_mismatch_graph()
+create_gender_mismatch_graph()
 # create_df_num_gender_mismatch_per_year()
-create_future_verb_graph()
+# create_future_verb_graph()
 # get_corpus_for_gender_mismatch_head_words()
 # plot_top_gender_mismatch_words_barchart()
 # create_gender_mismatch_graph
