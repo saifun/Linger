@@ -30,13 +30,19 @@ def create_df_num_gender_mismatch_per_year():
     mismatches_noun_num_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
     mismatches_noun_adj_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
     mismatches_verb_noun_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
+    for month in MONTHS:
+        if int(month) > 3:
+            del mismatches_noun_num_per_month[f'2021-{month}']
+            del mismatches_noun_adj_per_month[f'2021-{month}']
+            del mismatches_verb_noun_per_month[f'2021-{month}']
     gender_mismatch_dict = {"noun_num": mismatches_noun_num_per_month,
                             "noun_adj": mismatches_noun_adj_per_month,
                             "verb_noun": mismatches_verb_noun_per_month}
     for year in YEARS:
         for df, month, filename in generate_df_from_csv_path(GENDER_MISMATCH_PATHS[year]):
-            mismatch_name = get_mismatch_name_from_path(filename)
-            gender_mismatch_dict[mismatch_name][f'{year}-{month}'] += len(df)
+            if 'chunk1_' in filename:
+                mismatch_name = get_mismatch_name_from_path(filename)
+                gender_mismatch_dict[mismatch_name][f'{year}-{month}'] += len(df)
     write_data_to_csv("noun_num", gender_mismatch_dict["noun_num"], "gender_mismatch")
     write_data_to_csv("noun_adj", gender_mismatch_dict["noun_adj"], "gender_mismatch")
     write_data_to_csv("verb_noun", gender_mismatch_dict["verb_noun"], "gender_mismatch")
@@ -73,9 +79,15 @@ def plot_top_gender_mismatch_words_barchart():
 
 def create_df_num_wrong_future_verb_per_year():
     wrong_future_verb_per_month = {f'{year}-{month}': 0 for year in YEARS for month in MONTHS}
+    for month in MONTHS:
+        if int(month) > 3:
+            del wrong_future_verb_per_month[f'2021-{month}']
+    del wrong_future_verb_per_month[f'2018-01']
+    del wrong_future_verb_per_month[f'2018-02']
     for year in YEARS:
         for df, month, filename in generate_df_from_csv_path(FUTURE_VERB_PATHS[year]):
-            wrong_future_verb_per_month[f'{year}-{month}'] += len(df)
+            if 'chunk1_' in filename:
+                wrong_future_verb_per_month[f'{year}-{month}'] += len(df)
     write_data_to_csv("future_verb", wrong_future_verb_per_month, "future_verb")
 
 
@@ -208,8 +220,8 @@ def get_common_mistaken_verbs():
     for year in YEARS:
         for df, month, filename in generate_df_from_csv_path(FUTURE_VERB_PATHS[year]):
             curr_verbs = list(df['verb'])
-            if 'יביסט' in curr_verbs:
-                print(df['sentence'])
+            # if 'יביסט' in curr_verbs:
+            #     print(df['sentence'])
             curr_counter = Counter(curr_verbs)
             counter = sum([counter, curr_counter], Counter())
     return counter
@@ -237,10 +249,10 @@ def plot_word_cloud_for_common_mistaken_verbs():
 # plot_gender_mismatch_word_graph_example()
 # create_gender_mismatch_graph()
 # create_df_num_gender_mismatch_per_year()
-# create_future_verb_graph()
+create_future_verb_graph()
 # get_corpus_for_gender_mismatch_head_words()
 # plot_top_gender_mismatch_words_barchart()
 # create_gender_mismatch_graph
 # create_graph_for_common_gender_mismatches_wordsun()
-plot_word_cloud_for_common_mistaken_verbs()
+# plot_word_cloud_for_common_mistaken_verbs()
 # create_df_num_wrong_future_verb_per_year()
