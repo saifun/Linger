@@ -3,6 +3,7 @@ import seaborn
 import matplotlib.pyplot as plt
 import pandas as pd
 from consts import HEB_CAHRS_START, HEB_CAHRS_END
+from sklearn import preprocessing
 
 
 def create_single_file_chart(filename, use_word_from_file=False):
@@ -37,10 +38,35 @@ def format_month_values(month_tag):
         return year
     return ''
 
+def visualize_trends():
+    month_df = pd.read_csv('results/trends_count/month.csv')
+    day_df = pd.read_csv('results/trends_count/day.csv')
+    # df = month_df
+    plot_trend_df(month_df)
+    plot_trend_df(day_df)
+    # pass
+
+
+def plot_trend_df(df):
+    dates = df['date']
+    df.set_index(['date'], inplace=True)
+    df.plot()
+    cols = df.columns
+    x = df.values  # returns a numpy array
+    min_max_scaler = preprocessing.MinMaxScaler()
+    x_scaled = min_max_scaler.fit_transform(x)
+    df = pd.DataFrame(x_scaled)
+    df.columns = cols
+    df['date'] = dates
+    df.set_index(['date'], inplace=True)
+    df.plot()
+    plt.show()
+
 
 def main():
+    visualize_trends()
     # visualize_basic_files('results/word_count')
-    visualize_basic_files('results/meta_data_count', True)
+    # visualize_basic_files('results/meta_data_count', True)
 
 
 def visualize_basic_files(data_dir, use_word_from_file=False):
