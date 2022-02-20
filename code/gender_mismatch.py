@@ -258,8 +258,8 @@ def create_csv_dumps_gender_mismatch_per_year_multiple_sentences():
                 dump_track_df = dump_track_df.append({'visited': filename, 'chunk_num': chunk_num}, ignore_index=True)
                 dump_track_df.to_csv(TEMP_PATH, columns=['visited', 'chunk_num'])
 
-create_dump_track_file()
-create_csv_dumps_gender_mismatch_per_year_multiple_sentences()
+# create_dump_track_file()
+# create_csv_dumps_gender_mismatch_per_year_multiple_sentences()
 # def create_csv_gender_mismatch_per_file(filename, path, year):
 #     mismatches_noun_num_df = pd.DataFrame([], columns=['month', 'year', 'head', 'head_gender', 'mismatch'])
 #     mismatches_noun_adj_df = pd.DataFrame([], columns=['month', 'year', 'head', 'head_gender', 'mismatch'])

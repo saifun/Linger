@@ -63,6 +63,7 @@ NUMBER = 'number'
 PERSON = 'person'
 DEPREL = 'deprel'
 Info = namedtuple('Info', [WORD, HEAD, POS, GENDER, TENSE, NUMBER, PERSON, DEPREL])
+NumberInfo = namedtuple('NumberInfo', [WORD, POS, GENDER, TENSE, NUMBER, PERSON])
 Mismatch = namedtuple('Mismatch', [WORD, GENDER])
 FEMININE = 'Fem'
 MASCULINE = 'Masc'

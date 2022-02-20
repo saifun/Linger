@@ -5,8 +5,10 @@ from collections import Counter
 from semantic_tree import SemanticTree
 from stanza_processor import Processor
 from consts import PATHS, YEARS, TEMP_PATH
+from stanza_light_processor import LightProcessor
 
 processor = Processor()
+light_processor = LightProcessor()
 
 
 def open_csv_files_from_path(path):
@@ -16,7 +18,7 @@ def open_csv_files_from_path(path):
             # df = pd.read_csv(filename, encoding='utf-8')
             # print('yielding! - ' + filename)
             # yield df, filename
-            df_iter = pd.read_csv(filename, chunksize=200, iterator=True, encoding='utf-8')
+            df_iter = pd.read_csv(filename, chunksize=500, iterator=True, encoding='utf-8')
             print('yielding! - ' + filename)
             yield df_iter, filename
         except:
@@ -70,6 +72,19 @@ def generate_sentences_for_single_day(path):
                 yield processor.get_stanza_analysis_multiple_sentences(sentences_for_partial_posts), month, filename, chunk_num
             else:
                 yield None, month, filename, chunk_num
+
+
+def generate_sentences_for_single_day_with_light_processor(path):
+    for posts_iterator, filename in open_csv_files_from_path(path):
+        month = filename.split('-')[1]
+        chunk_num = 0
+        for partial_posts in posts_iterator:
+            chunk_num +=1
+            print("yield chunk " + str(chunk_num))
+            posts = partial_posts["text"].dropna()
+            sentences_for_partial_posts = posts.str.split(r'\.|\?|\n').explode('sentences')
+            sentences_for_partial_posts = sentences_for_partial_posts.replace('', float('NaN')).dropna().to_numpy()
+            yield light_processor.get_stanza_analysis_multiple_sentences(sentences_for_partial_posts), month, filename, chunk_num
 
 # def generate_sentences_for_single_day(path):
 #     for posts_iterator, filename in open_csv_files_from_path(path):
