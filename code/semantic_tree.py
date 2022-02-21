@@ -40,12 +40,7 @@ class SemanticTree:
 
     def parse_text(self):
         parsed_text, tree, pos, features, deprel = self.processor.get_stanza_analysis(self.text)
-        word_list = list(zip(list(parsed_text), map(lambda head: head - 1, list(tree)), list(pos),
-                             map(lambda feature: self.get_feature_dict(feature), list(features)),list(deprel)))
-        self.tree = {index: Info(word, head, pos, self.get_gender(feature_dict), self.get_tense(feature_dict),
-                                 self.get_number(feature_dict), self.get_person(feature_dict), deprel)
-                        for index, (word, head, pos, feature_dict, deprel) in enumerate(word_list)}
-        self.parsed_text = parsed_text
+        self.parse_text_without_processing(parsed_text, tree, pos, features, deprel)
 
 
     def parse_text_without_processing_less_features(self, parsed_text, pos, features):

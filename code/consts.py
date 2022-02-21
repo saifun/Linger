@@ -3,9 +3,7 @@ from collections import namedtuple
 # DATA_PATH = '/Users/saifun/Documents/HUJI/3 semester/67978_Needle_in_a_Data_Haystack/final_project/twitter/hebrew_twitter/{}'
 DATA_PATH = '/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/{}'
 # DATA_PATH = '/Users/mariatseytlin/Documents/Msc/Needle in Data Haystack/project/test_data/{}'
-# DATA_PATH = '/cs/labs/gabis/nfun/hebrew_twitter/{}'
 TEMP_PATH = 'temp/dump_track.csv'
-# TEMP_PATH = '/cs/labs/gabis/nfun/hebrew_twitter/dump_track.csv'
 
 YEARS = list(range(2018, 2022))
 
@@ -13,11 +11,6 @@ PATHS = {
     year: DATA_PATH.format('twitter_data_' + str(year))
     for year in YEARS
 }
-
-# PATHS = {
-#     year: DATA_PATH.format('data_' + str(year))
-#     for year in YEARS
-# }
 
 SUBFILES_PATH = {
     year: DATA_PATH.format('twitter_data_' + str(year) + '/subfiles_twitter_data_' + str(year))
@@ -29,20 +22,10 @@ GENDER_MISMATCH_PATHS = {
     for year in YEARS
 }
 
-# GENDER_MISMATCH_PATHS = {
-#     year: DATA_PATH.format('data_' + str(year) + '/gender_mismatch_' + str(year))
-#     for year in YEARS
-# }
-
 FUTURE_VERB_PATHS = {
     year: DATA_PATH.format('twitter_data_' + str(year) + '/future_verb_' + str(year))
     for year in YEARS
 }
-
-# FUTURE_VERB_PATHS = {
-#     year: DATA_PATH.format('data_' + str(year) + '/future_verb_' + str(year))
-#     for year in YEARS
-# }
 
 FRAMES = {
     year: DATA_PATH.format('frame_' + str(year) + '.csv')

@@ -1,7 +1,6 @@
 from utilities import generate_sentences, open_csv_files_from_path, generate_sentences_for_single_day_with_light_processor, create_dump_track_file
 from consts import NUM_POS, NOUN_POS,GENDERS, SUBJECT_DEPREL, YEARS, PATHS, MONTHS
 from semantic_tree import SemanticTree
-from collections import defaultdict
 import pandas as pd
 from gender_mismatch import create_new_gender_mismatch_df
 
