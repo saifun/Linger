@@ -37,11 +37,18 @@ def get_number_mismatch_dump_path(filename, year, number):
     end_filename = '_'.join(split_filename[-1].split('_')[2:])
     return dir_path + 'number_mismatch_dump_chunk' + str(number) + '_' + end_filename
 
+def is_sentence_containing_number(sent_df):
+    if not sent_df.empty and NUM_POS in set(sent_df['upos']):
+        return True
+    return False
+
+
 def create_csv_dumps_number_mismatch_per_year_multiple_sentences():
     for year in YEARS:
         for stanza_analysis_list, month, filename, chunk_num in generate_sentences_for_single_day_with_light_processor(PATHS[year]):
             new_df_noun_num = create_new_gender_mismatch_df()
-            for sent_df in stanza_analysis_list:
+            new_stanza_analysis_list = list(filter(is_sentence_containing_number, stanza_analysis_list))
+            for sent_df in new_stanza_analysis_list:
                 semantic_tree = SemanticTree(sent_df['text'])
                 semantic_tree.parse_text_without_processing_less_features(sent_df['text'], sent_df['upos'], sent_df['feats'])
                 parse_tree = semantic_tree.tree
