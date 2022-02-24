@@ -17,11 +17,13 @@ class MistakeAlephBert:
         self.alephbert_tokenizer = AutoTokenizer.from_pretrained(ALEPH_BERT_BASE)
         self.dataset = dataset
         self.training_args = TrainingArguments(
-            f"writing-mistakes-finetuned-alephbert",
+            f"all-run-mistakes-finetuned-alephbert",
             evaluation_strategy="epoch",
             learning_rate=2e-5,
             weight_decay=0.01,
-            save_strategy='epoch'
+            save_strategy='steps',
+            save_steps=100,
+            per_device_train_batch_size=16
         )
 
     def train(self):
@@ -59,7 +61,8 @@ class HebrewMistakesDataset:
         return tokenized_dataset
 
     def load_data(self):
-        df = pd.read_csv("./Hebrew_corpus.csv", header=0, names=['correct', 'mistaken'])
+        df = pd.read_csv("./hebrew_corpus.csv", header=0, names=['correct', 'mistaken'])
+        df = df.head(10000)
         logger.info('Number of training sentences: {:,}\n'.format(df.shape[0]))
         return df
 
