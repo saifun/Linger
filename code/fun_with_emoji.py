@@ -1,5 +1,14 @@
-import copy
+# Set the backend to use mplcairo
+import matplotlib
+
+print('Default backend: ' + matplotlib.get_backend())
+matplotlib.use("module://mplcairo.macosx")
+print('Backend is now ' + matplotlib.get_backend())
+
+import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
 import json
+import networkx as nx
 from collections import defaultdict, Counter
 from typing import List, Dict, Any
 
@@ -7,6 +16,7 @@ from emoji import UNICODE_EMOJI
 from utilities import get_posts_from_corpus
 from consts import PATHS, YEARS
 
+prop = FontProperties(fname='/System/Library/Fonts/Apple Color Emoji.ttc')
 EMOJIS_BY_MONTH_DUMP = './results/emoji/emojis_by_month.json'
 EMOJIS_COUNT_PER_POST_DUMP = './results/emoji/total_emoji_per_post_count.json'
 EMOJIS_TOTAL_COUNT_DUMP = './results/emoji/total_emoji_count.json'
@@ -56,6 +66,49 @@ class EmojiGraph:
     @staticmethod
     def get_emoji_neighbors(emoji_list, emoji):
         return list({em for em in emoji_list if em != emoji})
+
+    def _get_graph_nodes_and_edges(self):
+        per_post_stats = load_emojis(EMOJIS_COUNT_PER_POST_DUMP)
+        stats_counter = Counter(per_post_stats)
+        most_common_emojis = stats_counter.most_common(10)
+        graph_nodes = set()
+        graph_edges = set()
+        for emoji, count in most_common_emojis:
+            neighbors_sorted_by_commonness = sorted(self.graph[emoji].items(), key=lambda item: item[1], reverse=True)[:10]
+            graph_nodes.update({related_emoji[0] for related_emoji in neighbors_sorted_by_commonness})
+            graph_edges.update([(emoji, neighbor[0]) for neighbor in neighbors_sorted_by_commonness])
+        most_common_emojis_no_count = set(map(lambda emoji: emoji[0], most_common_emojis))
+        graph_nodes.update(most_common_emojis_no_count)
+        return graph_nodes, graph_edges, most_common_emojis_no_count
+
+    def plot(self):
+        G = nx.Graph()
+        nodes, edges, most_common_emojis = self._get_graph_nodes_and_edges()
+        not_common_emojis = nodes - most_common_emojis
+        print('*********')
+        print(len(nodes))
+        G.add_nodes_from(nodes)
+        G.add_edges_from(edges)
+
+        pos = nx.spring_layout(G, seed=3113794652)
+        print(pos)
+        print(len(pos.keys()))
+        options = {"edgecolors": "tab:gray", "alpha": 1}
+        nx.draw_networkx_nodes(G, pos, nodelist=not_common_emojis, node_color="#ae9dbd", node_size=1000, **options)
+        nx.draw_networkx_nodes(G, pos, nodelist=most_common_emojis, node_color="#9069b3", node_size=1000, **options)
+        nx.draw_networkx_edges(
+            G,
+            pos,
+            edgelist=edges,
+            width=2,
+            alpha=0.4,
+            edge_color="#1a1f1b"
+        )
+        for node_text, node_pos in pos.items():
+            real_pos = [node_pos[0] - 0.02, node_pos[1] - 0.06]
+            plt.annotate(text=node_text, xy=real_pos, xytext=real_pos, fontsize=20, fontproperties=prop)
+
+        plt.show()
 
 
 def extract_emojis_from_corpus() -> None:
@@ -116,3 +169,4 @@ if __name__ == '__main__':
     # find_most_common_emoji_per_month(emojis_by_month)
     graph = EmojiGraph()
     graph.build_graph(emojis_by_month)
+    graph.plot()

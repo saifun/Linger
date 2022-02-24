@@ -1,6 +1,5 @@
 # Set the backend to use mplcairo
 import matplotlib
-from wordcloud import WordCloud
 
 print('Default backend: ' + matplotlib.get_backend())
 matplotlib.use("module://mplcairo.macosx")
