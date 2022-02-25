@@ -10,8 +10,7 @@ from matplotlib.font_manager import FontProperties
 from collections import Counter
 
 from consts import RECORDS_COUNT_STATS
-from fun_with_emoji import load_emojis, EMOJIS_COUNT_PER_POST_DUMP, EMOJIS_MOST_COMMON_PER_MONTH_COUNT_DUMP, \
-    EMOJIS_TOTAL_COUNT_DUMP
+from fun_with_emoji import load_emojis, EMOJIS_COUNT_PER_POST_DUMP, EMOJIS_MOST_COMMON_PER_MONTH_COUNT_DUMP
 
 prop = FontProperties(fname='/System/Library/Fonts/Apple Color Emoji.ttc')
 
@@ -39,17 +38,7 @@ def create_per_post_visualization():
     most_common_emojis = stats_counter.most_common(10)
     x_values, counts = list(zip(*most_common_emojis))
     print(x_values)
-    # percents = [count / total_post_count * 100 for count in counts]
     plot_emoji_bar_chart(x_values, counts)
-    # matplotlib.use("module://mplcairo.macosx")
-    # plt.rcParams.update({'font.size': 18})
-    # prop = FontProperties(fname='/System/Library/Fonts/Apple Color Emoji.ttc')
-    # plt.rcParams['font.family'] = prop.get_family()
-    # seaborn.barplot(x=list(x_values), y=percents, color='purple')
-    # plt.title('Emoji Commonness - Post Percentage')
-    # plt.xlabel('Emoji')
-    # plt.ylabel('Percent of posts')
-    # plt.show()
 
 
 def _get_total_post_count():
