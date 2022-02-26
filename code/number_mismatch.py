@@ -6,17 +6,23 @@ from gender_mismatch import create_new_gender_mismatch_df
 
 
 def find_number_mismatches_for_sentence(sent_parse_tree):
+    """
+    This function finds number mismatches in a sentence.
+    It identifies all the words that are numbers and finds if the word that is following them in the sentence is a noun,
+    and if their genders don't match.
+    :return: A dictionary with keys as numbers, and values as list of mismatched nouns that are next to the number.
+    """
     number_indices = [index for index in sent_parse_tree if sent_parse_tree[index].pos == NUM_POS\
                     and sent_parse_tree[index].gender in GENDERS]
-    gender_mismatches = dict()
+    number_mismatches = dict()
     for number_idx in number_indices:
         if number_idx + 1 in sent_parse_tree:
             next_word = sent_parse_tree[number_idx + 1]
             mismatch = next_word if  next_word.pos == NOUN_POS and \
                     next_word.gender in GENDERS and next_word.gender != sent_parse_tree[number_idx].gender else None
             if mismatch:
-                gender_mismatches[sent_parse_tree[number_idx]] = mismatch
-    return gender_mismatches
+                number_mismatches[sent_parse_tree[number_idx]] = mismatch
+    return number_mismatches
 
 
 def create_df_number_mismatch_for_sentence(sent, parse_tree, month, year):
