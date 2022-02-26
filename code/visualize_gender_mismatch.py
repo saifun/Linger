@@ -1,15 +1,16 @@
 import seaborn as sns
 import pandas as pd
-from consts import YEARS, GENDER_MISMATCH_PATHS, MONTHS, FUTURE_VERB_PATHS
+from consts import YEARS, GENDER_MISMATCH_PATHS, MONTHS, FUTURE_VERB_PATHS, PATHS
 import os
 from visualize import format_month_values
 import matplotlib.pyplot as plt
-from utilities import generate_df_from_csv_path, invert_words
+from utilities import generate_df_from_csv_path, invert_words, get_all_tokens_from_array
 from collections import Counter
 import networkx as nx
 import itertools
 from wordcloud import WordCloud
 from visualize import _reverse_hebrew_word
+import glob
 
 
 def rename_head_mismatch_columns_in_verb_noun():
@@ -41,6 +42,9 @@ def create_df_num_gender_mismatch_per_year():
     del mismatches_noun_num_per_month[f'2018-02']
     del mismatches_noun_adj_per_month[f'2018-02']
     del mismatches_verb_noun_per_month[f'2018-02']
+    del mismatches_noun_num_per_month[f'2019-04']
+    del mismatches_noun_adj_per_month[f'2019-04']
+    del mismatches_verb_noun_per_month[f'2019-04']
     gender_mismatch_dict = {"noun_num": mismatches_noun_num_per_month,
                             "noun_adj": mismatches_noun_adj_per_month,
                             "verb_noun": mismatches_verb_noun_per_month}
@@ -90,6 +94,7 @@ def create_df_num_wrong_future_verb_per_year():
             del wrong_future_verb_per_month[f'2021-{month}']
     del wrong_future_verb_per_month[f'2018-01']
     del wrong_future_verb_per_month[f'2018-02']
+    del wrong_future_verb_per_month[f'2019-04']
     for year in YEARS:
         for df, month, filename in generate_df_from_csv_path(FUTURE_VERB_PATHS[year]):
             if 'chunk1_' in filename:
@@ -138,7 +143,7 @@ def create_future_verb_graph():
         dfs.append(df)
         x_values = [format_month_values(month_tag) for month_tag in df['month']]
     final_df = pd.concat(dfs, ignore_index=True)
-    plot = sns.barplot(x='month', y='count', data=final_df, palette="pastel")
+    plot = sns.barplot(x='month', y='count', data=final_df, color='#CC99FF')
     # plot = sns.lineplot(x='month', y='count', hue='mismatch name', style="mismatch name", markers=True, data=final_df, palette="pastel")
     plot.set_xticklabels(x_values)
     # plt.xticks(ticks=list(range(len(x_values))), labels=x_values)
@@ -176,6 +181,37 @@ def create_graph_for_common_gender_mismatches_wordsun_interesting_word(word):
 
     plot_gender_mismatch_word_graph(word, heads_to_mistakes_list[word])
 
+
+def create_graph_for_common_gender_mismatches_wordsun_number_in_center(number):
+    most_common_heads = [number]
+    number_to_noun_list = {number_word: set() for number_word in most_common_heads}
+    for year in YEARS:
+        for df, month, filename in generate_df_from_csv_path(GENDER_MISMATCH_PATHS[year]):
+            if 'noun_num' in filename:
+                for number_word in number_to_noun_list:
+                    mistakes = df[df['mismatch'] == number_word]
+                    if not mistakes.empty:
+                        # print(mistakes['sentence'])
+                        number_to_noun_list[number_word].update(list(mistakes['head']))
+
+    plot_gender_mismatch_word_graph(number, number_to_noun_list[number])
+
+def create_graph_for_common_gender_mismatches_wordsun_number_in_center_most_common(number):
+    most_common_heads = [number]
+    number_to_noun_list = {number_word: list() for number_word in most_common_heads}
+    for year in YEARS:
+        for df, month, filename in generate_df_from_csv_path(GENDER_MISMATCH_PATHS[year]):
+            if 'noun_num' in filename:
+                for number_word in number_to_noun_list:
+                    mistakes = df[df['mismatch'] == number_word]
+                    if not mistakes.empty:
+                        print(list(mistakes['sentence']))
+                        number_to_noun_list[number_word].extend(list(mistakes['head']))
+    count_mistakes = Counter(number_to_noun_list[number])
+    print(count_mistakes)
+    common = count_mistakes.most_common()[:10]
+
+    plot_gender_mismatch_word_graph(number, set(word for word, count in common))
 
 def plot_gender_mismatch_word_graph(head, mistakes):
     G = nx.Graph()
@@ -263,12 +299,86 @@ def plot_word_cloud_for_common_mistaken_verbs():
     plt.axis("off")
     plt.show()
 
+
+def count_interesting_words_in_the_data():
+    count_df = pd.DataFrame([['', 0, 0, 0], ['', 0, 0, 0], ['', 0, 0, 0]], columns=['word', 'total', 'mistake_num', 'percent'])
+    count_df['word'] = ['שלושת', 'גרביים', 'שתי']
+    # count_df = pd.DataFrame([['', 0,0,0,0]], columns=['row_name', 'birthday', 'socks', 'three_masc', 'two_fem'])
+    # count_df['row_name'] = 'total'
+    for year in YEARS:
+        all_files = glob.glob(PATHS[year] + "/*.csv")
+        for filename in all_files:
+            try:
+                df_iter = pd.read_csv(filename, chunksize=200, iterator=True, encoding='utf-8')
+                for first_df in df_iter:
+                    tokens = get_all_tokens_from_array(list(first_df['text']))
+                    counts = Counter(tokens)
+                    count_df.loc[count_df['word'] == 'שלושת', "total"] += counts['שלושת']
+                    count_df.loc[count_df['word'] == 'גרביים', "total"] += counts['גרביים']
+                    count_df.loc[count_df['word'] == 'שתי', "total"] += counts['שתי']
+                    # count_df['three_masc'] += counts['שלושת']
+                    # count_df['socks'] += counts['גרביים']
+                    # count_df['two_fem'] += counts['שתי']
+                    break
+            except:
+                print(filename)
+    count_df.to_csv('./results/gender_mismatch/count_interesting_words.csv')
+
+
+def count_mistaken_interesting_words_in_the_data():
+    count_df = pd.read_csv('./results/gender_mismatch/count_interesting_words.csv')
+    # to_add = pd.DataFrame([['', 0,0,0,0]], columns=['row_name', 'birthday', 'socks', 'three_masc', 'two_fem'])
+    # to_add['row_name'] = 'mistake_num'
+    for year in YEARS:
+        for df, month, filename in generate_df_from_csv_path(GENDER_MISMATCH_PATHS[year]):
+            if 'chunk1_' in filename:
+                if 'noun_num' in filename:
+                    counts = Counter(list(df['mismatch']))
+                    # count_df['three_masc'] += counts['שלושת']
+                    # count_df['two_fem'] += counts['שתי']
+                    count_df.loc[count_df['word'] == 'שלושת', "mistake_num"] += counts['שלושת']
+                    count_df.loc[count_df['word'] == 'שתי', "mistake_num"] += counts['שתי']
+                counts = Counter(get_all_tokens_from_array(list(df['head'])))
+                # count_df['socks'] += counts['גרביים']
+                count_df.loc[count_df['word'] == 'גרביים', "mistake_num"] += counts['גרביים']
+    # count_df = count_df.append(to_add, ignore_index=True)
+    count_df.to_csv('./results/gender_mismatch/count_interesting_words.csv', columns=['word', 'total', 'mistake_num', 'percent'])
+
+def calculate_percent_interesting_words_in_the_data():
+    count_df = pd.read_csv('./results/gender_mismatch/count_interesting_words.csv')
+    # count_df['percent'] = (count_df[["mistake_num"]] / count_df['total']) * 100
+    for index, row in count_df.iterrows():
+        count_df.loc[count_df['word'] == row['word'], "percent"] = (row["mistake_num"] / float(row['total'])) * 100
+    count_df.to_csv('./results/gender_mismatch/count_interesting_words.csv',
+                    columns=['word', 'total', 'mistake_num', 'percent'])
+
+
+def plot_mistake_percent_interesting_words():
+    sns.set_theme(style="ticks")
+    df = pd.read_csv('results/gender_mismatch/count_interesting_words.csv', encoding='utf-8')
+    plot = sns.barplot(x=invert_words(df['word']), y='percent', data=df, color='#CC99FF')
+    # plot = sns.lineplot(x='month', y='count', hue='mismatch name', style="mismatch name", markers=True, data=final_df, palette="pastel")
+    # plot.set_xticklabels(x_values)
+    # plt.xticks(ticks=list(range(len(x_values))), labels=x_values)
+    plt.title("Percent of mistaken words from the corpus")
+    plt.xlabel('Words')
+    plt.ylabel('Gender mismatch percent')
+    plt.ylim(-0.3, 50)
+
+    plt.show()
+
 # plot_gender_mismatch_word_graph_example()
 # create_gender_mismatch_graph()
 # create_df_num_gender_mismatch_per_year()
 # create_future_verb_graph()
 # plot_top_gender_mismatch_words_barchart()
 # create_gender_mismatch_graph
-create_graph_for_common_gender_mismatches_wordsun()
+# create_graph_for_common_gender_mismatches_wordsun()
 # plot_word_cloud_for_common_mistaken_verbs()
 # create_df_num_wrong_future_verb_per_year()
+# create_graph_for_common_gender_mismatches_wordsun_number_in_center('שני')
+# create_graph_for_common_gender_mismatches_wordsun_number_in_center_most_common('שלושת')
+# count_interesting_words_in_the_data()
+# count_mistaken_interesting_words_in_the_data()
+# calculate_percent_interesting_words_in_the_data()
+plot_mistake_percent_interesting_words()

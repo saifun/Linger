@@ -56,3 +56,7 @@ class Processor:
                 tot_df["head"] = tot_df["head"].astype(int)
                 dfs.append(tot_df)
         return dfs
+
+# processor = Processor()
+# a=processor.get_stanza_analysis('אם הייתי ביביסט (שאני לא), הייתי מקווה מאוד שברק יחזור לפוליטיקה ויפרק את המרכז/שמאל עוד יותר')
+# print('hi')
