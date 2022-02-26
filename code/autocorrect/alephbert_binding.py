@@ -66,6 +66,6 @@ class AlephBertPredictor:
 
 if __name__ == '__main__':
     alephbert = AlephBertPredictor()
-    text = "אני רוצה לאכול חרק"
-    autocorrect_suggestions = alephbert.get_autocorrect_suggestions(text, 3)
+    text = "אני רוצה לבכות שוקולד"
+    autocorrect_suggestions = alephbert.get_autocorrect_suggestions(text, 2)
     print(autocorrect_suggestions)
