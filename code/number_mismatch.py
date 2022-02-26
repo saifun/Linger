@@ -31,11 +31,13 @@ def create_df_number_mismatch_for_sentence(sent, parse_tree, month, year):
         return new_df
     return None
 
+
 def get_number_mismatch_dump_path(filename, year, number):
     split_filename = filename.split('/')
     dir_path = '/'.join(split_filename[:-1]) + '/number_mismatch_' + str(year) + '/'
     end_filename = '_'.join(split_filename[-1].split('_')[2:])
     return dir_path + 'number_mismatch_dump_chunk' + str(number) + '_' + end_filename
+
 
 def is_sentence_containing_number(sent_df):
     if not sent_df.empty and NUM_POS in set(sent_df['upos']):
@@ -56,7 +58,6 @@ def create_csv_dumps_number_mismatch_per_year_multiple_sentences():
                     sentence_text = sent_df['sentence'][1]
                     noun_num_df = create_df_number_mismatch_for_sentence(sentence_text, parse_tree, month, year)
                     if isinstance(noun_num_df, pd.DataFrame):
-                        # noun_num_df.to_csv(get_gender_mismatch_dump_path(filename, 'noun_num'))
                         new_df_noun_num = new_df_noun_num.append(noun_num_df)
             new_df_noun_num = new_df_noun_num.drop_duplicates()
             new_df_noun_num.to_csv(get_number_mismatch_dump_path(filename, year, chunk_num))

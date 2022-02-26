@@ -1,7 +1,7 @@
 import stanza
 import pandas as pd
 
-# stanza.download('he')
+
 class LightProcessor:
     def __init__(self):
         self.heb_nlp = stanza.Pipeline(lang='he', processors='tokenize,mwt,pos,lemma', verbose=False)
@@ -47,6 +47,5 @@ class LightProcessor:
                         lst.append(df)
                 tot_df = pd.concat(lst, ignore_index=True)
                 tot_df = tot_df.shift(1).iloc[1:]
-                # tot_df["head"] = tot_df["head"].astype(int)
                 dfs.append(tot_df)
         return dfs
