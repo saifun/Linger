@@ -67,5 +67,3 @@ def create_csv_dumps_number_mismatch_per_year_multiple_sentences():
                         new_df_noun_num = new_df_noun_num.append(noun_num_df)
             new_df_noun_num = new_df_noun_num.drop_duplicates()
             new_df_noun_num.to_csv(get_number_mismatch_dump_path(filename, year, chunk_num))
-
-create_csv_dumps_number_mismatch_per_year_multiple_sentences()

@@ -56,12 +56,15 @@ def is_chunk_visited(dump_track_df, filename, chunk_num):
 
 
 def generate_sentences_for_single_day(path):
+    """
+    This function generates processed sentences from a data filepath by Stanza processor
+    """
     for posts_iterator, filename in open_csv_files_from_path(path):
         dump_track_df = pd.read_csv(TEMP_PATH)
         month = filename.split('-')[1]
         chunk_num = 0
         for partial_posts in posts_iterator:
-            chunk_num +=1
+            chunk_num += 1
             if not is_chunk_visited(dump_track_df, filename, chunk_num):
                 print("yield chunk " + str(chunk_num))
                 posts = partial_posts["text"].dropna()
@@ -73,6 +76,10 @@ def generate_sentences_for_single_day(path):
 
 
 def generate_sentences_for_single_day_with_light_processor(path):
+    """
+    This function generates processed sentences from a data filepath by Stanza light processor - a processor without
+    dependency parsing
+    """
     for posts_iterator, filename in open_csv_files_from_path(path):
         month = filename.split('-')[1]
         chunk_num = 0
@@ -122,5 +129,3 @@ def create_all_words_histogram(all_text_df):
 def create_dump_track_file():
     df = pd.DataFrame([], columns=['visited', 'chunk_num'])
     df.to_csv(TEMP_PATH, index=False)
-
-# create_dump_track_file()
