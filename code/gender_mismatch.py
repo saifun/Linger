@@ -41,11 +41,18 @@ def is_verb_future_third_singular(verb_info):
 
 
 def find_wrong_future_verb_for_sentence(sent_parse_tree):
-    # example: {0: Info(word='אני', head=1, pos='PRON', gender='Fem,Masc', tense=None, number='Sing', person='1', deprel='nsubj'),
-    #   1: Info(word='יתן', head=-1, pos='VERB', gender='Masc', tense='Fut', number='Sing', person='3', deprel='root'),
-    #   2: Info(word='ל_', head=3, pos='ADP', gender=None, tense=None, number=None, person=None, deprel='case'),
-    #   3: Info(word='_הוא', head=1, pos='PRON', gender='Masc', tense=None, number='Sing', person='3', deprel='obl'),
-    #   4: Info(word='את', head=5, pos='ADP', gender=None, tense=None, number=None, person=None, deprel='case:acc')}
+    """
+    This function finds 1-3 person future tense mistakes by identifying all the verbs is a sentence and adds them to
+    the mistake dictionary if the verb is of 3rd person singular future tense and its modifier is a pronoun of
+    1st person singular type (='אני')
+    example for a sentence:
+        {0: Info(word='אני', head=1, pos='PRON', gender='Fem,Masc', tense=None, number='Sing', person='1', deprel='nsubj'),
+        1: Info(word='יתן', head=-1, pos='VERB', gender='Masc', tense='Fut', number='Sing', person='3', deprel='root'),
+        2: Info(word='ל_', head=3, pos='ADP', gender=None, tense=None, number=None, person=None, deprel='case'),
+        3: Info(word='_הוא', head=1, pos='PRON', gender='Masc', tense=None, number='Sing', person='3', deprel='obl'),
+        4: Info(word='את', head=5, pos='ADP', gender=None, tense=None, number=None, person=None, deprel='case:acc')}
+    :return: A dictionary with keys as sentence verbs and values as their pronoun modifiers.
+    """
     verb_indices = [index for index in sent_parse_tree if sent_parse_tree[index].pos == VERB_POS]
     future_verb_mistakes = dict()
     for verb_idx in verb_indices:
@@ -57,6 +64,12 @@ def find_wrong_future_verb_for_sentence(sent_parse_tree):
 
 
 def find_gender_mismatches_for_sentence(sent_parse_tree, head_pos, target_pos):
+    """
+    This function finds gender mismatches for a given head pos and target pos.
+    It identifies all the words that have the head pos and finds if one of their modifiers is of target pos and also
+    has a different gender that its head.
+    :return: A dictionary with keys as head words, and values as list of mismatched words that correspond to the head.
+    """
     head_indices = [index for index in sent_parse_tree if sent_parse_tree[index].pos == head_pos\
                     and sent_parse_tree[index].gender in GENDERS]
     gender_mismatches = defaultdict(list)
@@ -65,6 +78,7 @@ def find_gender_mismatches_for_sentence(sent_parse_tree, head_pos, target_pos):
         if mismatches:
             gender_mismatches[sent_parse_tree[head_idx]].extend(find_mismatch_for_head(target_pos, head_idx, sent_parse_tree))
     return gender_mismatches
+
 
 def create_df_future_verb_for_sentence(sent, parse_tree, month, year):
     future_verb_mistakes_dict = find_wrong_future_verb_for_sentence(parse_tree)
@@ -114,9 +128,11 @@ def create_df_gender_mismatch_for_sentence_noun_adj(sent, parse_tree, month, yea
 def create_df_gender_mismatch_for_sentence_verb_noun(sent, parse_tree, month, year):
     return create_df_gender_mismatch_for_sentence(sent, parse_tree, VERB_POS, NOUN_POS, month, year)
 
+
 def write_data_to_csv(mismatch_name, mismatch_dict):
     mismatch_df = pd.DataFrame(list(mismatch_dict.items()), columns=['month', 'count'])
     mismatch_df.to_csv(f'results/gender_mismatch/{mismatch_name}_count.csv', index=False, header=True)
+
 
 def get_gender_mismatch_dump_path(filename, mismatch_name, year, number):
     split_filename = filename.split('/')
