@@ -302,13 +302,9 @@ def plot_word_cloud_for_common_mistaken_verbs():
 
 def count_interesting_words_in_the_data(mistakes_list):
     count_df = pd.DataFrame([], columns=['word', 'total', 'mistake_num', 'percent'])
-    # count_df['word'] = ['שלושת', 'גרביים', 'שתי']
     for word in mistakes_list:
         to_add = pd.DataFrame([[word, 0, 0, 0]], columns=['word', 'total', 'mistake_num', 'percent'])
         count_df = count_df.append(to_add)
-    # count_df['word'] = mistakes_list
-    # count_df = pd.DataFrame([['', 0,0,0,0]], columns=['row_name', 'birthday', 'socks', 'three_masc', 'two_fem'])
-    # count_df['row_name'] = 'total'
     for year in YEARS:
         all_files = glob.glob(PATHS[year] + "/*.csv")
         for filename in all_files:
@@ -319,12 +315,6 @@ def count_interesting_words_in_the_data(mistakes_list):
                     counts = Counter(tokens)
                     for word in mistakes_list:
                         count_df.loc[count_df['word'] == word, "total"] += counts[word]
-                    # count_df.loc[count_df['word'] == 'שלושת', "total"] += counts['שלושת']
-                    # count_df.loc[count_df['word'] == 'גרביים', "total"] += counts['גרביים']
-                    # count_df.loc[count_df['word'] == 'שתי', "total"] += counts['שתי']
-                    # count_df['three_masc'] += counts['שלושת']
-                    # count_df['socks'] += counts['גרביים']
-                    # count_df['two_fem'] += counts['שתי']
                     break
             except:
                 print(filename)
@@ -333,25 +323,16 @@ def count_interesting_words_in_the_data(mistakes_list):
 
 def count_mistaken_interesting_words_in_the_data(mistakes_list):
     count_df = pd.read_csv('./results/gender_mismatch/count_interesting_words.csv')
-    # to_add = pd.DataFrame([['', 0,0,0,0]], columns=['row_name', 'birthday', 'socks', 'three_masc', 'two_fem'])
-    # to_add['row_name'] = 'mistake_num'
     for year in YEARS:
         for df, month, filename in generate_df_from_csv_path(GENDER_MISMATCH_PATHS[year]):
             if 'chunk1_' in filename:
                 if 'noun_num' in filename:
                     counts = Counter(list(df['mismatch']))
-                    # count_df['three_masc'] += counts['שלושת']
-                    # count_df['two_fem'] += counts['שתי']
                     count_df.loc[count_df['word'] == 'שלושת', "mistake_num"] += counts['שלושת']
                     count_df.loc[count_df['word'] == 'שתי', "mistake_num"] += counts['שתי']
                 counts = Counter(get_all_tokens_from_array(list(df['head'])))
-                # count_df['socks'] += counts['גרביים']
                 for word in mistakes_list[2:]:
                     count_df.loc[count_df['word'] == word, "mistake_num"] += counts[word]
-                # count_df.loc[count_df['word'] == 'גרביים', "mistake_num"] += counts['גרביים']
-                # count_df.loc[count_df['word'] == 'משקפיים', "mistake_num"] += counts['משקפיים']
-                # count_df.loc[count_df['word'] == 'אופניים', "mistake_num"] += counts['אופניים']
-    # count_df = count_df.append(to_add, ignore_index=True)
     count_df.to_csv('./results/gender_mismatch/count_interesting_words.csv', columns=['word', 'total', 'mistake_num', 'percent'])
 
 def calculate_percent_interesting_words_in_the_data():
