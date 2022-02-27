@@ -337,7 +337,6 @@ def count_mistaken_interesting_words_in_the_data(mistakes_list):
 
 def calculate_percent_interesting_words_in_the_data():
     count_df = pd.read_csv('./results/gender_mismatch/count_interesting_words.csv')
-    # count_df['percent'] = (count_df[["mistake_num"]] / count_df['total']) * 100
     for index, row in count_df.iterrows():
         count_df.loc[count_df['word'] == row['word'], "percent"] = (row["mistake_num"] / float(row['total'])) * 100
     count_df.to_csv('./results/gender_mismatch/count_interesting_words.csv',
