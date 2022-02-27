@@ -6,10 +6,11 @@ CORRECT = 'correct'
 MISTAKE_INDEX = 'mistake_index'
 
 
-def evaluate(dataset_file, number_of_samples=101):
-    dataset = HebrewMistakesDataset(dataset_file=dataset_file, column_names=['correct', 'mistaken', 'mistake_index'])
+def evaluate(dataset_file, number_of_samples=101, file_columns=None):
+    dataset = HebrewMistakesDataset(dataset_file=dataset_file, column_names=file_columns)
     alephbert = AlephBertPredictor()
     test_sentences = format_test_set(dataset.dataset[:number_of_samples])
+    print(f'Got {len(test_sentences)} test sentences')
     was_in_three_best = 0
     exact_match = 0
     harmonic_score = 0
@@ -29,9 +30,10 @@ def evaluate(dataset_file, number_of_samples=101):
             print(sentence[CORRECT])
             print(sentence[MISTAKE])
             print(three_best_suggestions)
-    print(f'Exact match: {exact_match}/{test_sentences}')
-    print(f'Was in best three: {was_in_three_best}/{test_sentences}')
-    print(f'The harmonic score was {harmonic_score}/{test_sentences}')
+    test_dataset_size = len(test_sentences)
+    print(f'Exact match: {exact_match}/{test_dataset_size}')
+    print(f'Was in best three: {was_in_three_best}/{test_dataset_size}')
+    print(f'The harmonic score was {harmonic_score}/{test_dataset_size}')
 
 
 def format_test_set_with_no_indices(test_data):
@@ -40,12 +42,13 @@ def format_test_set_with_no_indices(test_data):
         correct_sentence = sample[CORRECT]
         mistaken_sentence = sample[MISTAKE]
         different_index = \
-            [index for index, word in enumerate(correct_sentence.split()) if word != mistaken_sentence.split()[index]][
-                0]
+            [index for index, word in enumerate(correct_sentence.split()) if word != mistaken_sentence.split()[index]]
+        if different_index == []:
+            continue
         final_data.append({
             MISTAKE: mistaken_sentence,
             CORRECT: correct_sentence,
-            MISTAKE_INDEX: different_index
+            MISTAKE_INDEX: different_index[0]
         })
     return final_data
 
@@ -69,5 +72,5 @@ def calculate_harmonic_score(suggestions, correct_word):
 
 
 if __name__ == '__main__':
-    evaluate(dataset_file='./dataset/evaluation_hebrew_corpus.csv')
-    # evaluate(dataset_file='./dataset/hebrew_corpus.csv', number_of_samples=2)
+    evaluate(dataset_file='./dataset/evaluation_hebrew_corpus.csv', file_columns=[CORRECT, MISTAKE, MISTAKE_INDEX])
+    # evaluate(dataset_file='./dataset/hebrew_corpus.csv', number_of_samples=1000)
