@@ -2,17 +2,94 @@ import re
 import glob
 import pandas as pd
 from collections import Counter
+from semantic_tree import SemanticTree
+from stanza_processor import Processor
+from consts import PATHS, YEARS, TEMP_PATH
+from stanza_light_processor import LightProcessor
+
+processor = Processor()
+light_processor = LightProcessor()
 
 
 def open_csv_files_from_path(path):
     all_files = glob.glob(path + "/*.csv")
     for filename in all_files:
         try:
-            df = pd.read_csv(filename, encoding='utf-8')
+            df_iter = pd.read_csv(filename, chunksize=500, iterator=True, encoding='utf-8')
             print('yielding! - ' + filename)
-            yield df, filename
+            yield df_iter, filename
         except:
             print(filename)
+
+
+def generate_df_from_csv_path(path):
+    all_files = glob.glob(path + "/*.csv")
+    for filename in all_files:
+        try:
+            df = pd.read_csv(filename, encoding='utf-8')
+            month = filename.split('-')[1]
+            # print('yielding! - ' + filename)
+            yield df, month, filename
+        except:
+            print(filename)
+
+
+def invert_words(words):
+    return [w[::-1] for w in words]
+
+
+def generate_sentences(path):
+    for single_day_posts, filename in open_csv_files_from_path(path):
+        posts = get_single_column(single_day_posts, 'text')
+        month = filename.split('-')[1]
+        for post in posts:
+            sentences = re.split('\.|\?|\n', post)
+            for sentence in sentences:
+                if sentence == '':
+                    continue
+                yield sentence, month, SemanticTree(sentence)
+
+
+def is_chunk_visited(dump_track_df, filename, chunk_num):
+    return filename in set(dump_track_df['visited']) and \
+           chunk_num in set(dump_track_df[dump_track_df["visited"] == filename]['chunk_num'])
+
+
+def generate_sentences_for_single_day(path):
+    """
+    This function generates processed sentences from a data filepath by Stanza processor
+    """
+    for posts_iterator, filename in open_csv_files_from_path(path):
+        dump_track_df = pd.read_csv(TEMP_PATH)
+        month = filename.split('-')[1]
+        chunk_num = 0
+        for partial_posts in posts_iterator:
+            chunk_num += 1
+            if not is_chunk_visited(dump_track_df, filename, chunk_num):
+                print("yield chunk " + str(chunk_num))
+                posts = partial_posts["text"].dropna()
+                sentences_for_partial_posts = posts.str.split(r'\.|\?|\n').explode('sentences')
+                sentences_for_partial_posts = sentences_for_partial_posts.replace('', float('NaN')).dropna().to_numpy()
+                yield processor.get_stanza_analysis_multiple_sentences(sentences_for_partial_posts), month, filename, chunk_num
+            else:
+                yield None, month, filename, chunk_num
+
+
+def generate_sentences_for_single_day_with_light_processor(path):
+    """
+    This function generates processed sentences from a data filepath by Stanza light processor - a processor without
+    dependency parsing
+    """
+    for posts_iterator, filename in open_csv_files_from_path(path):
+        month = filename.split('-')[1]
+        chunk_num = 0
+        for partial_posts in posts_iterator:
+            chunk_num +=1
+            print("yield chunk " + str(chunk_num))
+            posts = partial_posts["text"].dropna()
+            sentences_for_partial_posts = posts.str.split(r'\.|\?|\n').explode('sentences')
+            sentences_for_partial_posts = sentences_for_partial_posts.replace('', float('NaN')).dropna().to_numpy()
+            yield light_processor.get_stanza_analysis_multiple_sentences(sentences_for_partial_posts), month, filename, chunk_num
 
 
 def get_most_common_tokens_from_column(df, column_name):
@@ -45,26 +122,10 @@ def get_all_tokens_from_array(array):
             in sublist]
 
 
-# def get_df_from_result(question_number, results):
-#     return pandas.DataFrame([[question_number, res[1], res[0]] for res in results], columns=COLUMNS)
-
 def create_all_words_histogram(all_text_df):
     all_text_df.str.split().map(lambda x: len(x)).hist()
 
-# def plot_top_words_barchart(all_text_df):
-#     corpus = get_corpus(all_text_df)
-#     counter = Counter(corpus)
-#     most = counter.most_common()
-#     word_list, count_list = [], []
-#     for word, count in most[:20]:
-#         word_list.append(word)
-#         count_list.append(count)
-#
-#     seaborn.barplot(x=count_list, y=invert_words(word_list))
-#
-#
-# def plot_top_ngrams_barchart(all_text_df, n=2):
-#     corpus = get_corpus(all_text_df)
-#     top_n_bigrams = get_top_ngrams_from_corpus(all_text_df, n)[:20]
-#     word_list, count_list = map(list, zip(*top_n_bigrams))
-#     seaborn.barplot(x=count_list, y=invert_words(word_list))
+
+def create_dump_track_file():
+    df = pd.DataFrame([], columns=['visited', 'chunk_num'])
+    df.to_csv(TEMP_PATH, index=False)
