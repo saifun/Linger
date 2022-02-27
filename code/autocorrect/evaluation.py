@@ -35,14 +35,14 @@ class MistakeAlephBertFromPretrained:
         for sentence_output in output.logits:
             per_word_prediction = []
             for index in range(len(sentence_output)):
-                suggestion = self._get_masked_token_suggestions(sentence_output, index)
+                suggestion = self._get_masked_token_suggestion(sentence_output, index)
                 if suggestion[0].startswith('['):
                     break
                 per_word_prediction.append(suggestion)
             sentence_prediction.append(per_word_prediction)
         return sentence_prediction
 
-    def _get_masked_token_suggestions(self, model_output_tensors, token_index_to_mask):
+    def _get_masked_token_suggestion(self, model_output_tensors, token_index_to_mask):
         print('Unmasking', token_index_to_mask)
         masked_token_tensor = model_output_tensors[token_index_to_mask]
         probabilities = softmax(masked_token_tensor, dim=0)
