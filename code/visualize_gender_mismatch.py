@@ -176,7 +176,7 @@ def create_graph_for_common_gender_mismatches_wordsun_interesting_word(word):
             for head_word in heads_to_mistakes_list:
                 mistakes = df[df['head'] == head_word]
                 if not mistakes.empty:
-                    # print(mistakes['sentence'])
+                    print(list(mistakes['sentence']))
                     heads_to_mistakes_list[head_word].update(list(mistakes['mismatch']))
 
     plot_gender_mismatch_word_graph(word, heads_to_mistakes_list[word])
@@ -395,4 +395,5 @@ def create_interesting_words_graph(word_list):
 # create_df_num_wrong_future_verb_per_year()
 # create_graph_for_common_gender_mismatches_wordsun_number_in_center('שני')
 # create_graph_for_common_gender_mismatches_wordsun_number_in_center_most_common('שלושת')
-create_interesting_words_graph(['שלושת', 'שתי','גרביים','משקפיים', 'אופניים', 'צומת'])
+# create_interesting_words_graph(['שלושת', 'שתי','גרביים','משקפיים','כיכר', 'מגפיים'])
+# create_graph_for_common_gender_mismatches_wordsun_interesting_word('שדה')
