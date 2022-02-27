@@ -347,10 +347,7 @@ def calculate_percent_interesting_words_in_the_data():
 def plot_mistake_percent_interesting_words():
     sns.set_theme(style="ticks")
     df = pd.read_csv('results/gender_mismatch/count_interesting_words.csv', encoding='utf-8')
-    plot = sns.barplot(x=invert_words(df['word']), y='percent', data=df, color='#CC99FF')
-    # plot = sns.lineplot(x='month', y='count', hue='mismatch name', style="mismatch name", markers=True, data=final_df, palette="pastel")
-    # plot.set_xticklabels(x_values)
-    # plt.xticks(ticks=list(range(len(x_values))), labels=x_values)
+    sns.barplot(x=invert_words(df['word']), y='percent', data=df, color='#CC99FF')
     plt.title("Percent of mistaken words from the corpus")
     plt.xlabel('Words')
     plt.ylabel('Gender mismatch percent')
