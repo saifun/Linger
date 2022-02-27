@@ -34,6 +34,11 @@ def generate_df_from_csv_path(path):
             print(filename)
 
 
+def get_posts_from_corpus(path):
+    for single_day_posts, filename in open_csv_files_from_path(path):
+        yield from get_multiple_columns(single_day_posts, ['text', 'created_at'])
+
+        
 def invert_words(words):
     return [w[::-1] for w in words]
 
@@ -110,6 +115,10 @@ def get_most_common_values_from_array(array):
 
 def get_single_column(df, column_name):
     return df[column_name].dropna().to_numpy()
+
+
+def get_multiple_columns(df, column_names):
+    return df[column_names].dropna().to_numpy()
 
 
 def get_df_lines_by_condition(df, column_name, value):
