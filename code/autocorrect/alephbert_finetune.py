@@ -44,8 +44,10 @@ class MistakeAlephBert:
 
 
 class HebrewMistakesDataset:
-    def __init__(self):
+    def __init__(self, dataset_file, column_names=None):
         self.alephbert_tokenizer = AutoTokenizer.from_pretrained(ALEPH_BERT_BASE)
+        self.dataset_file = dataset_file
+        self.column_names = ['correct', 'mistaken'] if column_names is None else column_names
         self.dataset = self.load_data()
 
     @property
@@ -61,7 +63,7 @@ class HebrewMistakesDataset:
         return tokenized_dataset
 
     def load_data(self):
-        df = pd.read_csv("./hebrew_corpus.csv", header=0, names=['correct', 'mistaken'])
+        df = pd.read_csv(self.dataset_file, header=0, names=self.column_names)
         df = df.head(10000)
         logger.info('Number of training sentences: {:,}\n'.format(df.shape[0]))
         return df
@@ -82,7 +84,7 @@ class HebrewMistakesDataset:
 
 
 if __name__ == '__main__':
-    dataset = HebrewMistakesDataset()
+    dataset = HebrewMistakesDataset(dataset_file='./dataset/hebrew_corpus.csv')
     dataset.prepare()
     alephbert = MistakeAlephBert(dataset)
     alephbert.train()

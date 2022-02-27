@@ -35,13 +35,13 @@ class AlephBertPredictor:
 
     def get_autocorrect_suggestions(self, text, token_index_to_correct):
         masked_token = text.split()[token_index_to_correct]
-        suggested_tokens = alephbert.get_suggestions_by_probability(text, token_index_to_correct)
+        suggested_tokens = self.get_suggestions_by_probability(text, token_index_to_correct)
         return sorted(suggested_tokens, key=lambda token: token.get_suggested_token_score(masked_token), reverse=True)
 
     def get_whole_sentence_autocorrect(self, text):
         suggested_sentence = []
         for index, word in enumerate(text.split()):
-            autocorrect_suggestions = alephbert.get_autocorrect_suggestions(text, index)
+            autocorrect_suggestions = self.get_autocorrect_suggestions(text, index)
             suggested_sentence.append(autocorrect_suggestions[0].value)
         return ' '.join(suggested_sentence)
 
