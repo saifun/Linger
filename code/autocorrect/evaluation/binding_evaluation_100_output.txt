@@ -1,0 +1,285 @@
+Evaluating 0
+Harmonic score: 1.0
+Evaluating 1
+Harmonic score: 1.0
+Evaluating 2
+Harmonic score: 1.0
+Evaluating 3
+Harmonic score: 1.0
+Evaluating 4
+Harmonic score: 1.0
+Evaluating 5
+Harmonic score: 1.0
+Evaluating 6
+Harmonic score: 1.0
+Evaluating 7
+Harmonic score: 1.0
+Evaluating 8
+Harmonic score: 0.5
+כתוצאה ממלחמת העצמאות ובעקבות הסכמי שביתת הנשק נוצר הקו הירוק
+
+כתוצאה ממלחמת העצמאות ובעקבות הסכמי שביתת הנשק נוצר קו הירוק
+['קו', 'הקו', 'בקו']
+Evaluating 9
+Harmonic score: 1.0
+Evaluating 10
+Harmonic score: 1.0
+Evaluating 11
+Harmonic score: 1.0
+Evaluating 12
+Harmonic score: 1.0
+Evaluating 13
+Harmonic score: 0
+בשטח הבסיס נמצאים שרידי המבצר הצלבני הידוע
+
+בשטח הבסיס נמצאים שרידי המבצר הצלבנד הידוע
+['הלבן', 'הצבאי', 'הצפוני']
+Evaluating 14
+Harmonic score: 0.5
+אנחנו משתדלים לדווח כמה שפחות על דברים שקרו לאחרונה
+
+אנחנו משתדלים לדווח כה שפחות על דברים שקרו לאחרונה
+['כה', 'כמה', 'ככה']
+Evaluating 15
+Harmonic score: 0.5
+תקיפת שיירת הנשק הערבית בקריית מוצקין באתר הפלמ"ח
+
+תקיפת שיירת קנשק הערבית בקריית מוצקין באתר הפלמ"ח
+['נשק', 'הנשק', 'הטנק']
+Evaluating 16
+Harmonic score: 1.0
+Evaluating 17
+Harmonic score: 0
+אשאיר לאחרים שהשתתפו בדיון הקצר להסכים לנוסח
+
+אשאיר לאחרים שהשתתפו בדיון הקצר להסכים נלוסח
+['לו', 'בנימוס', 'עליו']
+Evaluating 18
+Harmonic score: 1.0
+Evaluating 19
+Harmonic score: 1.0
+Evaluating 20
+Harmonic score: 1.0
+Evaluating 21
+Harmonic score: 1.0
+Evaluating 22
+Harmonic score: 1.0
+Evaluating 23
+Harmonic score: 1.0
+Evaluating 24
+Harmonic score: 1.0
+Evaluating 25
+Harmonic score: 1.0
+Evaluating 26
+Harmonic score: 0.5
+הפניתי במקומות מסוימים למשחקי שחמט שניתן לצפות בהם בצורה נוחה
+
+הפניתי במקומות מסוימים מלשחקי שחמט שניתן לצפות בהם בצורה נוחה
+['משחקי', 'למשחקי', 'במשחקי']
+Evaluating 27
+Harmonic score: 1.0
+Evaluating 28
+Harmonic score: 1.0
+Evaluating 29
+Harmonic score: 1.0
+Evaluating 30
+Harmonic score: 1.0
+Evaluating 31
+Harmonic score: 1.0
+Evaluating 32
+Harmonic score: 0.5
+בראשית שנות החמישים למדה ספרות ופילוסופיה באוניברסיטה
+
+בראשית שנות החמישים מלדה ספרות ופילוסופיה באוניברסיטה
+['למד', 'למדה', 'מלמד']
+Evaluating 33
+Harmonic score: 1.0
+Evaluating 34
+Harmonic score: 1.0
+Evaluating 35
+Harmonic score: 1.0
+Evaluating 36
+Harmonic score: 1.0
+Evaluating 37
+Harmonic score: 1.0
+Evaluating 38
+Harmonic score: 1.0
+Evaluating 39
+Harmonic score: 1.0
+Evaluating 40
+Harmonic score: 1.0
+Evaluating 41
+Harmonic score: 1.0
+Evaluating 42
+Harmonic score: 0
+בבסיס המצבה הוצב לוח זיכרון לזכר החללים שנפלו במערכה
+
+בבסיס המצהב הוצב לוח זיכרון לזכר החללים שנפלו במערכה
+['מצדה', 'הצבאי', 'המחנה']
+Evaluating 43
+Harmonic score: 1.0
+Evaluating 44
+Harmonic score: 0.5
+הבנים הצעירים חזרו לגרמניה ואילו הבכור מתגורר ככל הנראה בארגנטינה
+
+הבשנים הצעירים חזרו לגרמניה ואילו הבכור מתגורר ככל הנראה בארגנטינה
+['שני', 'הבנים', 'השניים']
+Evaluating 45
+Harmonic score: 1.0
+Evaluating 46
+Harmonic score: 1.0
+Evaluating 47
+Harmonic score: 1.0
+Evaluating 48
+Harmonic score: 0
+צילום ממרחק קרוב ובעזרת עצמית רחבה יוצר תחושת פרספקטיבה חזקה
+
+צילום ממרחק קרוב ובעזרת עצמית רחוה יוצר תחושת פרספקטיבה חזקה
+['יוצר', 'עושה', 'יצרו']
+Evaluating 49
+Harmonic score: 1.0
+Evaluating 50
+Harmonic score: 1.0
+Evaluating 51
+Harmonic score: 1.0
+Evaluating 52
+Harmonic score: 1.0
+Evaluating 53
+Harmonic score: 1.0
+Evaluating 54
+Harmonic score: 1.0
+Evaluating 55
+Harmonic score: 1.0
+Evaluating 56
+Harmonic score: 1.0
+Evaluating 57
+Harmonic score: 1.0
+Evaluating 58
+Harmonic score: 0
+לאחר המלחמה המשיך בקריירת המשחק במקומות שונים
+
+לאחר המלחמה המשיך בקריירתצ המשחק במקומות שונים
+['קריירת', 'בניית', 'לקיים']
+Evaluating 59
+Harmonic score: 1.0
+Evaluating 60
+Harmonic score: 1.0
+Evaluating 61
+Harmonic score: 1.0
+Evaluating 62
+Harmonic score: 1.0
+Evaluating 63
+Harmonic score: 0
+מיקרוסקופ אלקטרוני יכול לזהות יסודות שונים באמצעות ספקטרום הפליטה שלהם
+
+מיקרוסקופ אלקטרוני יכול לזהות יסודחות שונים באמצעות ספקטרום הפליטה שלהם
+['ריחות', 'צינורות', 'שדות']
+Evaluating 64
+Harmonic score: 1.0
+Evaluating 65
+Harmonic score: 0
+נרשמה ללימודי סוציולוגיה באוניברסיטה העברית וסיימה תואר ראשון ושני בסוציולוגיה
+
+נרשמה ללימודי סוציולוגיה באוניברסיטה העברית סויימה תואר ראשון ושני בסוציולוגיה
+['סיימה', 'שסיימה', 'מסיימת']
+Evaluating 66
+Harmonic score: 0.5
+קשרים אלו מתקיימים באמצעות הלשכה ליחסי חוץ במועצת העיר
+
+קשרים אלו מתקיימים באמצעות הלשכה ליחסי חוץ זמועצת העיר
+['מועצת', 'במועצת', 'למועצת']
+Evaluating 67
+Harmonic score: 1.0
+Evaluating 68
+Harmonic score: 1.0
+Evaluating 69
+Harmonic score: 0.5
+המשפחה יצאה מהארץ מספר פעמים לצורך מחקריו האקדמיים של האב
+
+המשפחה יצאה מהארץ מספר פעמים לצורך מחקריו האקדמיים של הבא
+['הרב', 'האב', 'הבן']
+Evaluating 70
+Harmonic score: 1.0
+Evaluating 71
+Harmonic score: 1.0
+Evaluating 72
+Harmonic score: 1.0
+Evaluating 73
+Harmonic score: 1.0
+Evaluating 74
+Harmonic score: 1.0
+Evaluating 75
+Harmonic score: 1.0
+Evaluating 76
+Harmonic score: 1.0
+Evaluating 77
+Harmonic score: 0.5
+לפי איזה קריטריונים בדיוק החלטת שאנשים מסוימים פחות חשובים מאחרים
+
+פלי איזה קריטריונים בדיוק החלטת שאנשים מסוימים פחות חשובים מאחרים
+['פי', 'לפי', 'בלי']
+Evaluating 78
+Harmonic score: 1.0
+Evaluating 79
+Harmonic score: 1.0
+Evaluating 80
+Harmonic score: 1.0
+Evaluating 81
+Harmonic score: 1.0
+Evaluating 82
+Harmonic score: 1.0
+Evaluating 83
+Harmonic score: 1.0
+Evaluating 84
+Harmonic score: 0.5
+מתברר שזכויות היוצרים על הספר שייכות לממשלה
+
+מתברר שזכויות היוצרים עשל הספר שייכות לממשלה
+['של', 'על', 'שעל']
+Evaluating 85
+Harmonic score: 1.0
+Evaluating 86
+Harmonic score: 1.0
+Evaluating 87
+Harmonic score: 0
+החוק פרט מערך שירותים שאנשים העומדים בקריטריונים המתאימים זכאים לקבל
+
+החוק פרט עמרך שירותים שאנשים העומדים בקריטריונים המתאימים זכאים לקבל
+['מספר', 'עשרה', 'מפרט']
+Evaluating 88
+Harmonic score: 1.0
+Evaluating 89
+Harmonic score: 1.0
+Evaluating 90
+Harmonic score: 0
+למחזה נודעה השפעה רבה בעיצוב זיכרון המלחמה של החברה האזרחית
+
+למחזה נוץעה השפעה רבה בעיצוב זיכרון המלחמה של החברה האזרחית
+['נודע', 'ישנה', 'ורשה']
+Evaluating 91
+Harmonic score: 0
+במהלך מלחמת העולם השנייה נהרס בית האופרה כליל בשתי הפצצות
+
+במהלך מלחמת העולם השנייה נהרס בית האופרה כליל בתי הפצצות
+['בעת', 'בין', 'באחת']
+Evaluating 92
+Harmonic score: 1.0
+Evaluating 93
+Harmonic score: 1.0
+Evaluating 94
+Harmonic score: 1.0
+Evaluating 95
+Harmonic score: 1.0
+Evaluating 96
+Harmonic score: 1.0
+Evaluating 97
+Harmonic score: 1.0
+Evaluating 98
+Harmonic score: 1.0
+Evaluating 99
+Harmonic score: 1.0
+Evaluating 100
+Harmonic score: 1.0
+Exact match: 81/101
+Was in best three: 91/101
+The harmonic score was 86.0/101
