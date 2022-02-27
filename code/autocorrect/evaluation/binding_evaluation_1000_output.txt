@@ -1,0 +1,3133 @@
+/Users/saifun/opt/miniconda3/envs/hebnlp/bin/python "/Users/saifun/Documents/HUJI/3 semester/67978_Needle_in_a_Data_Haystack/final_project/Linger/code/autocorrect/binding_evaluation.py"
+/Users/saifun/opt/miniconda3/envs/hebnlp/lib/python3.9/site-packages/fuzzywuzzy/fuzz.py:11: UserWarning: Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning
+  warnings.warn('Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning')
+Got 977 test sentences
+Evaluating 0
+Harmonic score: 0.5
+קורות חייו צמרת למד בחוגים לחינוך ופילוסופיה באוניברסיטה העברית בירושלים
+
+קורות חייו צמרת למד בחוגים חלינוך ופילוסופיה באוניברסיטה העברית בירושלים
+['חינוך', 'לחינוך', 'לציונות']
+Evaluating 1
+Harmonic score: 1.0
+Evaluating 2
+Harmonic score: 0
+למד צרפתית וספרות בבודפשט ולבסוף הוסמך בלימודים גרמניים באוניברסיטת בלגרד
+
+למד צרפתית וספרות בבודפשט ולבסוף הוסמך בלימודים גטרמניים באוניברסיטת בלגרד
+['טכניים', 'רשמיים', 'בגרמניה']
+Evaluating 3
+Harmonic score: 1.0
+Evaluating 4
+Harmonic score: 1.0
+Evaluating 5
+Harmonic score: 1.0
+Evaluating 6
+Harmonic score: 1.0
+Evaluating 7
+Harmonic score: 1.0
+Evaluating 8
+Harmonic score: 1.0
+Evaluating 9
+Harmonic score: 1.0
+Evaluating 10
+Harmonic score: 1.0
+Evaluating 11
+Harmonic score: 1.0
+Evaluating 12
+Harmonic score: 1.0
+Evaluating 13
+Harmonic score: 1.0
+Evaluating 14
+Harmonic score: 1.0
+Evaluating 15
+Harmonic score: 1.0
+Evaluating 16
+Harmonic score: 1.0
+Evaluating 17
+Harmonic score: 1.0
+Evaluating 18
+Harmonic score: 0
+את השכלתו האקדמית עשה באוניברסיטאות בגרמניה שם למד משפטים ופילוסופיה
+
+את תשכלתו האקדמית עשה באוניברסיטאות בגרמניה שם למד משפטים ופילוסופיה
+['יכולתו', 'דרכו', 'שהותו']
+Evaluating 19
+Harmonic score: 1.0
+Evaluating 20
+Harmonic score: 0
+קישורים חיצוניים הספרייה היהודית הווירטואלית יהודים אמריקאים ברומניה באנגלית
+
+קישורים חיצוניים הספרייה היהודית הווירכטואלית יהודים אמריקאים ברומניה באנגלית
+['הישראלית', 'הישראלים', 'הכללית']
+Evaluating 21
+Harmonic score: 1.0
+Evaluating 22
+Harmonic score: 0.5
+באנציקלופדיה אנחנו משתדלים לדווח כמה שפחות על דברים שקרו לאחרונה
+
+באנציקלופדיה אנחנו משתדלים לדווח מה שפחות על דברים שקרו לאחרונה
+['מה', 'כמה', 'למה']
+Evaluating 23
+Harmonic score: 0
+קישורים חיצוניים תקיפת שיירת הנשק הערבית בקריית מוצקין באתר הפלמ"ח
+
+קישורים חיצוניים תקיפת שיירת הנשק הערבית בקריית מוצקין באתר הפנלמ"ח
+['ההנצחה', 'הרשמי', 'החברה']
+Evaluating 24
+Harmonic score: 1.0
+Evaluating 25
+Harmonic score: 0
+מבחינתי אפשר להעלות אותו לרשימת ההמתנה לשמוע הערות ואח"כ להצבעה
+
+מבחינתי אפשר להעלות אותו לרשימת ההמתנה לשמוע הערוץ ואח"כ להצבעה
+['ואח', 'ולרו', 'ובערב']
+Evaluating 26
+Harmonic score: 1.0
+Evaluating 27
+Harmonic score: 1.0
+Evaluating 28
+Harmonic score: 1.0
+Evaluating 29
+Harmonic score: 0
+שירת בצה"ל בחיל התותחנים ולמד משפטים באוניברסיטה העברית בירושלים
+
+שירת בצה"ל בחיל התותחנים בלמד משפטים באוניברסיטה העברית בירושלים
+['בחיל', 'במשרד', 'בפל']
+Evaluating 30
+Harmonic score: 1.0
+Evaluating 31
+Harmonic score: 0
+אם התכוונתם למושבה האמריקנית שקדמה למדינה ראו הפרובינציה של פנסילבניה
+
+אם התכוונתם למושבה האמריקנית שקדמה למדינה ראו הפרובינציה של פנסילניה
+['של', 'הפולנית', 'הפלסטינית']
+Evaluating 32
+Harmonic score: 1.0
+Evaluating 33
+Harmonic score: 1.0
+Evaluating 34
+Harmonic score: 1.0
+Evaluating 35
+Harmonic score: 1.0
+Evaluating 36
+Harmonic score: 1.0
+Evaluating 37
+Harmonic score: 1.0
+Evaluating 38
+Harmonic score: 1.0
+Evaluating 39
+Harmonic score: 0
+במהלך מחקר באוניברסיטת סטנפורד בארצות הברית נמצא אפקט עלה הפנטום
+
+במהלך מחקר באוניברסיטת סטנפורד באצרות הברית נמצא אפקט עלה הפנטום
+['##ורד', 'באוניברסיטת', 'ובאי']
+Evaluating 40
+Harmonic score: 1.0
+Evaluating 41
+Harmonic score: 1.0
+Evaluating 42
+Harmonic score: 0
+הוספתי התייחסות קצרה למחלוקת באשר להגדרה המדויקת בתוך הערך פנימה
+
+הוספתי התייחסות קצרה למחלוקת באשר להגדרה המדויקת בתוך ערך פנימה
+['העיר', 'השער', 'עצמך']
+Evaluating 43
+Harmonic score: 1.0
+Evaluating 44
+Harmonic score: 0
+את שירותו הצבאי עשה בחיל התותחנים בצה"ל והשתתף במלחמת לבנון
+
+את שירותו הצבאי עשה בחיל התותנים בצה"ל והשתתף במלחמת לבנון
+['התותח', 'הנשים', 'הצפוני']
+Evaluating 45
+Harmonic score: 0.5
+במהלך מלחמת העצמאות של אירלנד הפעילה בריטניה יחידות חיסול אחדות
+
+במהלך מלחמת העצמאות של אירלנד הפעילה בריטניה יחידות חיסול חדות
+['חדשות', 'אחדות', 'מיוחדות']
+Evaluating 46
+Harmonic score: 0
+אינדקס של גורדי השחקים העיקריים בישראל ללא תוכן אנציקלופדי כלשהו
+
+אינדקס של גורדי השחקים העיקריים בישראל ללא תוכן אניצקלופדי כלשהו
+['אקדמי', 'חיצוני', 'מילולי']
+Evaluating 47
+Harmonic score: 1.0
+Evaluating 48
+Harmonic score: 1.0
+Evaluating 49
+Harmonic score: 1.0
+Evaluating 50
+Harmonic score: 0
+בבחירות לנשיאות ארצות הברית נוטה המדינה להצביע עבור המפלגה הדמוקרטית
+
+בבחירות לנשיאות ארצות הברית נוטה מדינה להצביע עבור המפלגה הדמוקרטית
+['אמריקה', 'מועמדים', 'המועמדים']
+Evaluating 51
+Harmonic score: 1.0
+Evaluating 52
+Harmonic score: 1.0
+Evaluating 53
+Harmonic score: 1.0
+Evaluating 54
+Harmonic score: 1.0
+Evaluating 55
+Harmonic score: 1.0
+Evaluating 56
+Harmonic score: 1.0
+Evaluating 57
+Harmonic score: 0
+קישורים חיצוניים הפרס לביקורת התקשורת באתר האגודה לזכות הציבור לדעת
+
+קישורים חיצוניים הפרסג לביקורת התקשורת באתר האגודה לזכות הציבור לדעת
+['הפורום', 'האגף', 'המרכז']
+Evaluating 58
+Harmonic score: 1.0
+Evaluating 59
+Harmonic score: 0
+ויקיפדיה בהיותה אנציקלופדיה יכולה לפרסם רק דברים מקובלים במחקר הקיים
+
+ויקיפדיה בהיותה אנציקלופדיה יכולה לפרסם רק דברים מקובים במחקר הקיים
+['מוגבלים', 'טובים', 'חשובים']
+Evaluating 60
+Harmonic score: 0
+ההיסטוריונים חלוקים בשאלה לגבי הכוח המניע מאחורי הפעלת שיטת השיירות
+
+ההיסטוריונים חלוקים בשאלה לגבי הכוח המניע מאחורי הפעלת שיכת השיירות
+['שיירת', 'שייטת', 'שירותי']
+Evaluating 61
+Harmonic score: 0
+הוקמו כנסיות שחורות עצמאיות רבות וחלקן הצטרפו למועצת הכנסיות העולמית
+
+הוקמו כנסיות שחורות עצמאיות רבות וחלקן הצטרפו למועצת הכנסיות העולימת
+['הכללית', 'הרוסית', 'הגדולות']
+Evaluating 62
+Harmonic score: 0
+הטיל יוצא בצורה נרחבת ועדיין בשירות בחלק מחברות חבר המדינות
+
+הטיל יוצא בצורה נרחבת ועדיין בשירץת בחלק מחברות חבר המדינות
+['משרת', 'בשימוש', 'רץ']
+Evaluating 63
+Harmonic score: 1.0
+Evaluating 64
+Harmonic score: 0
+אפשר להרחיב על אחוזי הצפייה במשחק ביחס לאירועים משחקים אחרים
+
+אפשר להרחיב על אחוזי הצפייה במשחק ביחס לירועים משחקים אחרים
+['לאירועי', 'לסוגי', 'למחירי']
+Evaluating 65
+Harmonic score: 1.0
+Evaluating 66
+Harmonic score: 0
+בראשית הקריירה המקצועית ג'קסון נודע בסרטי האימה יוצאי הדופן שיצר
+
+בראשית הקריירה המקצועית ג'קסון נודע בסרטי האימה יואצי הדופן שיצר
+['יוצרי', 'בסרטי', 'ביצירת']
+Evaluating 67
+Harmonic score: 1.0
+Evaluating 68
+Harmonic score: 1.0
+Evaluating 69
+Harmonic score: 1.0
+Evaluating 70
+Harmonic score: 0
+ערכים מעניינים שכתבתי לאחרונה הם ולדימיר פוטין ומלחמת צ'צ'ניה השנייה
+
+ערכים מעניינים שכתבתי לאחרונה הם ולדימיר פוטין ומלחמת צצ'ניה השנייה
+['העולם', 'נתניהו', 'גרמניה']
+Evaluating 71
+Harmonic score: 0.5
+ההגדרה האפשרית היחידה של קיצוניות חייבת להיות יחסית למרכז מסוים
+
+ההגדרה האפשרית היחידה של קיצוניות חייבת להית יחסית למרכז מסוים
+['להית', 'להיות', 'להיפתח']
+Evaluating 72
+Harmonic score: 0
+מתברר כי העתקת משפטים פסקאות וערכים שלמים ממקורות שאינם חופשיים
+
+מתברר כי העתקת משפטים פסקאות וערכים שלמם ממקורות שאינם חופשיים
+['שמקורם', 'שלה', 'שימושיים']
+Evaluating 73
+Harmonic score: 1.0
+Evaluating 74
+Harmonic score: 1.0
+Evaluating 75
+Harmonic score: 1.0
+Evaluating 76
+Harmonic score: 0.5
+כיום הוא חי בקליפורניה ומשמש פרופסור לספרות אנגלית באוניברסיטת סטנפורד
+
+כיום הוא חן בקליפורניה ומשמש פרופסור לספרות אנגלית באוניברסיטת סטנפורד
+['נבחן', 'חי', 'לן']
+Evaluating 77
+Harmonic score: 1.0
+Evaluating 78
+Harmonic score: 1.0
+Evaluating 79
+Harmonic score: 0
+במידה מסוימת ויקיחדשות משמשת בעצמה כמעין פורטל לערכים של ויקיפדיה
+
+במידה מסוימת ויקיחדשות משמשת בעצסה כמעין פורטל לערכים של ויקיפדיה
+['בעצם', 'עצמה', 'בה']
+Evaluating 80
+Harmonic score: 0
+שלום פרנץ ליסט וברוך בואך לוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+
+שלום פרנץ ליסט וברוך בואך ולויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+['לאקדמיה', 'לידי', 'לידיעת']
+Evaluating 81
+Harmonic score: 0
+שלום אלכס פלדמן וברוך בואך לוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+
+שלום אלכס פלדמן וברוך בואך לוויקיפדיה זהאנציקלופדיה העברית החופשית הראשונה
+['##פד', '##יקלופ', '##אפי']
+Evaluating 82
+Harmonic score: 1.0
+Evaluating 83
+Harmonic score: 0
+צילום ממרחק קרוב ובעזרת עצמית רחבה יוצר תחושת פרספקטיבה חזקה
+
+צילום ממרחק קרוב ובעזרת עצמית רחצה יוצר תחושת פרספקטיבה חזקה
+['יוצר', 'משרה', 'זה']
+Evaluating 84
+Harmonic score: 1.0
+Evaluating 85
+Harmonic score: 1.0
+Evaluating 86
+Harmonic score: 1.0
+Evaluating 87
+Harmonic score: 1.0
+Evaluating 88
+Harmonic score: 1.0
+Evaluating 89
+Harmonic score: 1.0
+Evaluating 90
+Harmonic score: 1.0
+Evaluating 91
+Harmonic score: 0
+האם העברת תוכן בצורה מסודרת לערכים המתאימים לפחות באופן חלקי
+
+האם העברת תוכן בצורה מסודרת לערכים המתאימים פלחות באופן חלקי
+['פועלת', 'פוגעת', 'רלוונטית']
+Evaluating 92
+Harmonic score: 1.0
+Evaluating 93
+Harmonic score: 0
+התקופה הישראלית בפעם הבאה נזכרת חצור בתנ"ך בהקשר שונה לחלוטין
+
+הקתופה הישראלית בפעם הבאה נזכרת חצור בתנ"ך בהקשר שונה לחלוטין
+['בתקופה', 'האופרה', 'האומה']
+Evaluating 94
+Harmonic score: 0.5
+לאחר מכן חזר לארצות הברית ללימודים במכון הטכנולוגי של מסצ'וסטס
+
+לאחר מכן חזר לארצות הבית ללימודים במכון הטכנולוגי של מסצ'וסטס
+['הבית', 'הברית', 'ברית']
+Evaluating 95
+Harmonic score: 0
+לאחר ניצחונו בתחרות הוכר אדולף אנדרסן כשחקן החזק ביותר בעולם
+
+לאחר ניצונו בתחרות הוכר אדולף אנדרסן כשחקן החזק ביותר בעולם
+['ניצחונות', 'נצחונות', 'ניצחון']
+Evaluating 96
+Harmonic score: 1.0
+Evaluating 97
+Harmonic score: 1.0
+Evaluating 98
+Harmonic score: 1.0
+Evaluating 99
+Harmonic score: 1.0
+Evaluating 100
+Harmonic score: 0
+והאם דווקא לאקדמיה בישראל הזכות להחליט או גם לגופים בארה"ב
+
+והאם דווקא לאקדמיה בישראל הזכות להחליט או גם לגופים ארה"ב
+['אלה', 'כאלה', 'רבים']
+Evaluating 101
+Harmonic score: 1.0
+Evaluating 102
+Harmonic score: 1.0
+Evaluating 103
+Harmonic score: 0
+ג'ויס למד באוניברסיטת לונדון וזכה בהצטיינות לתואר ראשון בספרות אנגלית
+
+ג'ויס מלד באוניברסיטת לונדון וזכה בהצטיינות לתואר ראשון בספרות אנגלית
+['המולד', 'מדי', 'במעלה']
+Evaluating 104
+Harmonic score: 1.0
+Evaluating 105
+Harmonic score: 1.0
+Evaluating 106
+Harmonic score: 0
+הרפורמציה הפרוטסטנטית באנגליה קנתה לה יריבות חדשה עם ספרד הקתולית
+
+הרפורצמיה הפרוטסטנטית באנגליה קנתה לה יריבות חדשה עם ספרד הקתולית
+['הרפורמה', 'הפדרציה', 'הרפובליקה']
+Evaluating 107
+Harmonic score: 1.0
+Evaluating 108
+Harmonic score: 1.0
+Evaluating 109
+Harmonic score: 0
+בערך שכזה מלא הפרטים הטכניים חשובים במיוחד פרקי ההיסטוריה והתרבות
+
+בערך שכזה מלא הפרטים הטכניים חשובים במיוחד פרקי ההיסטוריה והרבות
+['הרומית', 'הרוסית', 'המערבית']
+Evaluating 110
+Harmonic score: 1.0
+Evaluating 111
+Harmonic score: 0
+מאוחר יותר שיחק ג'פרסון כדורסל בליגת המכללות במדי אוניברסיטת אריזונה
+
+מאוחר יותר שיחק ג'פרוסן כדורסל בליגת המכללות במדי אוניברסיטת אריזונה
+['קרוס', 'בראון', 'יוסטון']
+Evaluating 112
+Harmonic score: 0
+מיקרוסקופ אלקטרוני יכול לזהות יסודות שונים באמצעות ספקטרום הפליטה שלהם
+
+מיקחרוסקופ אלקטרוני יכול לזהות יסודות שונים באמצעות ספקטרום הפליטה שלהם
+['##סקופ', 'חוקר', 'סופר']
+Evaluating 113
+Harmonic score: 1.0
+Evaluating 114
+Harmonic score: 0
+שלום זיו מזרחי וברוך בואך לוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+
+שלום זו מזרחי וברוך בואך לוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+['דוד', 'זאב', 'יוסי']
+Evaluating 115
+Harmonic score: 1.0
+Evaluating 116
+Harmonic score: 0
+נרשמה ללימודי סוציולוגיה באוניברסיטה העברית וסיימה תואר ראשון ושני בסוציולוגיה
+
+נרשמה ללימודי סוציולוגיה באוניבריטה העברית וסיימה תואר ראשון ושני בסוציולוגיה
+['##גיה', 'וחברה', 'בחברה']
+Evaluating 117
+Harmonic score: 1.0
+Evaluating 118
+Harmonic score: 1.0
+Evaluating 119
+Harmonic score: 1.0
+Evaluating 120
+Harmonic score: 0.3333333333333333
+סיים בשווייץ לימודי דוקטורט וחזר לארץ בסוף מלחמת העולם הראשונה
+
+סיים בשווייץ לימודי דוקטורט החזר לארץ בסוף מלחמת העולם הראשונה
+['הוחזר', 'חזר', 'וחזר']
+Evaluating 121
+Harmonic score: 1.0
+Evaluating 122
+Harmonic score: 0
+במקרה של אופציות הצבעה מרובות מדי הוויקיפדים עלולים לבחור אקראית
+
+במקרה של אופציות הצבעה מרובות מדי הוויקיפדים עלדלים לבחור אקראית
+['##פדים', '##נדים', 'יכולים']
+Evaluating 123
+Harmonic score: 1.0
+Evaluating 124
+Harmonic score: 1.0
+Evaluating 125
+Harmonic score: 1.0
+Evaluating 126
+Harmonic score: 1.0
+Evaluating 127
+Harmonic score: 1.0
+Evaluating 128
+Harmonic score: 1.0
+Evaluating 129
+Harmonic score: 1.0
+Evaluating 130
+Harmonic score: 1.0
+Evaluating 131
+Harmonic score: 1.0
+Evaluating 132
+Harmonic score: 0.5
+לימד בכמה אוניברסיטאות בצרפת ועשה את עיקר חייו המקצועיים בפריז
+
+לידמ בכמה אוניברסיטאות בצרפת ועשה את עיקר חייו המקצועיים בפריז
+['למד', 'לימד', 'לימדה']
+Evaluating 133
+Harmonic score: 1.0
+Evaluating 134
+Harmonic score: 1.0
+Evaluating 135
+Harmonic score: 1.0
+Evaluating 136
+Harmonic score: 1.0
+Evaluating 137
+Harmonic score: 1.0
+Evaluating 138
+Harmonic score: 1.0
+Evaluating 139
+Harmonic score: 0
+משם המשיך ללמוד בקולג' המלכותי לאומנות שבלונדון במטרה להיות צייר
+
+משם המשיך ללמוד בקולג' המלכותי לאומנות שבלונדון במטרה להיות ייר
+['לצייר', 'לייצר', 'להיות']
+Evaluating 140
+Harmonic score: 0
+אתרים חשובים מהתקופה בית הוועד הפועל של ההסתדרות ברחוב ארלוזורוב
+
+אתרים חשובים מםהתקופה בית הוועד הפועל של ההסתדרות ברחוב ארלוזורוב
+['כמו', 'הוא', 'היו']
+Evaluating 141
+Harmonic score: 1.0
+Evaluating 142
+Harmonic score: 1.0
+Evaluating 143
+Harmonic score: 1.0
+Evaluating 144
+Harmonic score: 1.0
+Evaluating 145
+Harmonic score: 1.0
+Evaluating 146
+Harmonic score: 1.0
+Evaluating 147
+Harmonic score: 1.0
+Evaluating 148
+Harmonic score: 1.0
+Evaluating 149
+Harmonic score: 0
+לבקשת לינקולן נסע במדינות המרכזיות כדי לעודד אותן להשאר באיחוד
+
+לנקשת לינקולן נסע במדינות המרכזיות כדי לעודד אותן להשאר באיחוד
+['הנשיא', 'לינקולן', 'נתן']
+Evaluating 150
+Harmonic score: 1.0
+Evaluating 151
+Harmonic score: 1.0
+Evaluating 152
+Harmonic score: 1.0
+Evaluating 153
+Harmonic score: 0
+שינויים כאלה בתפקוד ושימוש בתבניות נפוצות כדאי לפרסם בלוח המודעות
+
+שינויים כאלה בתפקוד וקשימוש בתבניות נפוצות כדאי לפרסם בלוח המודעות
+['בשלוש', 'בת', 'בקו']
+Evaluating 154
+Harmonic score: 0.5
+במשחק השני התמודדה ארגנטינה עם פנמה אחת הנבחרות החלשות בטורניר
+
+במשחק השני התמודדה ארגנטינה ועם פנמה אחת הנבחרות החלשות בטורניר
+['ועם', 'עם', 'וגם']
+Evaluating 155
+Harmonic score: 1.0
+Evaluating 156
+Harmonic score: 1.0
+Evaluating 157
+Harmonic score: 0
+מסתבר שזכויות היוצרים על הספר שייכות לממשלת מחוז בוואריה בגרמניה
+
+מסתבר שזגכויות היוצרים על הספר שייכות לממשלת מחוז בוואריה בגרמניה
+['זכויות', 'וזכויות', 'לזכויות']
+Evaluating 158
+Harmonic score: 1.0
+Evaluating 159
+Harmonic score: 0
+במאות הבאות הייתה אזרבייג'ן בשליטת המעצמות השכנות רוסיה טורקיה ופרס
+
+במאות הבאות הייתה אזרבייג'ן בקליטת המעצמות השכנות רוסיה טורקיה ופרס
+['בקלות', 'ביותר', 'שבגליל']
+Evaluating 160
+Harmonic score: 1.0
+Evaluating 161
+Harmonic score: 1.0
+Evaluating 162
+Harmonic score: 0
+מאוחר יותר חזר לצה"ל והצטרף לקורס קצינים אותו סיים בהצלחה
+
+מאוחר יותר חזר לצהדל והצטרף לקורס קצינים אותו סיים בהצלחה
+['לדגל', 'להודו', 'ארצה']
+Evaluating 163
+Harmonic score: 1.0
+Evaluating 164
+Harmonic score: 1.0
+Evaluating 165
+Harmonic score: 0
+למחזה נודעה השפעה רבה בעיצוב זיכרון המלחמה של החברה האזרחית
+
+למחזה נושדעה השפעה רבה בעיצוב זיכרון המלחמה של החברה האזרחית
+['נודע', 'ורשה', 'ישנה']
+Evaluating 166
+Harmonic score: 0
+ביוגרפיה רבינוביץ יליד ירושלים השתחרר מצה"ל בדרגת סגן אלוף
+
+ביוגרפיה רבינובמיץ יליד ירושלים השתחרר מצה"ל בדרגת סגן אלוף
+['בינלאומית', 'חיובית', 'חינוכית']
+Evaluating 167
+Harmonic score: 0
+במהלך מלחמת העולם השנייה נהרס בית האופרה כליל בשתי הפצצות
+
+במהלך מלחמת העולם השנייה נהרס יבת האופרה כליל בשתי הפצצות
+['רבות', 'בצרפת', 'הברית']
+Evaluating 168
+Harmonic score: 1.0
+Evaluating 169
+Harmonic score: 1.0
+Evaluating 170
+Harmonic score: 1.0
+Evaluating 171
+Harmonic score: 1.0
+Evaluating 172
+Harmonic score: 1.0
+Evaluating 173
+Harmonic score: 1.0
+Evaluating 174
+Harmonic score: 1.0
+Evaluating 175
+Harmonic score: 0
+התגייס לצה"ל לחיל התותחנים והמשיך בשירות קבע והגיע לדרגת סא"ל
+
+התגייס לצה"ל לחיל התותחנים והמשיך רבשירות קבע והגיע לדרגת סא"ל
+['התותח', 'שיריו', 'הביוב']
+Evaluating 176
+Harmonic score: 1.0
+Evaluating 177
+Harmonic score: 1.0
+Evaluating 178
+Harmonic score: 0
+ערכים על אנשים שהם בלתי אנציקלופדיים בעליל נמחקים מחיקה מהירה
+
+ערכים על אנשים שהם בלתי אנציקלופדיים בעלליל נמחקים מחיקה מהירה
+['##דיים', '##בים', '##ליים']
+Evaluating 179
+Harmonic score: 1.0
+Evaluating 180
+Harmonic score: 1.0
+Evaluating 181
+Harmonic score: 1.0
+Evaluating 182
+Harmonic score: 1.0
+Evaluating 183
+Harmonic score: 0
+ערכתי קצת לשונית הוספתי קטגוריה מבחינתי אפשר להעביר למרחב הראשי
+
+ערכתי קצת לשנית הוספתי קטגוריה מבחינתי אפשר להעביר למרחב הראשי
+['לפני', 'תבנית', 'קניות']
+Evaluating 184
+Harmonic score: 0
+קישורים חיצוניים בית בלגיה מתוך האתר הרשמי של האוניברסיטה העברית
+
+קישורים חיצוניים ביב בלגיה מתוך האתר הרשמי של האוניברסיטה העברית
+['באדיבות', 'לבני', 'לגבי']
+Evaluating 185
+Harmonic score: 1.0
+Evaluating 186
+Harmonic score: 1.0
+Evaluating 187
+Harmonic score: 1.0
+Evaluating 188
+Harmonic score: 1.0
+Evaluating 189
+Harmonic score: 1.0
+Evaluating 190
+Harmonic score: 1.0
+Evaluating 191
+Harmonic score: 0
+עדכונים בתבנית לוויין הראל שלום תודה על השתתפותך במיזם הקואורדינטות
+
+עדכונים בתבנית לוויין הראל שלום תודה על השתתפותך במיזם קהואורדינטות
+['האינטרנט', 'אורי', 'אורון']
+Evaluating 192
+Harmonic score: 0.5
+קישורים חיצוניים הקו הירוק באתר המוזיאון הממלכתי לאמנות קופנהגן
+
+קישורים חיצוניים הקו הירוק אבתר המוזיאון הממלכתי לאמנות קופנהגן
+['אתר', 'באתר', 'בית']
+Evaluating 193
+Harmonic score: 1.0
+Evaluating 194
+Harmonic score: 1.0
+Evaluating 195
+Harmonic score: 1.0
+Evaluating 196
+Harmonic score: 1.0
+Evaluating 197
+Harmonic score: 0
+עורך האקדמיה הלאומית הישראלית למדעים מוסד ביאליק ירושלים תשס"ג
+
+ערך האקדמיה הלאומית הישראלית למדעים מוסד ביאליק ירושלים תשס"ג
+['אתר', 'חבר', 'כתר']
+Evaluating 198
+Harmonic score: 1.0
+Evaluating 199
+Harmonic score: 1.0
+Evaluating 200
+Harmonic score: 1.0
+Evaluating 201
+Harmonic score: 0.3333333333333333
+שלום פיני שפיר וברוך בואך לוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+
+שלום פיני שפיר וברוך בואן לוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+['הבא', 'בוא', 'בואך']
+Evaluating 202
+Harmonic score: 0
+במהרה מצא צ'ייקובסקי את רוח היצירה וישב לכתוב קונצ'רטו לכינור
+
+במהרה מצא צ'ייקובסקי את רוח היצירה וישב לכתהוב קונצ'רטו לכינור
+['היצירה', 'הכתיבה', 'כתיבתו']
+Evaluating 203
+Harmonic score: 0
+הצבעות מחיקה אינן משחק אנא התייחס להצעות של עצמך ברצינות
+
+הצבעות מחקה אינן משחק אנא התייחס להצעות של עצמך ברצינות
+['מהו', 'ומהו', 'מהוות']
+Evaluating 204
+Harmonic score: 0
+לאחר מאמץ הצליחו בעלות הברית לבסס ראשי גשר בחופי הנחיתה
+
+לאחר מאמץ הצליחו בעלות הברית לבסס ראשי גשר בחופי הניתה
+['קניה', 'התעלה', 'הכנרת']
+Evaluating 205
+Harmonic score: 1.0
+Evaluating 206
+Harmonic score: 1.0
+Evaluating 207
+Harmonic score: 1.0
+Evaluating 208
+Harmonic score: 0.5
+לאחר הכרזת המלחמה לא ביצעו הצרפתים כל פעולה כנגד האיטלקים
+
+לאחר הכרזת המלחמה לא ביצעו הצרפתים כו פעולה כנגד האיטלקים
+['כול', 'כל', 'כוונת']
+Evaluating 209
+Harmonic score: 0.3333333333333333
+לכן חיים יכלו להיווצר מחומרים רגילים בתהליך של אבולוציה כימית
+
+לכן חיים יכו להיווצר מחומרים רגילים בתהליך של אבולוציה כימית
+['יכולים', 'יכול', 'יכלו']
+Evaluating 210
+Harmonic score: 1.0
+Evaluating 211
+Harmonic score: 0
+בכלל אפשר למצוא הרבה דוגמאות למלחמות אזרחים שהסתיימו ללא טבח
+
+בכלל אפשר למצוא הרבה דוגמאות למלחמות אזרחים שהסתיימו ללא ץטבח
+['הבחנה', 'אבחנה', 'קרב']
+Evaluating 212
+Harmonic score: 1.0
+Evaluating 213
+Harmonic score: 1.0
+Evaluating 214
+Harmonic score: 1.0
+Evaluating 215
+Harmonic score: 0
+תפקיד ביולוגי הנחושת מופיעה בכל היצורים החיים והיא חיונית לחיים
+
+תקפיד ביולוגי הנחושת מופיעה בכל היצורים החיים והיא חיונית לחיים
+['ידע', 'באופן', 'בידע']
+Evaluating 216
+Harmonic score: 0.3333333333333333
+אין פותחים הצבעה בפרלמנט לפני שהתקיים דיון רחב בנושא במזנון
+
+אין פותחים הצבעה בפרלמנט לפני שתהקיים דיון רחב בנושא במזנון
+['שמתקיים', 'שיתקיים', 'שהתקיים']
+Evaluating 217
+Harmonic score: 1.0
+Evaluating 218
+Harmonic score: 1.0
+Evaluating 219
+Harmonic score: 1.0
+Evaluating 220
+Harmonic score: 1.0
+Evaluating 221
+Harmonic score: 1.0
+Evaluating 222
+Harmonic score: 1.0
+Evaluating 223
+Harmonic score: 1.0
+Evaluating 224
+Harmonic score: 1.0
+Evaluating 225
+Harmonic score: 1.0
+Evaluating 226
+Harmonic score: 1.0
+Evaluating 227
+Harmonic score: 1.0
+Evaluating 228
+Harmonic score: 0
+בתחילת שנות השבעים החלה להתפתח סצנת הרוק המתקדם הישראלי
+
+בתחילת שנות השבעים החלה להתפתח סצנת הרוק מתקדם הישראלי
+['מקום', 'הישראלי', '##מרת']
+Evaluating 229
+Harmonic score: 1.0
+Evaluating 230
+Harmonic score: 1.0
+Evaluating 231
+Harmonic score: 1.0
+Evaluating 232
+Harmonic score: 0
+לכן התחלתי לשפץ ערכים קטנים אליהם יצטרך הערך זכוכית להפנות
+
+לכן התחלתי לשפץ רעכים קטנים אליהם יצטרך הערך זכוכית להפנות
+['רכבים', 'כלים', 'עצים']
+Evaluating 233
+Harmonic score: 1.0
+Evaluating 234
+Harmonic score: 0
+בבניין הכנסייה החדשה יותר מצויות בשימוש משני אבנים מתקופות קדומות
+
+בבניין הכנסייה החדשה יותר מצויות בשימוש משניה אבנים מתקופות קדומות
+['שני', 'מיני', 'זמני']
+Evaluating 235
+Harmonic score: 1.0
+Evaluating 236
+Harmonic score: 1.0
+Evaluating 237
+Harmonic score: 1.0
+Evaluating 238
+Harmonic score: 1.0
+Evaluating 239
+Harmonic score: 1.0
+Evaluating 240
+Harmonic score: 1.0
+Evaluating 241
+Harmonic score: 0.5
+ישנם גם קווי אוטובוסים ציבוריים למוסקבה סנקט פטרבורג ומקומות נוספים
+
+ישנם גם קווי אווטבוסים ציבוריים למוסקבה סנקט פטרבורג ומקומות נוספים
+['אוטובוס', 'אוטובוסים', 'האוטובוס']
+Evaluating 242
+Harmonic score: 0
+לאחר מלחמת העולם השנייה הפכה צ'כוסלובקיה למדינה קומוניסטית מתונה
+
+לאחר מלחמת העולם השנייה הפכה צ'כוסלובקיה למדינה קומוניסטית מותנה
+['למדינה', 'לעמותה', 'מדינה']
+Evaluating 243
+Harmonic score: 1.0
+Evaluating 244
+Harmonic score: 0
+סן פרנסיסקו היא העיר הרביעית בגודלה במדינת קליפורניה שבארצות הברית
+
+סן פרנסיסקו היא העיר הרביעית בגודלה במדינת קליפורניה בארצות הברית
+['בארצות', 'ובארצות', 'ארצות']
+Evaluating 245
+Harmonic score: 1.0
+Evaluating 246
+Harmonic score: 1.0
+Evaluating 247
+Harmonic score: 1.0
+Evaluating 248
+Harmonic score: 1.0
+Evaluating 249
+Harmonic score: 0.5
+התחלתי בויקיפדיה באנגלית אבל מהר הבנתי שעדיף להשקיע בזו העברית
+
+התחלתי בויקיפדיה באנגלית אבז מהר הבנתי שעדיף להשקיע בזו העברית
+['אז', 'אבל', 'ואז']
+Evaluating 250
+Harmonic score: 1.0
+Evaluating 251
+Harmonic score: 0
+לדעתי הפורטל במצבו הנוכחי מפר את ההנחיות שלנו לעיצוב פורטלים
+
+לדעתי הפורטל במצבו הנוכחי מפר את ההנחיות שלנו לעיצוב ופרטלים
+['פורטל', 'פרחים', 'הפורטל']
+Evaluating 252
+Harmonic score: 1.0
+Evaluating 253
+Harmonic score: 1.0
+Evaluating 254
+Harmonic score: 1.0
+Evaluating 255
+Harmonic score: 1.0
+Evaluating 256
+Harmonic score: 0
+האתר פועל היטב באינטרנט אקספלורר אך אינו מתפקד כראוי בפיירפוקס
+
+האתר פועל היטב באינטרנט אקספלורר אך אינו מתפקד כראוי בפיירנפוקס
+['בימינו', 'במהירות', 'באינטרנט']
+Evaluating 257
+Harmonic score: 0.5
+הערכים שבהם מדובר ויש יותר מאחד כוללים קישורים לאתרים מסחריים
+
+עהרכים שבהם מדובר ויש יותר מאחד כוללים קישורים לאתרים מסחריים
+['האתרים', 'הערכים', 'הכלים']
+Evaluating 258
+Harmonic score: 0
+מאמרי המערכת שלו שיצאו כנגד הכנסייה הביאו למספר תביעות נגדו
+
+מאמרי המערכת שלו שיצאו כנגד הכנסייטה הביאו למספר תביעות נגדו
+['הביאו', 'הכניסו', 'השיט']
+Evaluating 259
+Harmonic score: 1.0
+Evaluating 260
+Harmonic score: 0
+למידע תוכל לעיין בדף ההדרכה לניהול דיונים בעריכות שנויות במחלוקת
+
+למיעד תוכל לעיין בדף ההדרכה לניהול דיונים בעריכות שנויות במחלוקת
+['תמיד', 'למימוש', 'עוד']
+Evaluating 261
+Harmonic score: 1.0
+Evaluating 262
+Harmonic score: 0.5
+פתחתי ערך שיכול להיות הערך המאוחד ליגות הכדורסל הנמוכות בישראל
+
+פתחתי ערך שיכול להיות עהרך המאוחד ליגות הכדורסל הנמוכות בישראל
+['ערך', 'הערך', 'בערך']
+Evaluating 263
+Harmonic score: 1.0
+Evaluating 264
+Harmonic score: 1.0
+Evaluating 265
+Harmonic score: 1.0
+Evaluating 266
+Harmonic score: 1.0
+Evaluating 267
+Harmonic score: 0
+אפשר גם למצוא פרסומים רפואיים מקצועיים עבריים המשתמשים במונחים העבריים
+
+אפשר גם למצוא פרסומים רפואיים מקצועיים עבריים צמשתמשים במונחים העבריים
+['שמשתמשים', 'המתמחים', 'מתקדמים']
+Evaluating 268
+Harmonic score: 0
+בטורניר משתתפות נבחרות מצפון אמריקה מרכז אמריקה ומדינות האיים הקריביים
+
+בטורניר משתתות נבחרות מצפון אמריקה מרכז אמריקה ומדינות האיים הקריביים
+['השתתפו', 'השתתפות', 'ישתתפו']
+Evaluating 269
+Harmonic score: 1.0
+Evaluating 270
+Harmonic score: 1.0
+Evaluating 271
+Harmonic score: 1.0
+Evaluating 272
+Harmonic score: 0
+בראשית מלחמת העולם השנייה הצטרף עצמון לקבוצת פליטים יהודים
+
+בראשית מלחמת העולם השנייה הצטרף עצמוכן לקבוצת פליטים יהודים
+['ויצמן', 'סלומון', 'צוקרמן']
+Evaluating 273
+Harmonic score: 1.0
+Evaluating 274
+Harmonic score: 0
+הוא כתוב בצורה שאינה מקובלת בויקיפדיה ודורש צמצום פרטים לאלתר
+
+הוא כתוב בצורה שאינה מקובלת בויקיפדיה ודורש צמום פרטים לאלתר
+['מהם', 'מכם', 'ממנו']
+Evaluating 275
+Harmonic score: 0
+הנשק הועבר עוד בליל המבצע ליחידות שעמדו לפתוח במבצע נחשון
+
+הנשק הועבר עוד בליל המבצע ליחידות שעמדו לפתוח במבצע נחשושן
+['שריון', 'ראשון', 'החרמון']
+Evaluating 276
+Harmonic score: 1.0
+Evaluating 277
+Harmonic score: 1.0
+Evaluating 278
+Harmonic score: 1.0
+Evaluating 279
+Harmonic score: 1.0
+Evaluating 280
+Harmonic score: 1.0
+Evaluating 281
+Harmonic score: 0
+קישורים חיצוניים ראו מדיה וקבצים בנושא התחייה היוונית בוויקישיתוף
+
+קישורים חיצוניים ראו מדה וקבצים בנושא התחייה היוונית בוויקישיתוף
+['מפה', 'מידע', 'רשימה']
+Evaluating 282
+Harmonic score: 1.0
+Evaluating 283
+Harmonic score: 0
+במלים אחרות תצוגה של תוצאות הבחירות לכנסת במבט גאוגרפי אזורי
+
+במלים אחרות תצוגה של תוצאות הבחירות לכנסת במבט גאפוגרפי אזורי
+['גיאוגרפי', 'אזורי', 'אורבני']
+Evaluating 284
+Harmonic score: 0
+בפעולה זו נמנע לראשונה האצ"ל לפרסם אזהרה מוקדמת לפני הפיצוץ
+
+בפעולה זו נמנע לראשונה האצ"ל לפרמם אזהרה מוקדמת לפני הפיצוץ
+['לאור', '##לר', '"']
+Evaluating 285
+Harmonic score: 1.0
+Evaluating 286
+Harmonic score: 1.0
+Evaluating 287
+Harmonic score: 1.0
+Evaluating 288
+Harmonic score: 0
+ייצור גבינה הומצא במרכז אסיה ובמזרח התיכון ומשם התפשט לאירופה
+
+ייצור יבינה הומצא במרכז אסיה ובמזרח התיכון ומשם התפשט לאירופה
+['הגבינה', 'בירה', 'הבירה']
+Evaluating 289
+Harmonic score: 0
+לדיון ההמלצה תיקנתי היום שלוש עריכות שבוצעו ע"י משתמש אלמוני
+
+לדיון ההמלצה תיקנתי היום שלוש עריכות שבוצעו ע"ןי משתמש אלמוני
+['עי', 'למען', 'בענין']
+Evaluating 290
+Harmonic score: 1.0
+Evaluating 291
+Harmonic score: 1.0
+Evaluating 292
+Harmonic score: 1.0
+Evaluating 293
+Harmonic score: 1.0
+Evaluating 294
+Harmonic score: 0
+אין משתמשים חדשים ללא עריכות קודמות יכולים להצביע בהצבעות מחיקה
+
+אין משתמשים חדשים ללא עריכות קודמות יכולים להצביע בהצבעות מטיקה
+['##בעות', '##פיהם', 'אלה']
+Evaluating 295
+Harmonic score: 1.0
+Evaluating 296
+Harmonic score: 1.0
+Evaluating 297
+Harmonic score: 1.0
+Evaluating 298
+Harmonic score: 0
+ביוגרפיה ריצ'רדסון נולדה בלונדון למשפחה של שחקנים ואנשי תיאטרון
+
+ביוגרפיה ריצ'רדסון נולדה בלונדון למשפחה של שחנים ואנשי תיאטרון
+['למשפחה', 'משפחתי', 'משפחתם']
+Evaluating 299
+Harmonic score: 1.0
+Evaluating 300
+Harmonic score: 0
+בתקופה ההלניסטית היו מספר נסיונות חיצוניים לפגיעה במצוות הברית
+
+בתקופה ההליסטית היו מספר נסיונות חיצוניים לפגיעה במצוות הברית
+['ההיסטורית', 'היסטורית', 'הקלאסית']
+Evaluating 301
+Harmonic score: 1.0
+Evaluating 302
+Harmonic score: 1.0
+Evaluating 303
+Harmonic score: 1.0
+Evaluating 304
+Harmonic score: 0
+הספרות המוזיקלית איננה יודעת להסביר מדוע כתב צ'ייקובסקי יצירה זו
+
+הספרות המוזיקלית איננה יודעת להסביר מדוע כתב צ'ייקובסקי יצירה זץו
+['ייק', 'כוב', 'יקו']
+Evaluating 305
+Harmonic score: 0
+חיפשתי בקטגוריה ויקיפדיה מדיניות פנים התיחסות לעניין ולא מצאתי
+
+חיפשתי בקטגוריה ויקיפדיה דמיניות פנים התיחסות לעניין ולא מצאתי
+['תיירות', 'ידיעות', 'מפות']
+Evaluating 306
+Harmonic score: 0
+לקהילה גם מוסדות בארגנטינה צ'ילה ניקרגואה צ'אד זמביה מוזמביק ואיטליה
+
+לקהילה גם מוסדות בארגנטינה צ'ילה ניקרגואה צ'אד זמביה מוזמביק ואיטלתה
+['ילה', 'איילנד', '##וואי']
+Evaluating 307
+Harmonic score: 1.0
+Evaluating 308
+Harmonic score: 1.0
+Evaluating 309
+Harmonic score: 0.5
+בתור ויקיפדים אנחנו מצויים לתרגם מאמרים על תרבות ישראל לאנגלית
+
+בתור ויקיפדים אנחונ מצויים לתרגם מאמרים על תרבות ישראל לאנגלית
+['אנו', 'אנחנו', 'שאנו']
+Evaluating 310
+Harmonic score: 0.5
+המועדון מתמקד בארבעה תחומים אומנות דרמה מוזיקה ומשחקים חברתיים
+
+המועדון מתמקד בארבעה תיומים אומנות דרמה מוזיקה ומשחקים חברתיים
+['תחומי', 'תחומים', 'התחומים']
+Evaluating 311
+Harmonic score: 1.0
+Evaluating 312
+Harmonic score: 1.0
+Evaluating 313
+Harmonic score: 1.0
+Evaluating 314
+Harmonic score: 1.0
+Evaluating 315
+Harmonic score: 1.0
+Evaluating 316
+Harmonic score: 1.0
+Evaluating 317
+Harmonic score: 1.0
+Evaluating 318
+Harmonic score: 0
+מדינות הגוש המזרחי ובהן צ'כוסלובקיה שלחו למשחקים משלחות גדולות
+
+מדינות הגוש המזרחי ובהן צכוסלובקיה שלחו למשחקים משלחות גדולות
+['סלובקיה', 'קולומביה', 'אוסטרליה']
+Evaluating 319
+Harmonic score: 1.0
+Evaluating 320
+Harmonic score: 1.0
+Evaluating 321
+Harmonic score: 0
+צ'ייקובסקי עצמו כתב מעל התווים הראשונים בפתיחה של הסימפוניה החמישית
+
+צ'ייקובסקי עצמו כבת מעל התווים הראשונים בפתיחה של הסימפוניה החמישית
+['כוב', 'כית', 'ייק']
+Evaluating 322
+Harmonic score: 1.0
+Evaluating 323
+Harmonic score: 1.0
+Evaluating 324
+Harmonic score: 1.0
+Evaluating 325
+Harmonic score: 1.0
+Evaluating 326
+Harmonic score: 0
+תפקידים במהלך משחק כדורסל רשאים לשחק בכל קבוצה חמישה שחקנים
+
+תפקידרם במהלך משחק כדורסל רשאים לשחק בכל קבוצה חמישה שחקנים
+['משתתפים', 'תמיד', 'המשתתפים']
+Evaluating 327
+Harmonic score: 1.0
+Evaluating 328
+Harmonic score: 0.5
+בתחילת שנות השישים שימש פרופסור אורח באוניברסיטה העברית בירושלים
+
+בתחילת שנות השישים שימש פרופסור אורח באוניברסיטה הערבית בירושלים
+['הערבית', 'העברית', 'המערבית']
+Evaluating 329
+Harmonic score: 1.0
+Evaluating 330
+Harmonic score: 1.0
+Evaluating 331
+Harmonic score: 1.0
+Evaluating 332
+Harmonic score: 1.0
+Evaluating 333
+Harmonic score: 1.0
+Evaluating 334
+Harmonic score: 1.0
+Evaluating 335
+Harmonic score: 1.0
+Evaluating 336
+Harmonic score: 1.0
+Evaluating 337
+Harmonic score: 1.0
+Evaluating 338
+Harmonic score: 1.0
+Evaluating 339
+Harmonic score: 1.0
+Evaluating 340
+Harmonic score: 1.0
+Evaluating 341
+Harmonic score: 1.0
+Evaluating 342
+Harmonic score: 1.0
+Evaluating 343
+Harmonic score: 1.0
+Evaluating 344
+Harmonic score: 1.0
+Evaluating 345
+Harmonic score: 1.0
+Evaluating 346
+Harmonic score: 1.0
+Evaluating 347
+Harmonic score: 1.0
+Evaluating 348
+Harmonic score: 0.3333333333333333
+חלק מהן היו חלקות חקלאיות גדולות בבעלות הקרן הקיימת לישראל
+
+חלק מהן הוי חלקות חקלאיות גדולות בבעלות הקרן הקיימת לישראל
+['הוליד', 'הן', 'היו']
+Evaluating 349
+Harmonic score: 0
+כיצד סייעה ההסתדרות הציונית העולמית לעליית ביתא ישראל לארץ ישראל
+
+כיצד סייעה ההסתדרות הציונית העולמית לעליית יתא ישראל לארץ ישראל
+['בית', 'בירת', 'חיבת']
+Evaluating 350
+Harmonic score: 1.0
+Evaluating 351
+Harmonic score: 1.0
+Evaluating 352
+Harmonic score: 1.0
+Evaluating 353
+Harmonic score: 1.0
+Evaluating 354
+Harmonic score: 1.0
+Evaluating 355
+Harmonic score: 0
+הוא מועמד לקבלת מועמדות המפלגה הרפובליקנית לנשיאות ארה"ב יש הבדל
+
+הוא מועמד לקבלת מועמדות המפלגה הרפובליקנית לנשיאות ארה"סב יש הבדל
+['לכאורה', 'אבל', 'ולכאורה']
+Evaluating 356
+Harmonic score: 0
+עשר שנים לאחר מכן נפטר בוושינגטון ונקבר בקתדרלה הלאומית בעיר
+
+עשר שנים לאחר מכן נפטר בוושינגטון ונקרב בקתדרלה הלאומית בעיר
+['ונקרא', 'נקבר', 'ונפטר']
+Evaluating 357
+Harmonic score: 1.0
+Evaluating 358
+Harmonic score: 1.0
+Evaluating 359
+Harmonic score: 1.0
+Evaluating 360
+Harmonic score: 0
+הרקולס במיתולוגיה היוונית פסל ברונזה של הרקולס מהמאה השניה לפנה"ס
+
+הרקלס במיתולוגיה היוונית פסל ברונזה של הרקולס מהמאה השניה לפנה"ס
+['רק', 'המפורסם', 'קיסר']
+Evaluating 361
+Harmonic score: 0.5
+שלום מרק ויקיפדיה וברוך בואך לוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+
+שלום מרק ויקיפדיה ובצרוך בואך לוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+['ברוך', 'וברוך', 'ובר']
+Evaluating 362
+Harmonic score: 1.0
+Evaluating 363
+Harmonic score: 1.0
+Evaluating 364
+Harmonic score: 0
+אנסה להעביר ויקיזציה ואולי קצת לצמצם וזאת בימים הקרובים
+
+אנסה להעביר ויקיציה ואולי קצת לצמצם וזאת בימים הקרובים
+['חוקים', 'אינפורמציה', 'לקבוצה']
+Evaluating 365
+Harmonic score: 1.0
+Evaluating 366
+Harmonic score: 0
+בלחץ ארצות הברית הוחלט בפברואר לקצר את תקופת הגירוש לשנה
+
+בלחץ ארצות הברית הוחלט בפברואר לקצר את תקופת הגירוש לשנהן
+['למדינה', 'לגרמניה', 'לאנגליה']
+Evaluating 367
+Harmonic score: 1.0
+Evaluating 368
+Harmonic score: 0.5
+מאז יומי הראשון בויקיפדיה לא הצלחתי להבין שניים וחצי חברים
+
+מאז יומי הארשון בויקיפדיה לא הצלחתי להבין שניים וחצי חברים
+['האחרון', 'הראשון', 'ראשון']
+Evaluating 369
+Harmonic score: 1.0
+Evaluating 370
+Harmonic score: 1.0
+Evaluating 371
+Harmonic score: 0
+במקור היו לפחות ארבעה פסלים נוספים ואחד מהם נמצא בוונציה
+
+במקור היו לפחות ארבעה פסלים נוספים ואחד מהם נמצא וונציה
+['בווינה', 'בתמונה', 'בבנייה']
+Evaluating 372
+Harmonic score: 0
+היית של מנצ'סטר יונייטד בצבע אדום שוחררה בממלכה המאוחדת
+
+היית של מנצ'סטר יונייטד זצבע אדום שוחררה בממלכה המאוחדת
+['סטר', 'מבל', 'מזל']
+Evaluating 373
+Harmonic score: 1.0
+Evaluating 374
+Harmonic score: 1.0
+Evaluating 375
+Harmonic score: 0
+שם הערך בעד להעביר לשם הרווח בציבור צומת הגבעה הצרפתית
+
+שם הערך בצד להעביר לשם הרווח בציבור צומת הגבעה הצרפתית
+['כדי', 'בחר', 'הבא']
+Evaluating 376
+Harmonic score: 1.0
+Evaluating 377
+Harmonic score: 0.3333333333333333
+אני גם אוהב לצפות בתוכניות טלוויזיה במיוחד במשחקי כדורגל
+
+אני גם אוהב לצפות בתוכניות טלוויזיה במיוחד משחקי כדורגל
+['משחקי', 'למשחקי', 'במשחקי']
+Evaluating 378
+Harmonic score: 0
+בכל אופן זהו הכתיב המקובל בספרות המקצועית גם מחוץ לויקיפדיה
+
+בכל אופן זהו הכתיב המקובל בספרות המקצועית גם מחוץ לויקיידיה
+['לאקדמיה', 'למוזיקה', 'לפוליטיקה']
+Evaluating 379
+Harmonic score: 1.0
+Evaluating 380
+Harmonic score: 1.0
+Evaluating 381
+Harmonic score: 0
+הטענה היחידה היתה שזה צריך להיות כחלק מהערך הפצצת גוגל
+
+הטענה היחידה היתה שזה צריך להיות כחלק מהערך הפצתצ גוגל
+['של', 'שהציע', 'להיות']
+Evaluating 382
+Harmonic score: 1.0
+Evaluating 383
+Harmonic score: 0
+אבל לא חסינות מוחלטת גרועים במיוחד הועברו למרחב שמות המשתמשים
+
+אבל לא חסינות מבוחלטת גרועים במיוחד הועברו למרחב שמות המשתמשים
+['שמות', 'בשמות', 'ששמות']
+Evaluating 384
+Harmonic score: 1.0
+Evaluating 385
+Harmonic score: 1.0
+Evaluating 386
+Harmonic score: 1.0
+Evaluating 387
+Harmonic score: 1.0
+Evaluating 388
+Harmonic score: 1.0
+Evaluating 389
+Harmonic score: 1.0
+Evaluating 390
+Harmonic score: 0
+הוספתי לאחר התנגשות עריכה הרעיון הבסיסי טוב ההצעה הספציפית לא
+
+הוספתי לאחר התנגשות עריכה הרעיון הבסביסי טוב ההצעה הספציפית לא
+['יחסית', 'הסופי', 'היה']
+Evaluating 391
+Harmonic score: 1.0
+Evaluating 392
+Harmonic score: 1.0
+Evaluating 393
+Harmonic score: 1.0
+Evaluating 394
+Harmonic score: 1.0
+Evaluating 395
+Harmonic score: 1.0
+Evaluating 396
+Harmonic score: 0
+מבחינתי אפשר למחוק את הדיון הקצר עקב חוסר הרלוונטיות שלו
+
+מבחינתי אפשר למחוק את הדיון הקצדר עקב חוסר הרלוונטיות שלו
+['הקודם', 'מהקשר', 'המקורי']
+Evaluating 397
+Harmonic score: 0
+ראה הערכים המומלצים משקפים שלוש וחצי שנים של פעילות בוויקיפדיה
+
+ראה הערכים המומלצים מקשפים שלוש וחצי שנים של פעילות בוויקיפדיה
+['מלפני', 'מסכמים', 'שלי']
+Evaluating 398
+Harmonic score: 1.0
+Evaluating 399
+Harmonic score: 1.0
+Evaluating 400
+Harmonic score: 0
+המדיניות בוויקיפדיה היא שימוש בתאריך גרגוריאני כמקובל גם מחוצה לה
+
+המדיניות בףוויקיפדיה היא שימוש בתאריך גרגוריאני כמקובל גם מחוצה לה
+['באירופה', 'בבריטניה', 'הרצויה']
+Evaluating 401
+Harmonic score: 1.0
+Evaluating 402
+Harmonic score: 1.0
+Evaluating 403
+Harmonic score: 1.0
+Evaluating 404
+Harmonic score: 1.0
+Evaluating 405
+Harmonic score: 1.0
+Evaluating 406
+Harmonic score: 1.0
+Evaluating 407
+Harmonic score: 1.0
+Evaluating 408
+Harmonic score: 1.0
+Evaluating 409
+Harmonic score: 1.0
+Evaluating 410
+Harmonic score: 0
+קישורים חיצוניים ג'ון צ'ארלס באתר היכל התהילה של הכדורגל האנגלי
+
+קישורים יצוניים ג'ון צ'ארלס באתר היכל התהילה של הכדורגל האנגלי
+['מעניינים', 'ליוסי', 'שצילם']
+Evaluating 411
+Harmonic score: 1.0
+Evaluating 412
+Harmonic score: 0
+קישורים חיצוניים ספרו שו"ת אבני קודש להורדה מאתר ספריה וירטואלית
+
+קישורים חיצוניים ספרו שו"ת אבני קודש להורדק מאתר ספריה וירטואלית
+['הר', 'לימודי', 'הרב']
+Evaluating 413
+Harmonic score: 1.0
+Evaluating 414
+Harmonic score: 0
+אתה יכול להכנס לפורום הקראים ולראות בעצמך שמדובר באש פיזית
+
+אתה יכול להכנס לפורום הקראים ולראות בעצמך שמדובר באש תפיזית
+['##תית', '##תיים', '##תי']
+Evaluating 415
+Harmonic score: 0
+באנגליה מכללה בשמה הלועזי קולג' היא יחידה אקדמית בתוך אוניברסיטה
+
+באנגליה מכללה בשמה הלועזי קולג' היא יחיה אקדמית בתוך אוניברסיטה
+['היא', 'חצי', 'אינה']
+Evaluating 416
+Harmonic score: 0.5
+בהמשך ארחיב בנושא משפחת הלבנים ואז הדבר ייראה יותר משמעותי
+
+בהמשך ארחיב בנושא משפחת הלבנים אוז הדבר ייראה יותר משמעותי
+['אז', 'ואז', 'שאז']
+Evaluating 417
+Harmonic score: 1.0
+Evaluating 418
+Harmonic score: 1.0
+Evaluating 419
+Harmonic score: 0
+החבר הראשון והיחיד מישראל בוועד הבינלאומי הינו אלכס גלעדי
+
+החבר הראשון והיחיד מישראל בלועד הבינלאומי הינו אלכס גלעדי
+['במועדון', 'למועדון', 'בכבוד']
+Evaluating 420
+Harmonic score: 1.0
+Evaluating 421
+Harmonic score: 1.0
+Evaluating 422
+Harmonic score: 0
+כך כולנו ביחד תורמים בהתנדבות לידע האנושי וכותבים אנציקלופדיה
+
+כך כולנו ביחד תורמים בהתנדבות לידע האנושי ווכתבים אנציקלופדיה
+['ולכתוב', 'ויוצרים', 'אודות']
+Evaluating 423
+Harmonic score: 1.0
+Evaluating 424
+Harmonic score: 1.0
+Evaluating 425
+Harmonic score: 1.0
+Evaluating 426
+Harmonic score: 0
+משחקי מחשב הם כיום מאוד פופולריים ובטח זכאים לערך משלהם
+
+משחקי מחשב הם כיום מאוד פופולריים ובחט זכאים לערך משלהם
+['ובהחלט', 'והם', 'וכבר']
+Evaluating 427
+Harmonic score: 1.0
+Evaluating 428
+Harmonic score: 1.0
+Evaluating 429
+Harmonic score: 1.0
+Evaluating 430
+Harmonic score: 1.0
+Evaluating 431
+Harmonic score: 1.0
+Evaluating 432
+Harmonic score: 1.0
+Evaluating 433
+Harmonic score: 0
+אני כל הזמן מחפשת ארכאולוגים שיכתבו מאמרים על החפירות שלהם
+
+אני כל הזמן מחפשת ארכאולוגים שיכתבו מלאמרים על החפירות שלהם
+['##ת', 'מתי', '##ים']
+Evaluating 434
+Harmonic score: 1.0
+Evaluating 435
+Harmonic score: 1.0
+Evaluating 436
+Harmonic score: 1.0
+Evaluating 437
+Harmonic score: 1.0
+Evaluating 438
+Harmonic score: 1.0
+Evaluating 439
+Harmonic score: 0.25
+המתחם הממוקם באזור גרסיה על גבעת אל כרמל בברצלונה שבספרד
+
+המתחם הממוקם באזור גרסיה לע גבעת אל כרמל בברצלונה שבספרד
+['לעבר', 'לשעבר', 'של']
+Evaluating 440
+Harmonic score: 1.0
+Evaluating 441
+Harmonic score: 1.0
+Evaluating 442
+Harmonic score: 1.0
+Evaluating 443
+Harmonic score: 1.0
+Evaluating 444
+Harmonic score: 1.0
+Evaluating 445
+Harmonic score: 0
+אלכס כרמל התיישבות הגרמנים בארץ ישראל בשלהי התקופה העות'מאנית
+
+אלכס כומל התיישבות הגרמנים בארץ ישראל בשלהי התקופה העות'מאנית
+['סיכום', 'במהלך', '##כמי']
+Evaluating 446
+Harmonic score: 1.0
+Evaluating 447
+Harmonic score: 1.0
+Evaluating 448
+Harmonic score: 1.0
+Evaluating 449
+Harmonic score: 1.0
+Evaluating 450
+Harmonic score: 1.0
+Evaluating 451
+Harmonic score: 1.0
+Evaluating 452
+Harmonic score: 1.0
+Evaluating 453
+Harmonic score: 1.0
+Evaluating 454
+Harmonic score: 1.0
+Evaluating 455
+Harmonic score: 1.0
+Evaluating 456
+Harmonic score: 1.0
+Evaluating 457
+Harmonic score: 1.0
+Evaluating 458
+Harmonic score: 1.0
+Evaluating 459
+Harmonic score: 0
+האנונימי מתעקש להכניס שטויות וכל מתי שניסיתי לשחזר היתה התנגשות
+
+האנונימי מתעקש להכניס שטויות וכל דמתי שניסיתי לשחזר היתה התנגשות
+['מי', 'הקודמת', 'מה']
+Evaluating 460
+Harmonic score: 1.0
+Evaluating 461
+Harmonic score: 1.0
+Evaluating 462
+Harmonic score: 0
+נוסף לכך הורחבה האוניברסיטה העברית בירושלים ורמת הרפואה עלתה
+
+נוסף לכך הורגחבה האוניברסיטה העברית בירושלים ורמת הרפואה עלתה
+['הוכרזה', 'התעוררה', 'גברה']
+Evaluating 463
+Harmonic score: 1.0
+Evaluating 464
+Harmonic score: 1.0
+Evaluating 465
+Harmonic score: 0
+בעקבות גרמניה גם בולגריה והאימפריה העות'מאנית הכריזו מלחמה על רומניה
+
+בעקבות גרמניה גם בולגריה והאימפריה העות'מאניתע הכריזו מלחמה על רומניה
+['הרוסית', 'העולמית', 'העצמאית']
+Evaluating 466
+Harmonic score: 0
+שלום אסף ב וברוך בואך לוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+
+שלום אסף ב וברוך בואך טלוויקיפדיה האנציקלופדיה העברית החופשית הראשונה
+['לאקדמיה', 'לידי', 'לידיעת']
+Evaluating 467
+Harmonic score: 1.0
+Evaluating 468
+Harmonic score: 1.0
+Evaluating 469
+Harmonic score: 1.0
+Evaluating 470
+Harmonic score: 1.0
+Evaluating 471
+Harmonic score: 0.5
+מטבעות ישראליים מודרניים המבוססים ברובם על מטבעות ארץ ישראלים עתיקים
+
+מטבעות ישראליים מודרניים המבוססים ברובם על מטבעות ארץ ירשאלים עתיקים
+['ישראליים', 'ישראלים', 'הישראלים']
+Evaluating 472
+Harmonic score: 0
+שהה כפרופסור אורח באוניברסיטת ויסקונסין אוניברסיטת ג'ונס הופקינס ואוניברסיטת פנסילבניה
+
+שהה כפרופסור אורח באוניברסיטת ויסקונסין ואניברסיטת ג'ונס הופקינס ואוניברסיטת פנסילבניה
+['##קונס', 'ארלי', '##ונס']
+Evaluating 473
+Harmonic score: 1.0
+Evaluating 474
+Harmonic score: 1.0
+Evaluating 475
+Harmonic score: 1.0
+Evaluating 476
+Harmonic score: 1.0
+Evaluating 477
+Harmonic score: 1.0
+Evaluating 478
+Harmonic score: 1.0
+Evaluating 479
+Harmonic score: 1.0
+Evaluating 480
+Harmonic score: 0
+המונח סייג רום נמצא בשימוש נרחב לפחות בחיל האוויר הישראלי
+
+המונח סייג רום נמצא בשימוש נרחב לפחת בחיל האוויר הישראלי
+['פחות', 'יחסית', 'בחברות']
+Evaluating 481
+Harmonic score: 1.0
+Evaluating 482
+Harmonic score: 1.0
+Evaluating 483
+Harmonic score: 1.0
+Evaluating 484
+Harmonic score: 1.0
+Evaluating 485
+Harmonic score: 1.0
+Evaluating 486
+Harmonic score: 0
+לאחר השמדת הכוחות הצבאיים של המדינה השחקן צר על בירתה
+
+לאחר השמדת הכוחות הצבאיים של המדינה השחקן ץר על בירתה
+['אשר', 'מצור', 'הקרב']
+Evaluating 487
+Harmonic score: 1.0
+Evaluating 488
+Harmonic score: 1.0
+Evaluating 489
+Harmonic score: 0
+במקרה כזה התקציר יימצא לפני או אחרי ההפנייה לערך המורחב
+
+במקרה כזה התקציר יימצא לפני או אחרי ההפנייה לעלרך המורחב
+['##נייה', '##עלה', '##עיל']
+Evaluating 490
+Harmonic score: 1.0
+Evaluating 491
+Harmonic score: 1.0
+Evaluating 492
+Harmonic score: 1.0
+Evaluating 493
+Harmonic score: 1.0
+Evaluating 494
+Harmonic score: 0.5
+למרות זאת ברוב ההצעות לא הייתה התייחסות רצינית לבעיות הרווחה
+
+למרות זאת ברוב ההצעות לא היתיה התייחסות רצינית לבעיות הרווחה
+['היתה', 'הייתה', 'היה']
+Evaluating 495
+Harmonic score: 1.0
+Evaluating 496
+Harmonic score: 1.0
+Evaluating 497
+Harmonic score: 1.0
+Evaluating 498
+Harmonic score: 1.0
+Evaluating 499
+Harmonic score: 0
+קישורים חיצוניים ראו מדיה וקבצים בנושא תחנות רכבת בוויקישיתוף
+
+קישורים חיצוניים ראו מדיה ץקבצים בנושא תחנות רכבת בוויקישיתוף
+['קבוצתית', 'קישורים', 'חיצוניים']
+Evaluating 500
+Harmonic score: 1.0
+Evaluating 501
+Harmonic score: 0
+אם התכוונתם לניהול ענייני הצדקה במישור הציבורי ראו גבאי צדקה
+
+אם הכוונתם לניהול ענייני הצדקה במישור הציבורי ראו גבאי צדקה
+['התכוונת', 'הכוונה', 'מכוונים']
+Evaluating 502
+Harmonic score: 1.0
+Evaluating 503
+Harmonic score: 1.0
+Evaluating 504
+Harmonic score: 1.0
+Evaluating 505
+Harmonic score: 1.0
+Evaluating 506
+Harmonic score: 1.0
+Evaluating 507
+Harmonic score: 1.0
+Evaluating 508
+Harmonic score: 1.0
+Evaluating 509
+Harmonic score: 1.0
+Evaluating 510
+Harmonic score: 1.0
+Evaluating 511
+Harmonic score: 0
+אין צורך לומר שאחרי דיון ההצעה תעבור לפרלמנט להצבעה מסודרת
+
+אין צורך לומר שאחרי יון ההצעה תעבור לפרלמנט להצבעה מסודרת
+['הדיון', 'התיקון', 'יום']
+Evaluating 512
+Harmonic score: 1.0
+Evaluating 513
+Harmonic score: 1.0
+Evaluating 514
+Harmonic score: 0.5
+בינתיים כבר הצלחתי למצוא את המאמר המקביל בויקיפדיה הצרפתית
+
+יבנתיים כבר הצלחתי למצוא את המאמר המקביל בויקיפדיה הצרפתית
+['בנתיים', 'בינתיים', 'בשניהם']
+Evaluating 515
+Harmonic score: 1.0
+Evaluating 516
+Harmonic score: 1.0
+Evaluating 517
+Harmonic score: 0
+בצבאות אירופאים בתקופת מלחמת העולם השנייה היו שני סוגי יחידות
+
+בטצבאות אירופאים בתקופת מלחמת העולם השנייה היו שני סוגי יחידות
+['צבאות', 'בצבא', 'מטבעות']
+Evaluating 518
+Harmonic score: 1.0
+Evaluating 519
+Harmonic score: 1.0
+Evaluating 520
+Harmonic score: 1.0
+Evaluating 521
+Harmonic score: 0
+מקומם של ערכי צה"ל וביניהם חיל האוויר הישראלי בולט ברשימה
+
+מקומם של ערכי צה"ל וביניהם חיל האוויר הישראלי בלוט ברשימה
+['האוויר', 'בחיל', '##בנו']
+Evaluating 522
+Harmonic score: 1.0
+Evaluating 523
+Harmonic score: 1.0
+Evaluating 524
+Harmonic score: 1.0
+Evaluating 525
+Harmonic score: 1.0
+Evaluating 526
+Harmonic score: 0
+או לצורך הדיון מכל תבניות ניווט כדורגל כולל הפרמייר ליג
+
+או לצורך הדיון מכל תבניות ניווט כדורגל כולל הזפרמייר ליג
+['פרופילי', 'פליי', 'מיני']
+Evaluating 527
+Harmonic score: 1.0
+Evaluating 528
+Harmonic score: 1.0
+Evaluating 529
+Harmonic score: 1.0
+Evaluating 530
+Harmonic score: 1.0
+Evaluating 531
+Harmonic score: 0
+במקצועו הוא היה מהנדס ימי שרכש את השכלתו באוניברסיטת גלאזגו
+
+במקצועו הוא היה מהנדס ימי שרכש את שכלתו באוניברסיטת גלאזגו
+['השכלה', 'כתביו', 'ההשכלה']
+Evaluating 532
+Harmonic score: 1.0
+Evaluating 533
+Harmonic score: 0
+בסיום לימודיו הוא הועלה לדרגת לוטננט ג'נרל ושב לתפקידו בירדן
+
+בסיום לימודיו הוא הועלה לדרגת לוטננט ג'נרל ושב לתפקידו ירדן
+['וירד', 'וישר', 'וניתן']
+Evaluating 534
+Harmonic score: 0
+בתחרות זו ניצח אדולף אנדרסן הגרמני שהיה אלמוני יחסית בזמנו
+
+בתחרות זו ניצח אדולף אנדרסן הגרמני שהיה אלמוני יחסית בטזמנו
+['בעצמו', 'במינכן', 'בגרמניה']
+Evaluating 535
+Harmonic score: 1.0
+Evaluating 536
+Harmonic score: 0
+גם חלק מהדמויות שלא נמצאות בשליטת השחקן יכולות להטיל קסמים
+
+גם חלק מהדמויות שלא נמצאות בשליטת ץהשחקן יכולות להטיל קסמים
+['המשחק', 'השטן', 'החוק']
+Evaluating 537
+Harmonic score: 0
+האוסף כולל הסיפור המדובר מצוי כולו באנגלית בפרויקט גוטנברג כאן
+
+האוסף כולל הסיפור המדובר מצוי כולו באגלית בפרויקט גוטנברג כאן
+['בגלריה', 'באתר', 'אצלי']
+Evaluating 538
+Harmonic score: 0.5
+הכרך הראשון עוסק בתקופה שבין היווצרות היקום למאה השלישית לספירה
+
+הכרך הראשון עוסק בתקופה שבין היווצרות היקום למאה ךשלישית לספירה
+['שלישית', 'השלישית', 'השישית']
+Evaluating 539
+Harmonic score: 0.5
+המחלוקת בנושא מובנת ואכן קשה להסביר אותו לאנשים חסרי סבלנות
+
+המחלוקת בנושא מובנת ואכן קשה להסביר אוגו לאנשים חסרי סבלנות
+['אותה', 'אותו', 'או']
+Evaluating 540
+Harmonic score: 1.0
+Evaluating 541
+Harmonic score: 1.0
+Evaluating 542
+Harmonic score: 0
+הערכים מועתקים במובהק לאו דוקא מהאינטרנט אלא גם מחומר מודפס
+
+הערכים מועתקים במובהק לאו דוקא מחהאינטרנט אלא גם מחומר מודפס
+['דוקא', 'מחלקים', 'קאי']
+Evaluating 543
+Harmonic score: 1.0
+Evaluating 544
+Harmonic score: 0
+חבל רק שהיתה נוכחות מצומצמת ובוודאי קטנה מכמה מפגשים אחרים
+
+חבל רק שהיתה נוכחות מצומצמת ובוואי קטנה מכמה מפגשים אחרים
+['ולא', 'ובלתי', 'ואולי']
+Evaluating 545
+Harmonic score: 1.0
+Evaluating 546
+Harmonic score: 1.0
+Evaluating 547
+Harmonic score: 1.0
+Evaluating 548
+Harmonic score: 1.0
+Evaluating 549
+Harmonic score: 1.0
+Evaluating 550
+Harmonic score: 1.0
+Evaluating 551
+Harmonic score: 1.0
+Evaluating 552
+Harmonic score: 1.0
+Evaluating 553
+Harmonic score: 1.0
+Evaluating 554
+Harmonic score: 1.0
+Evaluating 555
+Harmonic score: 1.0
+Evaluating 556
+Harmonic score: 1.0
+Evaluating 557
+Harmonic score: 0
+תווי האלף בית הלטיני נחשבים בעלי כיווניות שמאל לימין חזקה
+
+תווי האלף בית הלטיני נחשבים בעלי כיווניות שמאל לימין חזקהב
+['כזה', '.', '##ה']
+Evaluating 558
+Harmonic score: 0
+אין לי כמובן התנגדות לשינויים הקשורים למראה הערך מבחינה ויזואלית
+
+אין לי כמובן התנגדות לשינויים הקשורים למארה הערך מבחינה ויזואלית
+['למבנה', 'למקור', 'לשימור']
+Evaluating 559
+Harmonic score: 0
+איסוף חמש חתימות לקראת הצבעה בפרלמנט ברוקס שיחה המורשת העולמית
+
+איסוף חמש חתימות לקראת הצבעה בפרלףנט ברוקס שיחה המורשת העולמית
+['בישראל', 'בר', 'בלונדון']
+Evaluating 560
+Harmonic score: 1.0
+Evaluating 561
+Harmonic score: 1.0
+Evaluating 562
+Harmonic score: 1.0
+Evaluating 563
+Harmonic score: 0.25
+הבעיה כנראה אצלך כי אני משתמש בפיירפוקס ורואה איורים ותמונות
+
+הבעיה כנראה אצלך כי אינ משתמש בפיירפוקס ורואה איורים ותמונות
+['אינך', 'איני', 'אינו']
+Evaluating 564
+Harmonic score: 1.0
+Evaluating 565
+Harmonic score: 1.0
+Evaluating 566
+Harmonic score: 1.0
+Evaluating 567
+Harmonic score: 1.0
+Evaluating 568
+Harmonic score: 1.0
+Evaluating 569
+Harmonic score: 1.0
+Evaluating 570
+Harmonic score: 0
+התצפית הראשונה היא ההבדל בריכוז הגזים בין אזורים גאוגרפיים שונים
+
+התצהית הראשונה היא ההבדל בריכוז הגזים בין אזורים גאוגרפיים שונים
+['התוצאה', 'התזה', 'הצרה']
+Evaluating 571
+Harmonic score: 1.0
+Evaluating 572
+Harmonic score: 1.0
+Evaluating 573
+Harmonic score: 1.0
+Evaluating 574
+Harmonic score: 1.0
+Evaluating 575
+Harmonic score: 1.0
+Evaluating 576
+Harmonic score: 1.0
+Evaluating 577
+Harmonic score: 1.0
+Evaluating 578
+Harmonic score: 1.0
+Evaluating 579
+Harmonic score: 0
+גזר הדין בבתי המשפט בישראל משתנים לרוב כשיש ראיות חדשות
+
+גר הדין בבתי המשפט בישראל משתנים לרוב כשיש ראיות חדשות
+['סדרי', 'גורמי', 'אתגרי']
+Evaluating 580
+Harmonic score: 1.0
+Evaluating 581
+Harmonic score: 1.0
+Evaluating 582
+Harmonic score: 1.0
+Evaluating 583
+Harmonic score: 0
+יצחקי מונה כמזכיר הוועד הזמני עד הבחירות הכלליות ברשות היהודית
+
+יצחקי מונה כמזכיץ הוועד הזמני עד הבחירות הכלליות ברשות היהודית
+['מזכיר', 'כיועץ', 'כמנהיג']
+Evaluating 584
+Harmonic score: 1.0
+Evaluating 585
+Harmonic score: 1.0
+Evaluating 586
+Harmonic score: 0
+לאחר קום המדינה סייעו המחשבים לנהל את מרשם האוכלוסין בישראל
+
+לאחר קום המדינה סייעו רמחשבים לנהל את מרשם האוכלוסין בישראל
+['רבים', 'רבנים', 'לרבים']
+Evaluating 587
+Harmonic score: 1.0
+Evaluating 588
+Harmonic score: 1.0
+Evaluating 589
+Harmonic score: 0
+מן הראוי איפוא להסירו מתבנית המבוקשים דבר הדורש התערבות מפעיל
+
+מן הראוי איפוא להסירו מתבנית המבחקשים דבר הדורש התערבות מפעיל
+['##נית', '##נים', '##חית']
+Evaluating 590
+Harmonic score: 1.0
+Evaluating 591
+Harmonic score: 1.0
+Evaluating 592
+Harmonic score: 0
+תמונות שאינן של משתמשים בוויקיפדיה העברית אינן מייצגות אותה בעיני
+
+תמונות שאינן של משתמשים בוויקיפדיה העברית אינן מייצבות אותה בעיני
+['מחייבות', 'מצביעות', 'מעניינות']
+Evaluating 593
+Harmonic score: 1.0
+Evaluating 594
+Harmonic score: 1.0
+Evaluating 595
+Harmonic score: 0
+לכוכב הלכת נוגה היה תפקיד מרכזי בתרבויות הקדומות ביבשת אמריקה
+
+לכוכב הלכת נוגה היה תפקיד מרכזי בתרבויות הצדומות ביבשת אמריקה
+['קדומות', 'הגדולות', 'השונות']
+Evaluating 596
+Harmonic score: 0
+עיצוב השלבים המגוון בו עומד בקריטריונים של המשחקים הקודמים בסדרה
+
+עיצוב השלבים הגוון בו עומד בקריטריונים של המשחקים הקודמים בסדרה
+['שהוצגו', 'הראשון', 'האחרון']
+Evaluating 597
+Harmonic score: 0
+קישורים חיצוניים מרכז ידע לייזר אלקטרונים חופשיים באתר משרד המדע
+
+קישורים חיצוניים מרכז ירדע לייזר אלקטרונים חופשיים באתר משרד המדע
+['מידע', 'המידע', 'מדע']
+Evaluating 598
+Harmonic score: 1.0
+Evaluating 599
+Harmonic score: 1.0
+Evaluating 600
+Harmonic score: 0
+כיום הבדואים משולבים בדרך כלל במערכת המדינות של המזרח התיכון
+
+כיום הבדואים משולבים בדרך כלל במערכת מדינות של המזרח התיכון
+['המדינית', 'האמונות', 'המפות']
+Evaluating 601
+Harmonic score: 0.5
+מיטשל למד במוסד הנקרא היום אוניברסיטת ג'ורג' וושינגטון בוושינגטון הבירה
+
+מיטשל למד במוסד הנקאר היום אוניברסיטת ג'ורג' וושינגטון בוושינגטון הבירה
+['שנקרא', 'הנקרא', 'הנקראת']
+Evaluating 602
+Harmonic score: 1.0
+Evaluating 603
+Harmonic score: 1.0
+Evaluating 604
+Harmonic score: 1.0
+Evaluating 605
+Harmonic score: 0
+מבחינתי שכל שגיאות הכתיב יימחקו במהרה מדפי ויקיפדיה במהרה בימינו
+
+בחינתי שכל שגיאות הכתיב יימחקו במהרה מדפי ויקיפדיה במהרה בימינו
+['בטוח', 'יתכן', 'מניח']
+Evaluating 606
+Harmonic score: 1.0
+Evaluating 607
+Harmonic score: 1.0
+Evaluating 608
+Harmonic score: 1.0
+Evaluating 609
+Harmonic score: 1.0
+Evaluating 610
+Harmonic score: 1.0
+Evaluating 611
+Harmonic score: 0
+המטרה המוצהרת הייתה הקמת מכשיר ארגוני לביצוע המהפכה הבינלאומית
+
+המטרה המוצהרת הייתה הקמת מכשיר ארגוני לביצוע המהפכה היבנלאומית
+['הלאומית', 'האיסלאמית', 'האסלאמית']
+Evaluating 612
+Harmonic score: 1.0
+Evaluating 613
+Harmonic score: 1.0
+Evaluating 614
+Harmonic score: 1.0
+Evaluating 615
+Harmonic score: 0
+אל הארגון הצעיר הצטרפו גם צעירים חברי תנועת הספורט מכבי
+
+אל הארגון הצעיר הצטרפו גם צעירים חברי תנועת הספורט מבכי
+['בעיר', 'בכלל', 'העממי']
+Evaluating 616
+Harmonic score: 1.0
+Evaluating 617
+Harmonic score: 1.0
+Evaluating 618
+Harmonic score: 1.0
+Evaluating 619
+Harmonic score: 1.0
+Evaluating 620
+Harmonic score: 1.0
+Evaluating 621
+Harmonic score: 1.0
+Evaluating 622
+Harmonic score: 1.0
+Evaluating 623
+Harmonic score: 1.0
+Evaluating 624
+Harmonic score: 1.0
+Evaluating 625
+Harmonic score: 1.0
+Evaluating 626
+Harmonic score: 1.0
+Evaluating 627
+Harmonic score: 1.0
+Evaluating 628
+Harmonic score: 1.0
+Evaluating 629
+Harmonic score: 1.0
+Evaluating 630
+Harmonic score: 1.0
+Evaluating 631
+Harmonic score: 1.0
+Evaluating 632
+Harmonic score: 0
+למרות הצלחתו הפוליטית המוקדמת חייו האישיים היו שמחים פחות
+
+למרות הצלחתו הפוליטית בהמוקדמת חייו האישיים היו שמחים פחות
+['המאוחרת', 'העולמית', 'במציאות']
+Evaluating 633
+Harmonic score: 1.0
+Evaluating 634
+Harmonic score: 1.0
+Evaluating 635
+Harmonic score: 1.0
+Evaluating 636
+Harmonic score: 1.0
+Evaluating 637
+Harmonic score: 0
+קישורים חיצוניים מידע על תיאטרון צה"ל באתר חיל החינוך והנוער
+
+קישורים חיצוניים מידע על תיאטרון הצ"ל באתר חיל החינוך והנוער
+['הרצליה', 'הצפון', 'הילדים']
+Evaluating 638
+Harmonic score: 1.0
+Evaluating 639
+Harmonic score: 1.0
+Evaluating 640
+Harmonic score: 1.0
+Evaluating 641
+Harmonic score: 1.0
+Evaluating 642
+Harmonic score: 1.0
+Evaluating 643
+Harmonic score: 1.0
+Evaluating 644
+Harmonic score: 1.0
+Evaluating 645
+Harmonic score: 1.0
+Evaluating 646
+Harmonic score: 1.0
+Evaluating 647
+Harmonic score: 1.0
+Evaluating 648
+Harmonic score: 0
+העלתי בערך בחדרי חרדים צילום מסך אחר מסודר יותר ויזואלית
+
+העלתי בערך בחדרי חרדים צילום מסך אחר מסןודר יותר ויזואלית
+['שמדבר', 'שמסביר', 'בצורה']
+Evaluating 649
+Harmonic score: 1.0
+Evaluating 650
+Harmonic score: 0.5
+ישנם גם פרקים חשובים שאפשר לכתוב עליהם ערך אנציקלופדי ראוי
+
+ישסם גם פרקים חשובים שאפשר לכתוב עליהם ערך אנציקלופדי ראוי
+['יש', 'ישנם', 'ויש']
+Evaluating 651
+Harmonic score: 1.0
+Evaluating 652
+Harmonic score: 1.0
+Evaluating 653
+Harmonic score: 0
+לגבי הקישורים לדעתי הפירוש הצבאי של המרכבה הוא הנפוץ יותר
+
+לגבי הקישוים לדעתי הפירוש הצבאי של המרכבה הוא הנפוץ יותר
+['הטנקים', 'הסוסים', 'הפרשים']
+Evaluating 654
+Harmonic score: 0.5
+לפיכך ניתנה לחברי הכנסת האפשרות להצביע בעד בחירתו או נגדה
+
+לפיכך ניתנה לחברי הכנסת האפשרות להצביע בעד בחירתו וא נגדה
+['ולא', 'או', 'ואף']
+Evaluating 655
+Harmonic score: 0.5
+מדובר למיטב הבנתי על מצעד גאווה מורחב שמתקיים בעיר אחת
+
+מדובר למיטב הבנתי על מצעד גאווה מורחב שמתקיים חעיר אחת
+['עיר', 'בעיר', 'לעיר']
+Evaluating 656
+Harmonic score: 1.0
+Evaluating 657
+Harmonic score: 1.0
+Evaluating 658
+Harmonic score: 1.0
+Evaluating 659
+Harmonic score: 1.0
+Evaluating 660
+Harmonic score: 0
+צריך לטפל בחלק על ההיסטוריה של הקפיטליזם הצעתי למחוק אותו
+
+צריך לטפל בפלק על ההיסטוריה של הקפיטליזם הצעתי למחוק אותו
+['בפרק', 'בפרקים', 'בספר']
+Evaluating 661
+Harmonic score: 1.0
+Evaluating 662
+Harmonic score: 1.0
+Evaluating 663
+Harmonic score: 0.5
+את שירותו הצבאי עשה בחטיבת הצנחנים ולאחר מכן בחיל חינוך
+
+את שירותו הצבאי עשה חטיבת הצנחנים ולאחר מכן בחיל חינוך
+['חטיבת', 'בחטיבת', 'בחטיבה']
+Evaluating 664
+Harmonic score: 1.0
+Evaluating 665
+Harmonic score: 1.0
+Evaluating 666
+Harmonic score: 1.0
+Evaluating 667
+Harmonic score: 0
+בני משפחה אחרים נכחו במדינה באירועים בעלי חשיבות פחותה יותר
+
+בני משפחה אחרים נכחו במידנה באירועים בעלי חשיבות פחותה יותר
+['ביניהם', 'במיוחד', 'במסעדה']
+Evaluating 668
+Harmonic score: 1.0
+Evaluating 669
+Harmonic score: 0
+בשלב זה יכולה להתרחש אינטראקציה ידידותית או עוינת בין שבטים
+
+בשלב זה יכולה להתרחש אינטראקציה ידידותית או עוינת בין שבטלים
+['מחשבים', 'הבעלים', 'המחשבים']
+Evaluating 670
+Harmonic score: 1.0
+Evaluating 671
+Harmonic score: 1.0
+Evaluating 672
+Harmonic score: 1.0
+Evaluating 673
+Harmonic score: 1.0
+Evaluating 674
+Harmonic score: 1.0
+Evaluating 675
+Harmonic score: 1.0
+Evaluating 676
+Harmonic score: 1.0
+Evaluating 677
+Harmonic score: 0.3333333333333333
+כך למשל אחוז שומרי המסורת גבוה במיוחד בקרב יהודים מזרחים
+
+כך למשל אחוז שומרי המוסרת גבוה במיוחד בקרב יהודים מזרחים
+['המוסר', 'המצוות', 'המסורת']
+Evaluating 678
+Harmonic score: 1.0
+Evaluating 679
+Harmonic score: 1.0
+Evaluating 680
+Harmonic score: 1.0
+Evaluating 681
+Harmonic score: 1.0
+Evaluating 682
+Harmonic score: 1.0
+Evaluating 683
+Harmonic score: 1.0
+Evaluating 684
+Harmonic score: 1.0
+Evaluating 685
+Harmonic score: 1.0
+Evaluating 686
+Harmonic score: 0
+אין אפשרות להעלות לוויקיפדיה תמונות באופן חופשי מרחבי האינטרנט
+
+אין אפשרות להעלות לוויקיפדיה תמונות באופןס חופשי מרחבי האינטרנט
+['אותן', 'תמונות', 'או']
+Evaluating 687
+Harmonic score: 0
+אירועים כ"ו בחשוון ראשוני העולים במבצע משה מגיעים ארצה מאתיופיה
+
+אירועים כ"ו בחשוון ראשוני העולים במבצע משה מגיעפים ארצה מאתיופיה
+['במבצע', 'מבצעים', 'חיים']
+Evaluating 688
+Harmonic score: 1.0
+Evaluating 689
+Harmonic score: 1.0
+Evaluating 690
+Harmonic score: 1.0
+Evaluating 691
+Harmonic score: 1.0
+Evaluating 692
+Harmonic score: 1.0
+Evaluating 693
+Harmonic score: 1.0
+Evaluating 694
+Harmonic score: 1.0
+Evaluating 695
+Harmonic score: 1.0
+Evaluating 696
+Harmonic score: 1.0
+Evaluating 697
+Harmonic score: 1.0
+Evaluating 698
+Harmonic score: 1.0
+Evaluating 699
+Harmonic score: 0
+המידע שהעלית מתאים לדפי זהב ולא לאנציקלופדיה ולכן נמחק
+
+המידע שהעלית מתאים לדפי זב ולא לאנציקלופדיה ולכן נמחק
+['##פי', '##ב', '##קב']
+Evaluating 700
+Harmonic score: 0
+המלך הבולגרי פרדיננד הראשון היה נצר למשפחת סקסה קובורג גותה
+
+המלך הבולגרי פרדיננד הראשון היה נצר למשפחת סקסה קובוארג גותה
+['##ה', '##ולוגית', '##ולוגיה']
+Evaluating 701
+Harmonic score: 0
+השימוש בדרגות חופש רציפות מקובל יותר וגם מאפשר ניתוח תאורטי
+
+השימוש בדרגות חופש ריצפות מקובל יותר וגם מאפשר ניתוח תאורטי
+['חברתיות', 'מוסריות', 'יותר']
+Evaluating 702
+Harmonic score: 0.5
+ולכן בטרם בקר האפיפיור בבית הכנסת הוצאו ממנו ספרי התורה
+
+ולכן בטרם בקר האפיפיור בבית הכנסת הוצאו ממנו ספרי תורה
+['תורה', 'התורה', 'תודה']
+Evaluating 703
+Harmonic score: 1.0
+Evaluating 704
+Harmonic score: 0
+כנגד פורסמו בישוב שמועות על אלימות חמורה מתוכננת מצד המשטרה
+
+כנגד פרוסמו בישוב שמועות על אלימות חמורה מתוכננת מצד המשטרה
+['הרוחות', 'רשויות', 'הרשויות']
+Evaluating 705
+Harmonic score: 1.0
+Evaluating 706
+Harmonic score: 1.0
+Evaluating 707
+Harmonic score: 1.0
+Evaluating 708
+Harmonic score: 1.0
+Evaluating 709
+Harmonic score: 0
+לבסוף המשתמש קומולוס העלה את ההצעה לפרלמנט והיא עברה בחיוב
+
+לבסוף המשתמש קומולוס העלה את ההצעה לפרלמנט והיא עברה בהחיוב
+['במהירות', 'בהצלחה', 'בהצבעה']
+Evaluating 710
+Harmonic score: 1.0
+Evaluating 711
+Harmonic score: 0
+לצערי הערך הנ"ל בויקי האנגלית מפורט אפילו פחות מזה שכתבתי
+
+לצערי הערך הנ"ל בויקי האנגלית מפורט אפילו פחות מזוה שכתבתי
+['מה', 'זה', 'אפילו']
+Evaluating 712
+Harmonic score: 1.0
+Evaluating 713
+Harmonic score: 0
+מכיוון שמדובר באנציקלופדיה חופשית התמונה צריכה להיות חופשית אף היא
+
+מכיוון שמדובר באנציקלופדיה חופשית התמונה צריכצה להיות חופשית אף היא
+['העריכה', 'התמונה', 'יכולה']
+Evaluating 714
+Harmonic score: 1.0
+Evaluating 715
+Harmonic score: 1.0
+Evaluating 716
+Harmonic score: 1.0
+Evaluating 717
+Harmonic score: 0
+קישורים חיצוניים מאה שורות של משולש פסקל כל המתמטיקה שמאחורי
+
+קישורים חיצוניים מאה שורות של משולש ספקל כל המתמטיקה שמאחורי
+['כל', 'ספר', 'סיפור']
+Evaluating 718
+Harmonic score: 1.0
+Evaluating 719
+Harmonic score: 1.0
+Evaluating 720
+Harmonic score: 1.0
+Evaluating 721
+Harmonic score: 1.0
+Evaluating 722
+Harmonic score: 1.0
+Evaluating 723
+Harmonic score: 1.0
+Evaluating 724
+Harmonic score: 0.5
+בעקבות המשחק הראשון הופיעו משחקים נוספים סדרת טלוויזיה וסרטים
+
+בעקבות המשחק הראשון הופיעו משחקים נוספים סדתר טלוויזיה וסרטים
+['בסדרות', 'סדרת', 'בסדרת']
+Evaluating 725
+Harmonic score: 1.0
+Evaluating 726
+Harmonic score: 1.0
+Evaluating 727
+Harmonic score: 1.0
+Evaluating 728
+Harmonic score: 1.0
+Evaluating 729
+Harmonic score: 1.0
+Evaluating 730
+Harmonic score: 1.0
+Evaluating 731
+Harmonic score: 1.0
+Evaluating 732
+Harmonic score: 1.0
+Evaluating 733
+Harmonic score: 0
+כך קרה בפרשת הפצצת המתקן הגרעיני בסוריה לפני כמה חודשים
+
+כך קרה בפרשת הפגצצת המתקן הגרעיני בסוריה לפני כמה חודשים
+['הפצצות', 'הפצת', 'הפלת']
+Evaluating 734
+Harmonic score: 1.0
+Evaluating 735
+Harmonic score: 1.0
+Evaluating 736
+Harmonic score: 1.0
+Evaluating 737
+Harmonic score: 1.0
+Evaluating 738
+Harmonic score: 1.0
+Evaluating 739
+Harmonic score: 1.0
+Evaluating 740
+Harmonic score: 1.0
+Evaluating 741
+Harmonic score: 0
+עמוד זה מכיל את רשימת הערכים חסרי התמונות בקטגוריה ירושלים
+
+עמוד זה מכיל את רשימת הערכים חסרי התמונות בקטגוריה ירושללים
+['ילדים', 'שלי', 'שלפניכם']
+Evaluating 742
+Harmonic score: 1.0
+Evaluating 743
+Harmonic score: 1.0
+Evaluating 744
+Harmonic score: 0.3333333333333333
+אוניית המלחמה של הצי האמריקאי פותחת בירי תותחים על המפלצת
+
+אוניית המלחמה של הצי האמריקאי פותחת בירי תותחים לע המפלצת
+['לעבר', 'למען', 'על']
+Evaluating 745
+Harmonic score: 1.0
+Evaluating 746
+Harmonic score: 1.0
+Evaluating 747
+Harmonic score: 1.0
+Evaluating 748
+Harmonic score: 1.0
+Evaluating 749
+Harmonic score: 1.0
+Evaluating 750
+Harmonic score: 0
+בשנים האחרונות סרטיו זכו להצלחה רבה יותר באירופה מאשר באמריקה
+
+בשנים האחרונות סטיו זכו להצלחה רבה יותר באירופה מאשר באמריקה
+['סרטים', 'הסרטים', 'יוטיוב']
+Evaluating 751
+Harmonic score: 0
+המנזר מסביב לכנסייה שוכנים חדרי הנזירים שנבנו במהלך השנים
+
+המנזר מסביב לכנסייה שוכנים חדרי הנזיירם שנבנו במהלך השנים
+['הביניים', 'המנזר', 'הילדים']
+Evaluating 752
+Harmonic score: 0
+השפעתה המסחרית הגיעה עד בריטניה בצפון ועד מרכז אפריקה בדרום
+
+השפעתה המסחרתי הגיעה עד בריטניה בצפון ועד מרכז אפריקה בדרום
+['החברתית', 'החריפה', 'האמיתית']
+Evaluating 753
+Harmonic score: 0
+ויקיפדים בעלי זכות הצבעה רואים חשיבות בקיומו ולפיכך התבנית הוסרה
+
+ויקיפדים בעלי זכות הצבעה רואים חשיבות בקיומו ולפיכך התבנית הסרה
+['חסרה', 'אסורה', 'סגורה']
+Evaluating 754
+Harmonic score: 1.0
+Evaluating 755
+Harmonic score: 1.0
+Evaluating 756
+Harmonic score: 1.0
+Evaluating 757
+Harmonic score: 1.0
+Evaluating 758
+Harmonic score: 1.0
+Evaluating 759
+Harmonic score: 1.0
+Evaluating 760
+Harmonic score: 1.0
+Evaluating 761
+Harmonic score: 0
+בערך מוזכרים המפקדים הצבאיים וראשי המפקדה הארצית הפוליטיים
+
+בערך מוזכרים המפקדים הצבאיים וראשי המפקדהי הארצית הפוליטיים
+['המפקדים', 'המפקד', 'המפה']
+Evaluating 762
+Harmonic score: 1.0
+Evaluating 763
+Harmonic score: 1.0
+Evaluating 764
+Harmonic score: 0
+השניה אולי ראוי להוסיף אזהרה לפני הפרק הפרעות ביהודי בוקרשט
+
+השינה אולי ראוי להוסיף אזהרה לפני הפרק הפרעות ביהודי בוקרשט
+['השנה', 'היה', 'והיה']
+Evaluating 765
+Harmonic score: 1.0
+Evaluating 766
+Harmonic score: 0.25
+חוסר הפעולה נתן לאנשי הסיעה הקיסרית הזדמנות לפעול נגד הקושרים
+
+חוסר הפעולה תתן לאנשי הסיעה הקיסרית הזדמנות לפעול נגד הקושרים
+['תיתן', 'תן', 'נותן']
+Evaluating 767
+Harmonic score: 1.0
+Evaluating 768
+Harmonic score: 1.0
+Evaluating 769
+Harmonic score: 1.0
+Evaluating 770
+Harmonic score: 1.0
+Evaluating 771
+Harmonic score: 1.0
+Evaluating 772
+Harmonic score: 1.0
+Evaluating 773
+Harmonic score: 1.0
+Evaluating 774
+Harmonic score: 1.0
+Evaluating 775
+Harmonic score: 1.0
+Evaluating 776
+Harmonic score: 1.0
+Evaluating 777
+Harmonic score: 1.0
+Evaluating 778
+Harmonic score: 1.0
+Evaluating 779
+Harmonic score: 0.5
+המקור הוא אינדקס האוניות העבריות שבאתר המוזיאון הימי הלאומי חיפה
+
+המקור הוא אינדקס האוניות העבריות שבאתר במוזיאון הימי הלאומי חיפה
+['במוזיאון', 'המוזיאון', 'מוזיאון']
+Evaluating 780
+Harmonic score: 0
+הקבוצה התנגדה לתוכנית אוגנדה תוכנית להקמת מדינה יהודית במזרח אפריקה
+
+הקבוצה התנגדה לתוכנית אוגנדה תכונית להקמת מדינה יהודית במזרח אפריקה
+['לתוכנית', 'המקורית', 'כמו']
+Evaluating 781
+Harmonic score: 0
+הקים את האקדמיה של פילדלפיה שממנה התפתחה אוניברסיטת פנסילבניה
+
+הקים את האקדמיה של פילדלפיה שממנה התפתחה אוניברסיטת פנסליבניה
+['סידני', 'קליפורניה', 'ולנסיה']
+Evaluating 782
+Harmonic score: 0
+נכנסתי לוויקיפדיה באנגלית התרשמתי תרגמתי את הפתיח כמעט מילה במילה
+
+נכנסתי וויקיפדיה באנגלית התרשמתי תרגמתי את הפתיח כמעט מילה במילה
+['לאפליקציה', 'וקראתי', 'לקריאה']
+Evaluating 783
+Harmonic score: 1.0
+Evaluating 784
+Harmonic score: 1.0
+Evaluating 785
+Harmonic score: 1.0
+Evaluating 786
+Harmonic score: 0
+הסרט בעיניים ישראליות הסרט התקבל בארץ בתקופתו בהתלהבות רבה
+
+הסרט בעיניים ישראליות סרט התקבל בארץ בתקופתו בהתלהבות רבה
+['בפרט', 'מסורתית', 'מסורתיות']
+Evaluating 787
+Harmonic score: 0.5
+קיימים צמחים רבים אחרים המשמשים לייצור חבלים באזורים אחרים בעולם
+
+קיימים מחים רבים אחרים המשמשים לייצור חבלים באזורים אחרים בעולם
+['חבלים', 'צמחים', 'מים']
+Evaluating 788
+Harmonic score: 1.0
+Evaluating 789
+Harmonic score: 1.0
+Evaluating 790
+Harmonic score: 1.0
+Evaluating 791
+Harmonic score: 0
+ציונית עצמאות הקמת גרעין צבאי על א"י צריך להגן
+
+ציוינת עצמאות הקמת גרעין צבאי על א"י צריך להגן
+['יותר', 'מדינת', 'רציתם']
+Evaluating 792
+Harmonic score: 0
+למרות נסיונות צבאיים הצליחה ממלכת קונגו לשמור על עצמאותה
+
+למרות נסיונות צבאיים הצליחה ממלכת קונגו לשמור על עצמאופה
+['עצמאות', 'עצמה', 'עצמו']
+Evaluating 793
+Harmonic score: 0
+אם לא יווצר קונצנזוס בעניין אבקש לפתוח בהצבעה מסודרת
+
+אם לא יוצור קונצנזוס בעניין אבקש לפתוח בהצבעה מסודרת
+['יוותר', 'יוצרים', 'נוצר']
+Evaluating 794
+Harmonic score: 1.0
+Evaluating 795
+Harmonic score: 0
+החשיפה הראשונה מחוץ לרשת פרויקט יקר מאוד של הקהילה עצמה
+
+החשיפה הראשונה מחוץ לשת פרויקט יקר מאוד של הקהילה עצמה
+['לקשת', 'לחשיפת', 'לבית']
+Evaluating 796
+Harmonic score: 0
+ואתה תמצא מעט מאוד סרטים כאלה שזכו להצלחה מסחרית עצמאית
+
+ואתה תמצא מעט מאוד סרטים כאלה שזכו להצלחה מסחרית עצמאילת
+['ענקית', 'עצומה', 'ממשית']
+Evaluating 797
+Harmonic score: 1.0
+Evaluating 798
+Harmonic score: 1.0
+Evaluating 799
+Harmonic score: 0.5
+כאשר החלה חוסר שביעות הרצון החל חיפוש אחר שורשי הביקורת
+
+כאשר החלה חוסר שביעות הרצון החל חפיוש אחר שורשי הביקורת
+['החיפוש', 'חיפוש', 'בחיפוש']
+Evaluating 800
+Harmonic score: 0
+כפי שציינתי לעיל נחוץ טכנולוגיה שבו יופיעו גם ענייני מחשבים
+
+כפי שציינתי לעיל נחוץ טכנולוגיד שבו יופיעו גם ענייני מחשבים
+['כלי', 'בלוג', 'נוהל']
+Evaluating 801
+Harmonic score: 1.0
+Evaluating 802
+Harmonic score: 1.0
+Evaluating 803
+Harmonic score: 0.5
+מדוע צריך לציין במפורש בפסקת הפתיחה שישראל שלחה סיוע
+
+מדוע צריה לציין במפורש בפסקת הפתיחה שישראל שלחה סיוע
+['צריכה', 'צריך', 'שצריך']
+Evaluating 804
+Harmonic score: 0
+משם הרבה לנסוע לברלין לנצח על ביצועי הבכורה של יצירותיו
+
+משם מרבה לנסוע לברלין לנצח על ביצועי הבכורה של יצירותיו
+['ארצה', 'אמור', 'מוטב']
+Evaluating 805
+Harmonic score: 1.0
+Evaluating 806
+Harmonic score: 1.0
+Evaluating 807
+Harmonic score: 1.0
+Evaluating 808
+Harmonic score: 0
+בצבע כחול השטחים שנתפסו על ידי האיטלקים בתחילת המלחמה
+
+בצבע כחול מהשטחים שנתפסו על ידי האיטלקים בתחילת המלחמה
+['מהשטחים', 'מטוסים', 'שחורים']
+Evaluating 809
+Harmonic score: 0
+בצעירותו הצטיין קיד גם בכדורגל ובמספר ענפי ספורט נוספים
+
+בצעירותו הצטיין קיד גם בכדורגל ועמספר ענפי ספורט נוספים
+['ומספר', 'במספר', 'ובמסגרת']
+Evaluating 810
+Harmonic score: 0.5
+בתחילה הציע פיינברג לעורר מרד צבאי של היישוב בסיוע הבריטים
+
+כתחילה הציע פיינברג לעורר מרד צבאי של היישוב בסיוע הבריטים
+['תחילה', 'בתחילה', 'בכתבה']
+Evaluating 811
+Harmonic score: 1.0
+Evaluating 812
+Harmonic score: 0
+הצצתי במדיניות השמות של ויקיפדיה והדבר איננו מוזכר שם
+
+הצצתי במדיניות השטות של ויקיפדיה והדבר איננו מוזכר שם
+['הפרטיות', 'החדשות', 'השקיפות']
+Evaluating 813
+Harmonic score: 0
+השחייה ברוב התחרויות מתבצע מקצה זה באגם או בים הפתוח
+
+השחיין ברוב התחרויות מתבצע מקצה זה באגם או בים הפתוח
+['בשחייה', 'שייט', 'עדיין']
+Evaluating 814
+Harmonic score: 1.0
+Evaluating 815
+Harmonic score: 1.0
+Evaluating 816
+Harmonic score: 1.0
+Evaluating 817
+Harmonic score: 0
+כמובן אם מישהו חושב שצריך לקצץ לשכתב לערוך לשחזר מוזמן
+
+כמובן אם מישהו חושב שצריך לקצץ לשכתב לערוך לשזר מוזמן
+['לערוך', 'שידור', 'קישור']
+Evaluating 818
+Harmonic score: 0
+כמות המידע הרלוונטי כולל ערכים מומלצים בהחלט מצדיק פורטל
+
+כמות המידע הרלוונטי כולל ערכים מומלים בהחלט מצדיק פורטל
+['מעולים', 'מסוימים', 'דומים']
+Evaluating 819
+Harmonic score: 0.5
+לאחר יציאת האלבום יצאו השלושה לסיבוב הופעות ענק בכל העולם
+
+לאחר יצאת האלבום יצאו השלושה לסיבוב הופעות ענק בכל העולם
+['צאת', 'יציאת', 'יצא']
+Evaluating 820
+Harmonic score: 1.0
+Evaluating 821
+Harmonic score: 1.0
+Evaluating 822
+Harmonic score: 0
+מעט רופאים נכנסים לאנציקלופדיה מפני שעסקו במקצוע ריפוי חולים
+
+מעט רופאים נכנסים לאנציקלופדיה מפני שעסקו במקצוע ריפוי חוליי
+['ויופי', 'מסויים', 'כימי']
+Evaluating 823
+Harmonic score: 0
+מתברר שהתשובה לשאלה האחרונה פשוטה במיוחד ארבע פעולות החשבון
+
+מתברר שהתשובה לשאלה האחרונה פשוטה במיוחד ארבע פעולות חשבון
+['חשבון', 'בחשבון', 'חשובות']
+Evaluating 824
+Harmonic score: 1.0
+Evaluating 825
+Harmonic score: 0.5
+קישורים חיצוניים אתר הבית של הלהקה גרמנית אנגלית צרפתית
+
+קישורים חיצוניים אתר הבת של הלהקה גרמנית אנגלית צרפתית
+['הבת', 'הבית', 'בת']
+Evaluating 826
+Harmonic score: 0
+קישורים חיצוניים מיצירותיו של סבסטיאן ברנט בפרויקט גוטנברג
+
+קישורים חיצוניים מיצירותיו של סבסטיאן ברנט בפרויקט גוטנבגר
+['המדובר', 'המגורים', 'הגמר']
+Evaluating 827
+Harmonic score: 0
+רובם אלמונים לחלוטין אפילו בארה"ב מחוץ למחוזות הבחירה
+
+רובם אלמונים לחלוטין אפילו בארה"ב מוחץ למחוזות הבחירה
+['מאור', 'וחבל', 'לשמור']
+Evaluating 828
+Harmonic score: 1.0
+Evaluating 829
+Harmonic score: 1.0
+Evaluating 830
+Harmonic score: 1.0
+Evaluating 831
+Harmonic score: 1.0
+Evaluating 832
+Harmonic score: 1.0
+Evaluating 833
+Harmonic score: 0
+בתרגום לעברית די נפוץ שהופכים לרבים את צורת היחיד מאנגלית
+
+בתרגום לעברית די נפוץ שהופכים לרםים את צורת היחיד מאנגלית
+['לתרגם', 'לגמרי', 'לעתים']
+Evaluating 834
+Harmonic score: 1.0
+Evaluating 835
+Harmonic score: 1.0
+Evaluating 836
+Harmonic score: 0
+הצצתי בערך כרטיס חיוג ואפשר למזג לתוכו את הערך הנוכחי
+
+הצצתי בערך כרטיס חיוג ואפר למזג לתוכו את הערך הנוכחי
+['##ור', '##וא', '##כור']
+Evaluating 837
+Harmonic score: 1.0
+Evaluating 838
+Harmonic score: 1.0
+Evaluating 839
+Harmonic score: 0
+לגבי תיארוך הפחמן אני אוסיף את התוצאות גם בפיסקה המוקדמת
+
+לגבי תיארוך הפסמן אני אוסיף את התוצאות גם בפיסקה המוקדמת
+['הזמן', 'זמן', 'המצב']
+Evaluating 840
+Harmonic score: 0.5
+לדוגמה הסיפור של דפדפן האינטרנט שהוא מוצר צריכה המוני וחשוב
+
+לדוגמה הסיפור של דפדפן האינטרנט השוא מוצר צריכה המוני וחשוב
+['הוא', 'שהוא', 'והוא']
+Evaluating 841
+Harmonic score: 1.0
+Evaluating 842
+Harmonic score: 1.0
+Evaluating 843
+Harmonic score: 1.0
+Evaluating 844
+Harmonic score: 1.0
+Evaluating 845
+Harmonic score: 0.5
+נמצאת בצד המערבי של המדינה במרכז ליד חוף האוקיינוס השקט
+
+נמצאת בצד המערבי של המדינה במרכז לד חוף האוקיינוס השקט
+['לצד', 'ליד', 'ולצד']
+Evaluating 846
+Harmonic score: 1.0
+Evaluating 847
+Harmonic score: 1.0
+Evaluating 848
+Harmonic score: 0
+אחרי הרצח השמיני במשפחה הנשים החליטו לדבר כתבה בהארץ
+
+אחרי רהצח השמיני במשפחה הנשים החליטו לדבר כתבה בהארץ
+['החג', 'האח', 'הצד']
+Evaluating 849
+Harmonic score: 1.0
+Evaluating 850
+Harmonic score: 1.0
+Evaluating 851
+Harmonic score: 1.0
+Evaluating 852
+Harmonic score: 0
+ארבע שנים אחר כך ג'קסון התמודד שוב כמועמד הדמוקרטים לנשיאות
+
+ארבע שנים אחר כך 'קסון התמודד שוב כמועמד הדמוקרטים לנשיאות
+['קסטרו', 'קמרון', 'מקרון']
+Evaluating 853
+Harmonic score: 0
+בהצגה גרפית נהוג לסמן קשר באמצעות קו המחבר בין ריבועים
+
+בהצגה גרפית נהוג לסמן שקר באמצעות קו המחבר בין ריבועים
+['קיר', 'שורה', 'שורות']
+Evaluating 854
+Harmonic score: 1.0
+Evaluating 855
+Harmonic score: 1.0
+Evaluating 856
+Harmonic score: 0
+ביקור משלחת קציני צה"ל באתרי השואה בפולין בשיתוף דובר צה"ל
+
+ביקור משלחת קציני צה"ל באתרי השואה בפולין בשיזוף דובר צה"ל
+['השואה', 'בשואה', 'השריפות']
+Evaluating 857
+Harmonic score: 1.0
+Evaluating 858
+Harmonic score: 1.0
+Evaluating 859
+Harmonic score: 0
+במידה שיש חלק בעייתי אפשר למחוק וליצור אותו מחדש במהירות
+
+במידה שיש חלק בשעייתי אפשר למחוק וליצור אותו מחדש במהירות
+['בשינוי', 'משמעותי', 'ברשת']
+Evaluating 860
+Harmonic score: 1.0
+Evaluating 861
+Harmonic score: 1.0
+Evaluating 862
+Harmonic score: 1.0
+Evaluating 863
+Harmonic score: 1.0
+Evaluating 864
+Harmonic score: 1.0
+Evaluating 865
+Harmonic score: 0
+בתקופת שלמה בערך החלה עלייתה של משפחת צדוק לכהונה הגדולה
+
+בתקופת שלמה בערך החלה עלייתה של משפחת צדוק לכהונה הגולה
+['##ונה', 'כהונה', 'הנהגה']
+Evaluating 866
+Harmonic score: 1.0
+Evaluating 867
+Harmonic score: 1.0
+Evaluating 868
+Harmonic score: 0
+הגנרל הלר קישורים חיצוניים יוזף הלר והצבא הכחול באנגלית
+
+הגנלר הלר קישורים חיצוניים יוזף הלר והצבא הכחול באנגלית
+['גנרל', 'היטלר', 'היינריך']
+Evaluating 869
+Harmonic score: 1.0
+Evaluating 870
+Harmonic score: 1.0
+Evaluating 871
+Harmonic score: 0
+החל מהמשפט בראש הדף ועד השניים שאחרי רשימת ארגזי החול
+
+החל הממשפט בראש הדף ועד השניים שאחרי רשימת ארגזי החול
+['ממש', 'ממבט', 'מלמטה']
+Evaluating 872
+Harmonic score: 1.0
+Evaluating 873
+Harmonic score: 1.0
+Evaluating 874
+Harmonic score: 1.0
+Evaluating 875
+Harmonic score: 1.0
+Evaluating 876
+Harmonic score: 1.0
+Evaluating 877
+Harmonic score: 0
+לאחר ניסוח חוקי קיימברידג' חלה התפתחות מהירה בכדורגל האנגלי
+
+לאחר ניסוח חוקי קיימברידג' חלה התפתחות מהירה כבדורגל האנגלי
+['כבר', 'מהירה', 'גדולה']
+Evaluating 878
+Harmonic score: 1.0
+Evaluating 879
+Harmonic score: 1.0
+Evaluating 880
+Harmonic score: 1.0
+Evaluating 881
+Harmonic score: 1.0
+Evaluating 882
+Harmonic score: 1.0
+Evaluating 883
+Harmonic score: 0
+מעמדה הפוליטי של פוארטו ריקו נתון במחלוקת בקרב הציבור באי
+
+מעמדה הפוליטי של פוארטו ריקו נתון במחלוקת בקרב הציבור פבאי
+['באיטליה', 'באירופה', 'הברזילאי']
+Evaluating 884
+Harmonic score: 0
+מתנגדי החוק רואים בו פגיעה חמורה בזכויות האזרח במדינת ישראל
+
+מתנגדי חהוק רואים בו פגיעה חמורה בזכויות האזרח במדינת ישראל
+['רואים', 'הטו', 'היום']
+Evaluating 885
+Harmonic score: 1.0
+Evaluating 886
+Harmonic score: 0.5
+ערכתי מחדש כידוע לך קישורים אדומים הם מנועי צמיחה לויקיפדיה
+
+ערכתי מחדש כידוע לך קישורים אדומים םה מנועי צמיחה לויקיפדיה
+['עם', 'הם', 'שהם']
+Evaluating 887
+Harmonic score: 0
+פרנק סינטרה ואלה פיצג'רלד נפגשו פעמים מספר להופעות משותפות
+
+פרנק סינםרה ואלה פיצג'רלד נפגשו פעמים מספר להופעות משותפות
+['ואלה', 'ואנה', '##יה']
+Evaluating 888
+Harmonic score: 1.0
+Evaluating 889
+Harmonic score: 0.5
+קישורים חיצוניים רשימת בתי ספר השדה של החברה להגנת הטבע
+
+קישורים חיצוניים רשימת בתי ספר השדה של חברה להגנת הטבע
+['חברה', 'החברה', 'בחברה']
+Evaluating 890
+Harmonic score: 0
+שמונים אחוז מכוח העבודה עוסק בחקלאות היתר במסחר ושירותים
+
+שמונים אחוז מכוח העבודה עוסק בחקלאות היתר בזמסחר ושירותים
+['מסחר', 'למסחר', 'סחר']
+Evaluating 891
+Harmonic score: 1.0
+Evaluating 892
+Harmonic score: 1.0
+Evaluating 893
+Harmonic score: 1.0
+Evaluating 894
+Harmonic score: 0
+את תחילת הקריירה הוא החל בארגונים קטנים במיוחד באזור מונטריאול
+
+את תחילת הקריירה הוא החל בארגונים קטנים במיוחד באזור מונטריאלו
+['מגוריו', 'מגורי', 'אריאל']
+Evaluating 895
+Harmonic score: 1.0
+Evaluating 896
+Harmonic score: 1.0
+Evaluating 897
+Harmonic score: 1.0
+Evaluating 898
+Harmonic score: 0
+בימי הביניים פירנצה נחשבה למרכז הכלכלה והמסחר באירופה
+
+בימי הביניים פףרנצה נחשבה למרכז הכלכלה והמסחר באירופה
+['ונציה', 'גרמניה', 'רומניה']
+Evaluating 899
+Harmonic score: 0
+במהלך הקריירה פרסם מספר קובצי שירה שזכו לפופולריות גבוהה
+
+במהלך הקריירה פרסם מספר קבוצי שירה שזכו לפופולריות גבוהה
+['קבצי', 'אלבומי', 'ספרי']
+Evaluating 900
+Harmonic score: 1.0
+Evaluating 901
+Harmonic score: 1.0
+Evaluating 902
+Harmonic score: 0.5
+במשך השנים הבאות הפכה קטלוניה בהדרגה לפחות ופחות עצמאית
+
+במשך השנים הבאות הפכה קטלוניה בהדרגה לחות ופחות עצמאית
+['ליותר', 'לפחות', 'פחות']
+Evaluating 903
+Harmonic score: 1.0
+Evaluating 904
+Harmonic score: 1.0
+Evaluating 905
+Harmonic score: 0
+גאוגרפיה מלבורן ממוקמת בקצה הדרום מזרחי של יבשת אוסטרליה
+
+גואגרפיה מלבורן ממוקמת בקצה הדרום מזרחי של יבשת אוסטרליה
+['ויה', 'וילה', 'אוסטרליה']
+Evaluating 906
+Harmonic score: 0
+האם לימים ההם חפצים להשיב אותנו אוהדי בית המקדש השלישי
+
+האם לימים ההם חפצים להיב אותנו אוהדי בית המקדש השלישי
+['להיות', 'ליבנו', 'השיבה']
+Evaluating 907
+Harmonic score: 0.3333333333333333
+הוא המליץ להשאיר רווח האם יש לויקיפדיה מדיניות מסודרת בנושא
+
+הוא המליץ להשאיר רווח לאם יש לויקיפדיה מדיניות מסודרת בנושא
+['אם', 'ואם', 'האם']
+Evaluating 908
+Harmonic score: 1.0
+Evaluating 909
+Harmonic score: 1.0
+Evaluating 910
+Harmonic score: 0
+הייתי מצפה ממפעילים לפעול כבית הלל קל וחומר בתחילת תפקידם
+
+הייתי מצפה ממפעלים לפעול כבית הלל קל וחומר בתחילת תפקידם
+['מהם', 'מבעלי', 'מילדים']
+Evaluating 911
+Harmonic score: 1.0
+Evaluating 912
+Harmonic score: 1.0
+Evaluating 913
+Harmonic score: 1.0
+Evaluating 914
+Harmonic score: 1.0
+Evaluating 915
+Harmonic score: 1.0
+Evaluating 916
+Harmonic score: 1.0
+Evaluating 917
+Harmonic score: 0.3333333333333333
+לידיעתך הצעתי אותך במפעיל נולד ומקווה שאין לך התנגדות עקרונית
+
+לידיעתך הצעתי אותך במפעיל נולד ומקווה שאין לא התנגדות עקרונית
+['לא', 'ללא', 'לך']
+Evaluating 918
+Harmonic score: 1.0
+Evaluating 919
+Harmonic score: 0
+למעשה כל מערכת מפתח פומבי יכולה לשמש לצורך חתימה דיגיטלית
+
+למעשה כל מערכת מפתח פמובי יכולה לשמש לצורך חתימה דיגיטלית
+['מסוימת', 'מקומית', 'מאובטחת']
+Evaluating 920
+Harmonic score: 1.0
+Evaluating 921
+Harmonic score: 0.5
+מחלוקות יוחנן העשרים ושניים היה מאוד מעורב בפוליטיקה אירופית
+
+מחלוקות יוחנן העשרים ושניים היה מאוד מעורם בפוליטיקה אירופית
+['מעור', 'מעורב', 'מפורסם']
+Evaluating 922
+Harmonic score: 0
+עצם הדיון שנעשה בערך בשמו הנכון וכו' משמעו הכרה בחשיבותו
+
+עצם הדיון שנעשה ברעך בשמו הנכון וכו' משמעו הכרה בחשיבותו
+['כבר', 'באתר', 'בקשר']
+Evaluating 923
+Harmonic score: 1.0
+Evaluating 924
+Harmonic score: 1.0
+Evaluating 925
+Harmonic score: 1.0
+Evaluating 926
+Harmonic score: 1.0
+Evaluating 927
+Harmonic score: 1.0
+Evaluating 928
+Harmonic score: 0
+אלו מקרים חריגים כי הטיעונים של הערכים שנויים במחלוקת מסוימת
+
+אלו מקרים חריגים כי הטיעונים של העכרים שנויים במחלוקת מסוימת
+['המעורבים', 'האחרים', 'ההורים']
+Evaluating 929
+Harmonic score: 1.0
+Evaluating 930
+Harmonic score: 1.0
+Evaluating 931
+Harmonic score: 0
+במהלך מלחמת האזרחים האמריקאית שימשה כבירת הקונפדרציה
+
+במהלך מלחמת האזרחים האמריקאית שימשה כבירת הוקנפדרציה
+['הפדרציה', 'המדינה', 'קנדה']
+Evaluating 932
+Harmonic score: 0
+בניגוד לדבריך פה מטרת התבנית להקטין את מספר הצבעות המחיקה
+
+בניגוד לדבריך פה מטרת התבנית להקטין את מספר הצבעות המחיךה
+['החסימה', 'הבחירה', 'התמיכה']
+Evaluating 933
+Harmonic score: 0.5
+בסיום המלחמה ניכר היה כי האוכלוסייה האזרחית נפגעה קשה במיוחד
+
+בסיום המלחמה ניר היה כי האוכלוסייה האזרחית נפגעה קשה במיוחד
+['נראה', 'ניכר', 'נדיר']
+Evaluating 934
+Harmonic score: 0
+הארגון לשחרור פלסטין תוכל לסייע ברשימת הערכים החסרים שם
+
+הארגון לשחרור פלסטין תוכל לסייע ברכשימת הערכים החסרים שם
+['ברכישת', 'באיתור', 'במתן']
+Evaluating 935
+Harmonic score: 1.0
+Evaluating 936
+Harmonic score: 1.0
+Evaluating 937
+Harmonic score: 1.0
+Evaluating 938
+Harmonic score: 1.0
+Evaluating 939
+Harmonic score: 1.0
+Evaluating 940
+Harmonic score: 0
+התנגשויות כאלו שהיו שכיחות בעבר ביקום הצעיר נדירות יותר כיום
+
+התנגשויות כאלו שהיו שכיחות בעבר ביקום חצעיר נדירות יותר כיום
+['אחר', 'הציבורי', 'הציפורים']
+Evaluating 941
+Harmonic score: 1.0
+Evaluating 942
+Harmonic score: 1.0
+Evaluating 943
+Harmonic score: 0
+זוהי ויקיפדיה בעברית ואנחנו משתדלים לא לכתוב שמות ערכים באנגלית
+
+זוהי ויקיפדיה בעברית ואנחנו משתדלים לא לכתוב שמות ערכיטם באנגלית
+['עבריים', 'ארוכים', 'זרים']
+Evaluating 944
+Harmonic score: 1.0
+Evaluating 945
+Harmonic score: 1.0
+Evaluating 946
+Harmonic score: 0
+לצבא האדום היפני היו קשרים עם החזית העממית לשחרור פלסטין
+
+לצבא האדום היפנד היו קשרים עם החזית העממית לשחרור פלסטין
+['הירדני', 'היהודי', 'הספרדי']
+Evaluating 947
+Harmonic score: 1.0
+Evaluating 948
+Harmonic score: 1.0
+Evaluating 949
+Harmonic score: 1.0
+Evaluating 950
+Harmonic score: 0
+אליוט הנחשבת לאחת היצירות החשובות בשירה האנגלית המודרנית
+
+אלויט הנחשבת לאחת היצירות החשובות בשירה האנגלית המודרנית
+['סוויטה', 'אות', 'יצירה']
+Evaluating 951
+Harmonic score: 1.0
+Evaluating 952
+Harmonic score: 1.0
+Evaluating 953
+Harmonic score: 1.0
+Evaluating 954
+Harmonic score: 1.0
+Evaluating 955
+Harmonic score: 1.0
+Evaluating 956
+Harmonic score: 1.0
+Evaluating 957
+Harmonic score: 0
+העקרון השני הוא אחידות בהפניה למקורות חיצוניים בהערות שוליים
+
+העקרון השני הוא אחידות ברפניה למקורות חיצוניים בהערות שוליים
+['בפנייה', 'הפניה', 'פנייה']
+Evaluating 958
+Harmonic score: 0.5
+ומכאן שלא היה מקום לשואה כגורם מרכזי בעיצוב הזהות הישראלית
+
+מכאן שלא היה מקום לשואה כגורם מרכזי בעיצוב הזהות הישראלית
+['מכאן', 'ומכאן', 'מכיוון']
+Evaluating 959
+Harmonic score: 1.0
+Evaluating 960
+Harmonic score: 0.25
+חסימה לצמיתות לשון האיומים שבה השתמשת בוויקיפדיה היא בלתי נסבלת
+
+חסימה לצמיתות לשון האיומים לבה השתמשת בוויקיפדיה היא בלתי נסבלת
+['בה', 'לה', 'בהם']
+Evaluating 961
+Harmonic score: 0
+כמו כן מדוע קיימות קטגוריות של חברות ישראליות וחברות אינטרנט
+
+כמו כן מוע קיימות קטגוריות של חברות ישראליות וחברות אינטרנט
+['כמובן', 'כאמור', 'במקום']
+Evaluating 962
+Harmonic score: 1.0
+Evaluating 963
+Harmonic score: 1.0
+Evaluating 964
+Harmonic score: 0
+לכן אני מסכים להפעלת הבוט בהתאם להחלטה שהתקבלה בפרלמנט
+
+לכן אני מסכים להפעלת הובט בהתאם להחלטה שהתקבלה בפרלמנט
+['בהתאם', 'המוס', 'התוא']
+Evaluating 965
+Harmonic score: 1.0
+Evaluating 966
+Harmonic score: 1.0
+Evaluating 967
+Harmonic score: 0
+עמוד זה מכיל את רשימת הערכים חסרי התמונות בקטגוריה היסטוריונים
+
+עמוד זה מכיל את רשימת הערכים חורי התמונות בקטגוריה היסטוריונים
+['שמאחורי', 'ופרטי', 'וראשי']
+Evaluating 968
+Harmonic score: 1.0
+Evaluating 969
+Harmonic score: 1.0
+Evaluating 970
+Harmonic score: 1.0
+Evaluating 971
+Harmonic score: 1.0
+Evaluating 972
+Harmonic score: 1.0
+Evaluating 973
+Harmonic score: 0.5
+במהלך הקריירה זכתה בפרס גראמי והייתה מועמדת לפרס גלובוס הזהב
+
+במהלך הקריירה זכה בפרס גראמי והייתה מועמדת לפרס גלובוס הזהב
+['זכה', 'זכתה', 'זוכה']
+Evaluating 974
+Harmonic score: 1.0
+Evaluating 975
+Harmonic score: 1.0
+Evaluating 976
+Harmonic score: 0
+האקדמיה הלאומית הישראלית למדעים מוסד ביאליק ירושלים תש"ן
+
+האקדמיה הלאומית הישראלית למדעים מוסד ביאליק ירושלים תשףן
+['ישראל', 'חולון', 'ירושלים']
+Exact match: 684/977
+Was in best three: 742/977
+The harmonic score was 712.3333333333334/977
