@@ -1,5 +1,4 @@
-# DATA_PATH = '/Users/saifun/Documents/HUJI/3 semester/67978_Needle_in_a_Data_Haystack/final_project/twitter/hebrew_twitter/{}'
-DATA_PATH = r'C:\Users\User\Dropbox\study\master\term1\needle\project\{}'
+DATA_PATH = '/Users/saifun/Documents/HUJI/3 semester/67978_Needle_in_a_Data_Haystack/final_project/twitter/hebrew_twitter/{}'
 
 YEARS = list(range(2018, 2022))
 
