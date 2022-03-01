@@ -11,7 +11,7 @@ processor = Processor()
 light_processor = LightProcessor()
 
 
-def open_csv_files_from_path(path):
+def open_csv_files_from_path(path, verbose=False):
     all_files = glob.glob(path + "/*.csv")
     for filename in all_files:
         try:
@@ -30,8 +30,9 @@ def generate_df_from_csv_path(path):
             month = filename.split('-')[1]
             # print('yielding! - ' + filename)
             yield df, month, filename
-        except:
-            print(filename)
+ע        except:
+            if verbose:
+                print(filename)
 
 
 def get_posts_from_corpus(path):
@@ -126,8 +127,7 @@ def get_df_lines_by_condition(df, column_name, value):
 
 
 def get_all_tokens_from_array(array):
-    # return [item for sublist in map(lambda settlement_name: settlement_name.split(), array) for item in sublist]
-    return [item for sublist in map(lambda word: re.split(',| |\.|\?|\n', word), array) for item
+    return [item for sublist in map(lambda word: re.split(',| |\.|\?|\n', str(word)), array) for item
             in sublist]
 
 
